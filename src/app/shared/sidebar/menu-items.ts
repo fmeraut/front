@@ -128,5 +128,13 @@ export const ROUTES: RouteInfo[] = [
     class: '',
     extralink: false,
     submenu: []
+  },
+  {
+    path: '/component/guide',
+    title: 'Guide',
+    icon: 'mdi mdi-book-open',
+    class: '',
+    extralink: false,
+    submenu: []
   }
 ];

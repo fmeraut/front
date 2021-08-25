@@ -15,6 +15,7 @@ import { NgbdtimepickerBasicComponent } from './timepicker/timepicker.component'
 import { NgbdtypeheadBasicComponent } from './typehead/typehead.component';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { CardsComponent } from './card/card.component';
+import {GuideComponent} from './guide/guide.component';
 
 export const ComponentsRoutes: Routes = [
   {
@@ -199,7 +200,20 @@ export const ComponentsRoutes: Routes = [
             { title: 'Card' }
           ]
         }
+      },
+      {
+        path: 'guide',
+        component: GuideComponent,
+        data: {
+          title: 'Guide',
+          urls: [
+            { title: 'Dashboard', url: '/dashboard' },
+            { title: 'ngComponent' },
+            { title: 'Guide' }
+          ]
+        }
       }
+
     ]
   }
 ];
