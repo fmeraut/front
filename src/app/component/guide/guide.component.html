@@ -1,5 +1,37 @@
 <div class="row">
     <div class="col-12">
+        
+              <div ngbDropdown class="d-inline-block">
+                <button
+                  class="btn btn-outline-primary"
+                  id="dropdownBasic1"
+                  ngbDropdownToggle
+                >
+                  Pays
+                </button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                  <button class="dropdown-item">France</button>
+                  <button class="dropdown-item">Espagne</button>
+                  <button class="dropdown-item">Grèce</button>
+                  <button class="dropdown-item">Italie</button>
+                  <button class="dropdown-item">Allemagne</button>
+                  
+                </div>
+                <div ngbDropdown class="d-inline-block">
+                    <button
+                      class="btn btn-outline-primary"
+                      id="dropdownBasic1"
+                      ngbDropdownToggle
+                    >
+                      Filtre de recherche
+                    </button>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                      <button class="dropdown-item">Par note</button>
+                    </div>
+             
+            
+            <br>
+
         <h4 class="d-inline">Les Guides les plus aimés</h4>
         <!-- Row -->
         <div class="row">
@@ -7,11 +39,15 @@
             <div class="col-lg-3 col-md-6">
                 <!-- Guide -->
                 <div class="guide">
-                    <img class="guide-img-top img-responsive" src="assets/images/big/img1.jpg" alt="Guide image cap">
+                    <img class="guide-img-top img-responsive" src="assets/images/big/img1.jpg" style="width: 330px; height: 400px;" alt="Guide image cap">
                     <div class="guide-body">
-                        <h4 class="guide-title">Guide title</h4>
+                        <h4 class="guide-title">Guide title <ngb-rating [(rate)]="currentRate">
+                            <ng-template let-fill="fill">
+                              <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                            </ng-template>
+                          </ngb-rating></h4>
                         <p class="guide-text">Some quick example text to build on the guide title and make up the bulk of the guide's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="#" class="btn btn-primary">En savoir plus</a>
                     </div>
                 </div>
                 <!-- Guide -->
@@ -21,11 +57,15 @@
             <div class="col-lg-3 col-md-6">
                 <!-- Guide -->
                 <div class="guide">
-                    <img class="guide-img-top img-responsive" src="assets/images/big/img2.jpg" alt="Guide image cap">
+                    <img class="guide-img-top img-responsive" src="assets/images/big/img2.jpg" style="width: 330px; height: 400px;" alt="Guide image cap">
                     <div class="guide-body">
-                        <h4 class="guide-title">Guide title</h4>
+                        <h4 class="guide-title">Guide title <ngb-rating [(rate)]="currentRate">
+                            <ng-template let-fill="fill">
+                              <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                            </ng-template>
+                          </ngb-rating></h4>
                         <p class="guide-text">Some quick example text to build on the guide title and make up the bulk of the guide's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="#" class="btn btn-primary">En savoir plus</a>
                     </div>
                 </div>
                 <!-- Guide -->
@@ -35,11 +75,15 @@
             <div class="col-lg-3 col-md-6">
                 <!-- Guide -->
                 <div class="guide">
-                    <img class="guide-img-top img-responsive" src="assets/images/big/img3.jpg" alt="Guide image cap">
+                    <img class="guide-img-top img-responsive" src="assets/images/big/img3.jpg" style="width: 330px; height: 400px;" alt="Guide image cap">
                     <div class="guide-body">
-                        <h4 class="guide-title">Guide title</h4>
+                        <h4 class="guide-title">Guide title <ngb-rating [(rate)]="currentRate">
+                            <ng-template let-fill="fill">
+                              <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                            </ng-template>
+                          </ngb-rating></h4>
                         <p class="guide-text">Some quick example text to build on the guide title and make up the bulk of the guide's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="#" class="btn btn-primary">En savoir plus</a>
                     </div>
                 </div>
                 <!-- Guide -->
@@ -49,11 +93,16 @@
             <div class="col-lg-3 col-md-6 img-responsive">
                 <!-- Guide -->
                 <div class="guide">
-                    <img class="guide-img-top img-responsive" src="assets/images/big/img4.jpg" alt="Guide image cap">
+                    <img class="guide-img-top img-responsive" src="assets/images/big/img4.jpg" style="width: 330px; height: 400px;" alt="Guide image cap">
                     <div class="guide-body">
-                        <h4 class="guide-title">Guide title</h4>
+                        <h4 class="guide-title" >Guide title <ngb-rating [(rate)]="currentRate">
+                            <ng-template let-fill="fill">
+                              <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                            </ng-template>
+                          </ngb-rating></h4>
+                        
                         <p class="guide-text">Some quick example text to build on the guide title and make up the bulk of the guide's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="#" class="btn btn-primary">En savoir plus</a>
                     </div>
                 </div>
                 <!-- Guide -->
@@ -67,384 +116,28 @@
 <!-- Row -->
 <div class="row">
     <div class="col-12 m-t-30">
-        <h4 class="m-b-0">Content types</h4>
-        <p class="text-muted m-t-0">The building block of a guide is the <code>.guide</code> <code>.guide-body</code> Use it whenever you need a padded section within a guide.</p>
-        <div class="guide">
-            <div class="guide-body collapse show">
-                <h4 class="guide-title">Special title treatment</h4>
-                <p class="guide-text">With supporting text below as a natural lead-in to additional content.</p>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Row -->
-<!-- Row -->
-<div class="row">
-    <div class="col-12 m-t-30">
-        <h4 class="m-b-0">Titles, text, and links</h4>
-        <p class="text-muted m-t-0">Guide titles are used by adding <code>.guide-title</code> &amp; <code>.guide-subtitle</code> for subtitle of guide.</p>
-        <div class="guide">
-            <div class="guide-body">
-                <h4 class="guide-title">Guide title</h4>
-                <h6 class="guide-subtitle mb-2 text-muted">Guide subtitle</h6>
-                <p class="guide-text">Some quick example text to build on the guide title and make up the bulk of the guide's content.</p>
-                <a href="#" class="guide-link">Guide link</a>
-                <a href="#" class="guide-link">Another link</a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Row -->
-<!-- Row -->
-<div class="row">
-    <div class="col-12 m-t-30">
-        <h4 class="m-b-0">Header and footer</h4>
-        <p class="text-muted m-t-0 font-12">Add an optional header and/or footer within a guide.</p>
-        <!-- Guide -->
-        <div class="guide">
-            <div class="guide-header">
-                Featured
-            </div>
-            <div class="guide-body">
-                <h4 class="guide-title">Special title treatment</h4>
-                <p class="guide-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-        <!-- Guide -->
-    </div>
-</div>
-<!-- End Row -->
-<!-- Row -->
-<div class="row">
-    <div class="col-12 m-t-30">
-        <h4 class="m-b-0">Header and footer</h4>
-        <p class="text-muted m-t-0 font-12">Add an optional header and/or footer within a guide. </p>
-        <!-- Guide -->
-        <div class="guide text-center">
-            <div class="guide-header">
-                Featured
-            </div>
-            <div class="guide-body">
-                <h4 class="guide-title">Special title treatment</h4>
-                <p class="guide-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-info">Go somewhere</a>
-            </div>
-            <div class="guide-footer text-muted">
-                2 days ago
-            </div>
-        </div>
-        <!-- Guide -->
-    </div>
-</div>
-<!-- End Row -->
-<!-- Row -->
-<div class="row">
-    <div class="col-12 m-t-30">
-        <h4 class="m-b-0">Size Using grid markup</h4>
-        <p class="text-muted m-t-0 font-12">Using the grid, wrap guides in columns and rows as needed.<code>.col-1 to .col-12</code></p>
-    </div>
-    <div class="col-md-6">
-        <div class="guide">
-            <div class="guide-body">
-                <h3 class="guide-title">Special title treatment</h3>
-                <p class="guide-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-success">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="guide">
-            <div class="guide-body">
-                <h3 class="guide-title">Special title treatment</h3>
-                <p class="guide-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Row -->
-<!-- Row -->
-<div class="row">
-    <div class="col-12 m-t-30">
-        <h4 class="m-b-0">Text alignment</h4>
-        <p class="text-muted m-t-0 font-12">You can quickly change the text alignment<code>.text-center .text-right</code>.</p>
-    </div>
-    <div class="col-md-4">
-        <div class="guide">
-            <div class="guide-body">
-                <h4 class="guide-title">Special title treatment</h4>
-                <p class="guide-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-info">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="guide text-center">
-            <div class="guide-body">
-                <h4 class="guide-title">Special title treatment</h4>
-                <p class="guide-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="guide text-right">
-            <div class="guide-body">
-                <h4 class="guide-title">Special title treatment</h4>
-                <p class="guide-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-inverse">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Row -->
-<!-- Row -->
-<div class="row">
-    <div class="col-12 m-t-30">
-        <h4 class="m-b-0">Using utilities</h4>
-        <p class="text-muted m-t-0 font-12">Using the utility, you can give direct width class to guide like<code>.w-25, w-50, w-75, w-100</code></p>
-        <div class="guide w-75">
-            <div class="guide-body">
-                <h3 class="guide-title">This guide has width of 75%</h3>
-                <p class="guide-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-danger">Go somewhere</a>
-            </div>
-        </div>
-        <div class="guide w-50">
-            <div class="guide-body">
-                <h3 class="guide-title">This guide has width of 50%</h3>
-                <p class="guide-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Row -->
-<!-- Row -->
-<div class="row">
-    <div class="col-12 m-t-30">
-        <h4 class="m-b-0">Size Using grid markup</h4>
-        <p class="text-muted m-t-0 font-12">Using the grid, wrap guides in columns and rows as needed.<code>.col-1 to .col-12</code></p>
-    </div>
-    <div class="col-md-6">
-        <div class="guide text-center">
-            <div class="guide-header">
-                <ul class="nav nav-tabs guide-header-tabs">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="javascript:void(0)">Active</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="guide-body">
-                <h4 class="guide-title">Special title treatment</h4>
-                <p class="guide-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-inverse">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="guide text-center">
-            <div class="guide-header">
-                <ul class="nav nav-pills guide-header-pills">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="javascript:void(0)">Active</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="javascript:void(0)">Disabled</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="guide-body">
-                <h4 class="guide-title">Special title treatment</h4>
-                <p class="guide-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-info">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Row -->
-<!-- Row -->
-<div class="row">
-    <div class="col-12 m-t-30">
-        <h4 class="m-b-0">Guide styles</h4>
-        <p class="text-muted m-t-0 font-12">Guides include various options for customizing their backgrounds, borders, and color.<code>.guide-primary info, warning, danger</code></p>
-    </div>
-    <div class="col-md-6">
-        <div class="guide guide-inverse" style="background-color: #333; border-color: #333;">
-            <div class="guide-header">
-                <h4 class="m-b-0 text-white">Guide Title</h4></div>
-            <div class="guide-body">
-                <h3 class="guide-title">Special title treatment</h3>
-                <p class="guide-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="guide guide-inverse guide-info">
-            <div class="guide-header">
-                <h4 class="m-b-0 text-white">Guide Title</h4></div>
-            <div class="guide-body">
-                <h3 class="guide-title">Special title treatment</h3>
-                <p class="guide-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-inverse">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="guide guide-inverse guide-primary">
-            <div class="guide-header">
-                <h4 class="m-b-0 text-white">Guide Title</h4></div>
-            <div class="guide-body">
-                <h3 class="guide-title">Special title treatment</h3>
-                <p class="guide-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-inverse">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="guide guide-inverse guide-danger">
-            <div class="guide-header">
-                <h4 class="m-b-0 text-white">Guide Title</h4></div>
-            <div class="guide-body">
-                <h3 class="guide-title">Special title treatment</h3>
-                <p class="guide-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-inverse">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="guide guide-inverse guide-warning">
-            <div class="guide-header">
-                <h4 class="m-b-0 text-white">Guide Title</h4></div>
-            <div class="guide-body">
-                <h3 class="guide-title">Special title treatment</h3>
-                <p class="guide-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-inverse">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="guide guide-inverse guide-success">
-            <div class="guide-header">
-                <h4 class="m-b-0 text-white">Guide Title</h4></div>
-            <div class="guide-body">
-                <h3 class="guide-title">Special title treatment</h3>
-                <p class="guide-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-inverse">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Row -->
-<!-- Row -->
-<div class="row">
-    <div class="col-12 m-t-30">
-        <h4 class="m-b-0">Guide styles</h4>
-        <p class="text-muted m-t-0 font-12">Guides include various options for customizing their backgrounds, borders, and color.<code>.guide-primary info, warning, danger</code></p>
-    </div>
-    <div class="col-md-6">
-        <div class="guide guide-outline-inverse">
-            <div class="guide-header">
-                <h4 class="m-b-0 text-white">Guide Title</h4></div>
-            <div class="guide-body">
-                <h3 class="guide-title">Special title treatment</h3>
-                <p class="guide-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="guide guide-outline-info">
-            <div class="guide-header">
-                <h4 class="m-b-0 text-white">Guide Title</h4></div>
-            <div class="guide-body">
-                <h3 class="guide-title">Special title treatment</h3>
-                <p class="guide-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-inverse">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="guide guide-outline-primary">
-            <div class="guide-header">
-                <h4 class="m-b-0 text-white">Guide Title</h4></div>
-            <div class="guide-body">
-                <h3 class="guide-title">Special title treatment</h3>
-                <p class="guide-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-inverse">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="guide guide-outline-danger">
-            <div class="guide-header">
-                <h4 class="m-b-0 text-white">Guide Title</h4></div>
-            <div class="guide-body">
-                <h3 class="guide-title">Special title treatment</h3>
-                <p class="guide-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-inverse">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="guide guide-outline-warning">
-            <div class="guide-header">
-                <h4 class="m-b-0 text-white">Guide Title</h4></div>
-            <div class="guide-body">
-                <h3 class="guide-title">Special title treatment</h3>
-                <p class="guide-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-inverse">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="guide guide-outline-success">
-            <div class="guide-header">
-                <h4 class="m-b-0 text-white">Guide Title</h4></div>
-            <div class="guide-body">
-                <h3 class="guide-title">Special title treatment</h3>
-                <p class="guide-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-inverse">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Row -->
-<!-- Row -->
-<div class="row">
-    <div class="col-12 m-t-30">
-        <h4 class="m-b-0">Guide Groups</h4>
-        <p class="text-muted m-t-0 font-12">Use guide groups to render guides as a single, attached element with equal width and height columns.</p>
+        <h4 class="m-b-0">Nos guides</h4>
+        <p class="text-muted m-t-0 font-12">Pour que vos voyages riment avec aventure</p>
         <div class="guide-group">
             <div class="guide">
-                <img class="guide-img-top img-responsive" src="assets/images/big/img1.jpg" alt="Guide image cap">
-                <div class="guide-body">
-                    <h4 class="guide-title">Guide title</h4>
+                <h4 class="guide-title">Guide title</h4>
+                <img class="guide-img-top img-responsive" src="assets/images/big/img1.jpg" style="width: 130px; height: 150px;" alt="Guide image cap">
+                
+                    
                     <p class="guide-text">This is a wider guide with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                     <p class="guide-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
+                
             </div>
             <div class="guide">
-                <img class="guide-img-top img-responsive" src="assets/images/big/img2.jpg" alt="Guide image cap">
+                <img class="guide-img-top img-responsive" src="assets/images/big/img2.jpg" style="width: 130px; height: 150px;" alt="Guide image cap">
                 <div class="guide-body">
-                    <h4 class="guide-title">Guide title</h4>
+                    <h4 class="float">Guide title</h4>
                     <p class="guide-text">This guide has supporting text below as a natural lead-in to additional content.</p>
                     <p class="guide-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
             </div>
             <div class="guide">
-                <img class="guide-img-top img-responsive" src="assets/images/big/img3.jpg" alt="Guide image cap">
+                <img class="guide-img-top img-responsive" src="assets/images/big/img3.jpg" style="width: 130px; height: 150px;" alt="Guide image cap">
                 <div class="guide-body">
                     <h4 class="guide-title">Guide title</h4>
                     <p class="guide-text">This is a wider guide with supporting text below as a natural lead-in to additional content. This guide has even longer content than the first to show that equal height action.</p>
@@ -455,118 +148,5 @@
     </div>
 </div>
 <!-- End Row -->
-<h4 class="m-t-40">Guide With action</h4>
-<p class="text-muted m-t-0 font-12">With action elements.</p>
-<div class="guide">
-    <div class="guide-header">
-        Title
-        <div class="guide-actions">
-            <a class="btn-minimize" data-perform="guide-collapse"><i class="ti-minus"></i></a>
-            <a class="btn-close"><i class="ti-close"></i></a>
-        </div>
-    </div>
-    <div class="guide-body collapse show">
-        <h4 class="guide-title">Special title treatment</h4>
-        <p class="guide-text">With supporting text below as a natural lead-in to additional content.</p>
-    </div>
-</div>
-<!-- Row -->
-<div class="row">
-    <div class="col-12 m-t-30">
-        <h4 class="m-b-0">Guide with Deck</h4>
-        <p class="text-muted m-t-0 font-12">Use guide groups to render guides as a single, attached element with equal width and height columns.</p>
-        <div class="guide-deck">
-            <div class="guide">
-                <img class="guide-img-top img-responsive" src="assets/images/big/img1.jpg" alt="Guide image cap">
-                <div class="guide-body">
-                    <h4 class="guide-title">Guide title</h4>
-                    <p class="guide-text">This is a wider guide with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="guide-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-            <div class="guide">
-                <img class="guide-img-top img-responsive" src="assets/images/big/img2.jpg" alt="Guide image cap">
-                <div class="guide-body">
-                    <h4 class="guide-title">Guide title</h4>
-                    <p class="guide-text">This guide has supporting text below as a natural.</p>
-                    <p class="guide-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-            <div class="guide">
-                <img class="guide-img-top img-responsive" src="assets/images/big/img3.jpg" alt="Guide image cap">
-                <div class="guide-body">
-                    <h4 class="guide-title">Guide title</h4>
-                    <p class="guide-text">This is a wider guide with supporting text below as a natural lead-in to additional content. This guide has even longer content than the first to show that equal height action. supporting text below as a natural lead-in to additional content</p>
-                    <p class="guide-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Row -->
-<!-- Row -->
-<div class="row">
-    <div class="col-12 m-t-30">
-        <h4 class="m-b-0">Guide columns</h4>
-        <p class="text-muted m-t-0 font-12">Guides can be organized into Masonry-like columns with just CSS by wrapping them in <code>guide-columns</code></p>
-        <div class="guide-columns">
-            <div class="guide">
-                <img class="guide-img-top img-fluid" src="assets/images/big/img6.jpg" alt="Guide image cap">
-                <div class="guide-body">
-                    <h4 class="guide-title">Guide title that wraps to a new line</h4>
-                    <p class="guide-text">This is a longer guide with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-            </div>
-            <div class="guide p-3">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                <footer>
-                    <small class="text-muted">
-              Someone famous in <cite title="Source Title">Source Title</cite>
-            </small>
-                </footer>
-            </div>
-            <div class="guide">
-                <img class="guide-img-top img-fluid" src="assets/images/big/img5.jpg" alt="Guide image cap">
-                <div class="guide-body">
-                    <h4 class="guide-title">Guide title</h4>
-                    <p class="guide-text">This guide has supporting text below as a natural lead-in to additional content.</p>
-                    <p class="guide-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-            <div class="guide guide-inverse guide-primary p-3 text-center">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
-                <footer>
-                    <small>
-              Someone famous in <cite title="Source Title">Source Title</cite>
-            </small>
-                </footer>
-            </div>
-            <div class="guide text-center">
-                <div class="guide-body">
-                    <h4 class="guide-title">Guide title</h4>
-                    <p class="guide-text">This guide has supporting text below as a natural lead-in to additional content.</p>
-                    <p class="guide-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-            <div class="guide">
-                <img class="guide-img img-fluid" src="assets/images/big/img4.jpg" alt="Guide image">
-            </div>
-            <div class="guide p-3 text-right">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                <footer>
-                    <small class="text-muted">
-              Someone famous in <cite title="Source Title">Source Title</cite>
-            </small>
-                </footer>
-            </div>
-            <div class="guide">
-                <div class="guide-body">
-                    <h4 class="guide-title">Guide title</h4>
-                    <p class="guide-text">This is a wider guide with supporting text below as a natural lead-in to additional content. This guide has even longer content than the first to show that equal height action.</p>
-                    <p class="guide-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Row -->
+
+
