@@ -34,6 +34,14 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
+    path: '/component/guide',
+    title: 'Guide',
+    icon: 'mdi mdi-book-open',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
     path: '/component/accordion',
     title: 'Accordion',
     icon: 'mdi mdi-equal',
@@ -128,13 +136,14 @@ export const ROUTES: RouteInfo[] = [
     class: '',
     extralink: false,
     submenu: []
-  },
-  {
+  }
+  /*{
     path: '/component/card',
     title: 'Card',
     icon: 'mdi mdi-arrange-bring-forward',
     class: '',
     extralink: false,
     submenu: []
-  }
+  },*/
+ 
 ];

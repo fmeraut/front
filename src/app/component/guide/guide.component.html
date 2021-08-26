@@ -1,0 +1,152 @@
+<div class="row">
+    <div class="col-12">
+        
+              <div ngbDropdown class="d-inline-block">
+                <button
+                  class="btn btn-outline-primary"
+                  id="dropdownBasic1"
+                  ngbDropdownToggle
+                >
+                  Pays
+                </button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                  <button class="dropdown-item">France</button>
+                  <button class="dropdown-item">Espagne</button>
+                  <button class="dropdown-item">Grèce</button>
+                  <button class="dropdown-item">Italie</button>
+                  <button class="dropdown-item">Allemagne</button>
+                  
+                </div>
+                <div ngbDropdown class="d-inline-block">
+                    <button
+                      class="btn btn-outline-primary"
+                      id="dropdownBasic1"
+                      ngbDropdownToggle
+                    >
+                      Filtre de recherche
+                    </button>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                      <button class="dropdown-item">Par note</button>
+                    </div>
+             
+            
+            <br>
+
+        <h4 class="d-inline">Les Guides les plus aimés</h4>
+        <!-- Row -->
+        <div class="row">
+            <!-- column -->
+            <div class="col-lg-3 col-md-6">
+                <!-- Guide -->
+                <div class="guide">
+                    <img class="guide-img-top img-responsive" src="assets/images/big/img1.jpg" style="width: 330px; height: 400px;" alt="Guide image cap">
+                    <div class="guide-body">
+                        <h4 class="guide-title">Guide title <ngb-rating [(rate)]="currentRate">
+                            <ng-template let-fill="fill">
+                              <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                            </ng-template>
+                          </ngb-rating></h4>
+                        <p class="guide-text">Some quick example text to build on the guide title and make up the bulk of the guide's content.</p>
+                        <a href="#" class="btn btn-primary">En savoir plus</a>
+                    </div>
+                </div>
+                <!-- Guide -->
+            </div>
+            <!-- column -->
+            <!-- column -->
+            <div class="col-lg-3 col-md-6">
+                <!-- Guide -->
+                <div class="guide">
+                    <img class="guide-img-top img-responsive" src="assets/images/big/img2.jpg" style="width: 330px; height: 400px;" alt="Guide image cap">
+                    <div class="guide-body">
+                        <h4 class="guide-title">Guide title <ngb-rating [(rate)]="currentRate">
+                            <ng-template let-fill="fill">
+                              <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                            </ng-template>
+                          </ngb-rating></h4>
+                        <p class="guide-text">Some quick example text to build on the guide title and make up the bulk of the guide's content.</p>
+                        <a href="#" class="btn btn-primary">En savoir plus</a>
+                    </div>
+                </div>
+                <!-- Guide -->
+            </div>
+            <!-- column -->
+            <!-- column -->
+            <div class="col-lg-3 col-md-6">
+                <!-- Guide -->
+                <div class="guide">
+                    <img class="guide-img-top img-responsive" src="assets/images/big/img3.jpg" style="width: 330px; height: 400px;" alt="Guide image cap">
+                    <div class="guide-body">
+                        <h4 class="guide-title">Guide title <ngb-rating [(rate)]="currentRate">
+                            <ng-template let-fill="fill">
+                              <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                            </ng-template>
+                          </ngb-rating></h4>
+                        <p class="guide-text">Some quick example text to build on the guide title and make up the bulk of the guide's content.</p>
+                        <a href="#" class="btn btn-primary">En savoir plus</a>
+                    </div>
+                </div>
+                <!-- Guide -->
+            </div>
+            <!-- column -->
+            <!-- column -->
+            <div class="col-lg-3 col-md-6 img-responsive">
+                <!-- Guide -->
+                <div class="guide">
+                    <img class="guide-img-top img-responsive" src="assets/images/big/img4.jpg" style="width: 330px; height: 400px;" alt="Guide image cap">
+                    <div class="guide-body">
+                        <h4 class="guide-title" >Guide title <ngb-rating [(rate)]="currentRate">
+                            <ng-template let-fill="fill">
+                              <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                            </ng-template>
+                          </ngb-rating></h4>
+                        
+                        <p class="guide-text">Some quick example text to build on the guide title and make up the bulk of the guide's content.</p>
+                        <a href="#" class="btn btn-primary">En savoir plus</a>
+                    </div>
+                </div>
+                <!-- Guide -->
+            </div>
+            <!-- column -->
+        </div>
+        <!-- Row -->
+    </div>
+</div>
+<!-- End Row -->
+<!-- Row -->
+<div class="row">
+    <div class="col-12 m-t-30">
+        <h4 class="m-b-0">Nos guides</h4>
+        <p class="text-muted m-t-0 font-12">Pour que vos voyages riment avec aventure</p>
+        <div class="guide-group">
+            <div class="guide">
+                <h4 class="guide-title">Guide title</h4>
+                <img class="guide-img-top img-responsive" src="assets/images/big/img1.jpg" style="width: 130px; height: 150px;" alt="Guide image cap">
+                
+                    
+                    <p class="guide-text">This is a wider guide with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="guide-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                
+            </div>
+            <div class="guide">
+                <img class="guide-img-top img-responsive" src="assets/images/big/img2.jpg" style="width: 130px; height: 150px;" alt="Guide image cap">
+                <div class="guide-body">
+                    <h4 class="float">Guide title</h4>
+                    <p class="guide-text">This guide has supporting text below as a natural lead-in to additional content.</p>
+                    <p class="guide-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            <div class="guide">
+                <img class="guide-img-top img-responsive" src="assets/images/big/img3.jpg" style="width: 130px; height: 150px;" alt="Guide image cap">
+                <div class="guide-body">
+                    <h4 class="guide-title">Guide title</h4>
+                    <p class="guide-text">This is a wider guide with supporting text below as a natural lead-in to additional content. This guide has even longer content than the first to show that equal height action.</p>
+                    <p class="guide-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Row -->
+
+
