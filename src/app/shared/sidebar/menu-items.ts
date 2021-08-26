@@ -18,6 +18,14 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
+    path: '/component/user',
+    title: 'Utilisateurs',
+    icon: 'mdi mdi-human',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
     path: '',
     title: 'UI Components',
     icon: 'mdi mdi-dots-horizontal',
