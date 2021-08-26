@@ -5,12 +5,12 @@
             <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
                   Pays
                 </button>
-            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                <button class="dropdown-item">France</button>
-                <button class="dropdown-item">Espagne</button>
-                <button class="dropdown-item">Grèce</button>
-                <button class="dropdown-item">Italie</button>
-                <button class="dropdown-item">Allemagne</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1" *ngFor="let e of list">
+                <button (click)="findcountry('france')" class="dropdown-item">France</button>
+                <button (click)="findcountry('espagne')" class="dropdown-item">Espagne</button>
+                <button (click)="findcountry('grece')" class="dropdown-item">Grèce</button>
+                <button (click)="findcountry('italie')" class="dropdown-item">Italie</button>
+                <button (click)="findcountry('allemagne')" class="dropdown-item">Allemagne</button>
 
             </div>
             <div ngbDropdown class="d-inline-block">
@@ -119,6 +119,7 @@
 
                 <h4 class="m-b-0">Nos experiences</h4>
                 <p class="text-muted m-t-0 font-12">Pour que vos voyages riment avec aventure</p>
+
                 <div class="experience-group" *ngFor="let e of list">
                     <div class="experience">
                         <h4 class="experience-title">{{e.title}}</h4>

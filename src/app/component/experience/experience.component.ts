@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
 import { Experience } from 'src/app/model/experience';
 import { ExperienceService } from 'src/app/services/experience.service';
 
@@ -57,13 +58,18 @@ export class ExperienceComponent implements OnInit {
     
   }
 
-  findall(){
-    this.experienceService.findall().subscribe(data => {this.list = data});
-    this.list.sort((a:Experience, b:Experience) => (a.rating < b.rating) ? 1 : -1)
-    console.log(this.list)
+  ratingorder(list:Observable<any>){
+    
   }
 
+  findall(){
+    this.experienceService.findall().subscribe(data => {this.list = data});
+  }
 
+  findcountry(country:string){
+    this.experienceService.findcountry(country).subscribe(data => {this.list = data});
+    
+  }
 
 
   }
