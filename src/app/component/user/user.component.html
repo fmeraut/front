@@ -1,1 +1,42 @@
-<p>user works !</p>
+<div class="container-fluid mt--7">
+    <div class="card">
+        <div class="card-header">
+            <strong>Nouvel utilisateur</strong>
+            <small></small>
+        </div>
+        <form (ngSubmit)="saveUser()">
+            <div class="card-body">
+                <div class="form-group">
+                    <label>Nom</label>
+                    <input type="text" class="form-control" [(ngModel)]="user.nom" name="nom" placeholder="Enter your last name">
+                </div>
+                <div class="form-group">
+                    <label>Prenom</label>
+                    <input type="text" class="form-control" [(ngModel)]="user.prenom" name="prenom" placeholder="Enter your first name">
+                </div>
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" class="form-control" [(ngModel)]="user.username" name="username" placeholder="Enter your username">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="text" class="form-control" [(ngModel)]="user.password" name="password" placeholder="Enter your password">
+                </div>
+                <div class="form-group">
+                    <label>Mail</label>
+                    <input type="text" class="form-control" [(ngModel)]="user.mail" name="mail" placeholder="Enter your mail adress">
+                </div>
+                <div class="form-group">
+                    <label>S'abonner à la newsletter</label><br>
+                    <input type="radio" id="true" [(ngModel)]="user.aboNews" name="aboNews" value=true>
+                    <label for="true">Recevoir la newsletter</label><br>
+                    <input type="radio" id="false" [(ngModel)]="user.aboNews" name="aboNews" value=false>
+                    <label for="false">Ne pas m'abonner</label><br>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                    <button class="btn btn-block btn-success">Ajouter</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
