@@ -24,6 +24,7 @@ import { CardsComponent } from './card/card.component';
 import { UserComponent } from './user/user.component';
 import { GuideComponent } from './guide/guide.component';
 import { ExperienceComponent } from './experience/experience.component';
+import { PlaceComponent } from './place/place.component';
 
 @NgModule({
   imports: [
@@ -51,7 +52,8 @@ import { ExperienceComponent } from './experience/experience.component';
     CardsComponent,
     UserComponent,
     GuideComponent,
-    ExperienceComponent
+    ExperienceComponent,
+    PlaceComponent
   ]
 })
 export class ComponentsModule {}

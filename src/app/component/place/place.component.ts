@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { GuideService } from 'src/app/services/guide.service';
+import { PlaceService } from 'src/app/services/place.service';
 
 @Component({
   selector: 'app-ngbd-rating',
-  templateUrl: './guide.component.html',
+  templateUrl: './place.component.html',
   styles: [
     `
       .star {
@@ -33,7 +33,7 @@ import { GuideService } from 'src/app/services/guide.service';
   ]
   
 })
-export class GuideComponent implements OnInit {
+export class PlaceComponent implements OnInit {
   currentRate = 8;
   currentRate2 = 2;
   selected = 0;
@@ -50,19 +50,19 @@ export class GuideComponent implements OnInit {
     }
   }
 
-  guideExtra : any = null;
+  placeExtra : any = null;
 
   results = [];
   
 
-  constructor(private guideService : GuideService ) { }
+  constructor(private placeService : PlaceService ) { }
 
   ngOnInit(): void {
   }
 
-  findAllGuides(){
-    this.guideService.findAllGuides().subscribe(data => {this.guideExtra = data});
-    console.log(this.guideExtra);
+  findAllPlaces(){
+    this.placeService.findAllPlaces().subscribe(data => {this.placeExtra = data});
+    console.log(this.placeExtra);
   }
 
   

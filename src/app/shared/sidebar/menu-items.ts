@@ -25,14 +25,14 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: []
   },
-  {
+  /*{
     path: '',
     title: 'UI Components',
     icon: 'mdi mdi-dots-horizontal',
     class: 'nav-small-cap',
     extralink: true,
     submenu: []
-  },
+  },*/
   {
     path: '/component/guide',
     title: 'Guide',
@@ -44,7 +44,15 @@ export const ROUTES: RouteInfo[] = [
   {
     path: '/component/experience',
     title: 'Experience',
-    icon: 'mdi mdi-book-open',
+    icon: 'mdi mdi-forum',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
+    path: '/component/place',
+    title: 'Place',
+    icon: 'mdi mdi-library',
     class: '',
     extralink: false,
     submenu: []

@@ -18,6 +18,7 @@ import { CardsComponent } from './card/card.component';
 import { UserComponent } from './user/user.component';
 import { GuideComponent } from './guide/guide.component';
 import { ExperienceComponent } from './experience/experience.component';
+import {PlaceComponent} from './place/place.component';
 
 export const ComponentsRoutes: Routes = [
   {
@@ -236,6 +237,18 @@ export const ComponentsRoutes: Routes = [
             { title: 'Dashboard', url: '/dashboard' },
             { title: 'ngComponent' },
             { title: 'Experience' }
+          ]
+        }
+      },
+      {
+        path: 'place',
+        component: PlaceComponent,
+        data: {
+          title: 'Place',
+          urls: [
+            { title: 'Dashboard', url: '/dashboard' },
+            { title: 'ngComponent' },
+            { title: 'Place' }
           ]
         }
       }
