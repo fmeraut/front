@@ -42,6 +42,14 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
+    path: '/component/experience',
+    title: 'Experience',
+    icon: 'mdi mdi-book-open',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
     path: '/component/accordion',
     title: 'Accordion',
     icon: 'mdi mdi-equal',

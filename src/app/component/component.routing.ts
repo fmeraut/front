@@ -17,6 +17,7 @@ import { ButtonsComponent } from './buttons/buttons.component';
 import { CardsComponent } from './card/card.component';
 import { UserComponent } from './user/user.component';
 import { GuideComponent } from './guide/guide.component';
+import { ExperienceComponent } from './experience/experience.component';
 
 export const ComponentsRoutes: Routes = [
   {
@@ -223,6 +224,18 @@ export const ComponentsRoutes: Routes = [
             { title: 'Dashboard', url: '/dashboard' },
             { title: 'ngComponent' },
             { title: 'Guide' }
+          ]
+        }
+      },
+      {
+        path: 'experience',
+        component: ExperienceComponent,
+        data: {
+          title: 'Experience',
+          urls: [
+            { title: 'Dashboard', url: '/dashboard' },
+            { title: 'ngComponent' },
+            { title: 'Experience' }
           ]
         }
       }
