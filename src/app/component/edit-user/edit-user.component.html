@@ -16,6 +16,14 @@
                             <label>Prénom</label>
                             <input type="text" class="form-control" [(ngModel)]="user.prenom" formControlName="prenom" placeholder="Enter your lastname">
                         </div>
+                        <div class="form-group">
+                            <label>Username</label>
+                            <input type="text" class="form-control" [(ngModel)]="user.username" formControlName="username" placeholder="Enter your username">
+                        </div>
+                        <div class="form-group">
+                            <label>Mail</label>
+                            <input type="text" class="form-control" [(ngModel)]="user.mail" formControlName="mail" placeholder="Enter your mail">
+                        </div>
                         <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
                             <button type="button" class="btn btn-block btn-success" (click)="updateUtilisateur()">Mettre à jour</button>
                         </div>
