@@ -23,7 +23,7 @@ export class UserService {
   }
 
   public getUtilisateur(id : number): Observable<any>{
-    return this.httpClient.get(this.baseURL+"/"+id);
+    return this.httpClient.get(this.baseURL+"/findOne/"+id);
   }
 
   public updateUtilisateur(user : any): Observable<any>{

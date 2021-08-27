@@ -36,7 +36,8 @@ import { LoginComponent } from './login/login.component';
     RouterModule.forChild(ComponentsRoutes),
     FormsModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ],
   declarations: [
     NgbdpregressbarBasicComponent,
