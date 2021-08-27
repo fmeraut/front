@@ -6,9 +6,9 @@ import {
   LocationStrategy,
   PathLocationStrategy
 } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { Injectable, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpHandler, HttpInterceptor, HttpRequest, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -35,7 +35,17 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   wheelSpeed: 1,
   wheelPropagation: true,
   minScrollbarLength: 20
-};   
+};  
+
+@Injectable()
+export class XhrInterceptor implements HttpInterceptor {
+intercept(req:HttpRequest<any>, next: HttpHandler){
+  const xhr=req.clone({
+    headers: req.headers.set('X-Requested-With','XMLHttpRequest')
+  });
+  return next.handle(xhr);
+}
+}
 
 @NgModule({
   declarations: [
@@ -68,7 +78,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 	{
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
-    }
+    },
+    {provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi:true}
   ],
   bootstrap: [AppComponent]
 })
