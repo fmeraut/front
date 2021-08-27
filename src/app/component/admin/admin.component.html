@@ -7,14 +7,14 @@
                 </h4>
                 <h6 class="card-subtitle">Liste utilisateurs</h6>
             </div>
-            <div class="ml-auto">
+            <!--<div class="ml-auto">
                 <select class="custom-select b-0">
             <option selected="">January 2020</option>
             <option value="1">February 2020</option>
             <option value="2">March 2020</option>
             <option value="3">April 2020</option>
           </select>
-            </div>
+            </div>-->
         </div>
 
     </div>
@@ -40,8 +40,9 @@
                     <td>{{u.mail}}</td>
                     <td>{{u.newsAbo}}</td>
                     <td>
-                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
-                            <button type="button" class="btn btn-block btn-danger" (click)="deleteUser(u.id)">Delete</button>
+                        <div>
+                            <button type="button" class="btn btn-rounded btn-warning" (click)="deleteUser(u.id)">Delete</button>
+                            <button type="button" class="btn btn-rounded btn-info" (click)="editUser(u)">Update</button>
                         </div>
                     </td>
                 </tr>

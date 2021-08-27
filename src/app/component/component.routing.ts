@@ -20,6 +20,7 @@ import { GuideComponent } from './guide/guide.component';
 import { AdminComponent } from './admin/admin.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { PlaceComponent } from './place/place.component';
+import { EditUserComponent } from './edit-user/edit-user.component';
 
 export const ComponentsRoutes: Routes = [
   {
@@ -262,6 +263,18 @@ export const ComponentsRoutes: Routes = [
             { title: 'Dashboard', url: '/dashboard' },
             { title: 'ngComponent' },
             { title: 'Place' }
+          ]
+        }
+      },
+      {
+        path: 'editUser',
+        component: EditUserComponent,
+        data: {
+          title: 'EditUser',
+          urls: [
+            { title: 'Dashboard', url: '/dashboard' },
+            { title: 'ngComponent' },
+            { title: 'EditUser' }
           ]
         }
       }

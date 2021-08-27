@@ -25,7 +25,6 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: []
   },
-<<<<<<< HEAD
   {
     path: '/component/admin',
     title: 'Gestion utilisateurs',
@@ -34,10 +33,7 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: []
   },
-  {
-=======
   /*{
->>>>>>> f33a1bb2743b3bc2a88354e05fdbe81ba8102961
     path: '',
     title: 'UI Components',
     icon: 'mdi mdi-dots-horizontal',

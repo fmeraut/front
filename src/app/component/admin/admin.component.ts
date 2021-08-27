@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from 'src/app/model/user';
 import { UserService } from 'src/app/services/user.service';
 
@@ -12,7 +13,7 @@ export class AdminComponent implements OnInit {
   usersExtra : any = null;
   user : User = new User();
 
-  constructor(private userService : UserService) { }
+  constructor(private userService : UserService, private router: Router) { }
 
   ngOnInit(): void {
     this.findAllUsers();
@@ -29,11 +30,10 @@ export class AdminComponent implements OnInit {
       )
   }
 
-  saveUser(){
-    this.userService.saveUtilisateur(this.user).subscribe(
-      () => {this.findAllUsers();
-      this.user = new User();}
-    )
+  editUser(user:User){
+    localStorage.removeItem("editUserId");
+    localStorage.setItem("editUserId",user.id.toString());
+    this.router.navigate(['/component/editUser',user.id]);
   }
 
 }

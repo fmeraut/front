@@ -27,7 +27,8 @@ export class UserService {
   }
 
   public updateUtilisateur(user : any): Observable<any>{
-    return this.httpClient.put(this.baseURL+'/'+user.id,user);
+    var userParse = JSON.parse(user);
+    return this.httpClient.put(this.baseURL+'/'+userParse.id,userParse);
   }
   
 }
