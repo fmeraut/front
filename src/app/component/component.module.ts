@@ -23,6 +23,7 @@ import { ButtonsComponent } from './buttons/buttons.component';
 import { CardsComponent } from './card/card.component';
 import { UserComponent } from './user/user.component';
 import { GuideComponent } from './guide/guide.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   imports: [
@@ -49,7 +50,8 @@ import { GuideComponent } from './guide/guide.component';
     ButtonsComponent,
     CardsComponent,
     UserComponent,
-    GuideComponent
+    GuideComponent,
+    AdminComponent
   ]
 })
 export class ComponentsModule {}

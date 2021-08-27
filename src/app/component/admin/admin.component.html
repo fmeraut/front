@@ -1,0 +1,51 @@
+<div class="card">
+    <div class="card-body">
+        <div class="d-md-flex align-items-center">
+            <div>
+                <h4 class="card-title">
+                    Gestion des comptes utilisateurs
+                </h4>
+                <h6 class="card-subtitle">Liste utilisateurs</h6>
+            </div>
+            <div class="ml-auto">
+                <select class="custom-select b-0">
+            <option selected="">January 2020</option>
+            <option value="1">February 2020</option>
+            <option value="2">March 2020</option>
+            <option value="3">April 2020</option>
+          </select>
+            </div>
+        </div>
+
+    </div>
+    <div class="table-responsive">
+        <table class="table v-middle mb-0">
+            <thead>
+                <tr>
+                    <th class="border-top-0 font-medium border-bottom-0">Nom</th>
+                    <th class="border-top-0 font-medium border-bottom-0">Prenom</th>
+                    <th class="border-top-0 font-medium border-bottom-0">Username</th>
+                    <th class="border-top-0 font-medium border-bottom-0">Password</th>
+                    <th class="border-top-0 font-medium border-bottom-0">Mail</th>
+                    <th class="border-top-0 font-medium border-bottom-0">Newsletter</th>
+                    <th class="border-top-0 font-medium border-bottom-0">Gestion</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let u of usersExtra'>
+                    <td>{{u.nom}}</td>
+                    <td>{{u.prenom}}</td>
+                    <td>{{u.username}}</td>
+                    <td>{{u.password}}</td>
+                    <td>{{u.mail}}</td>
+                    <td>{{u.newsAbo}}</td>
+                    <td>
+                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                            <button type="button" class="btn btn-block btn-danger" (click)="deleteUser(u.id)">Delete</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
