@@ -22,6 +22,8 @@ export class UserComponent implements OnInit {
     this.utilisateurService.findAllUtilisateurs().subscribe(data => {this.usersExtra = data});
   }
 
+  
+
   deleteUser(id : number){
     this.utilisateurService.deleteUtilisateur(id).subscribe(
       () => {this.findAllUsers()}

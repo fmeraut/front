@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { GuideService } from 'src/app/services/guide.service';
+import { Observable } from 'rxjs';
+import { Experience } from 'src/app/model/experience';
+import { ExperienceService } from 'src/app/services/experience.service';
 
 @Component({
-  selector: 'app-ngbd-rating',
-  templateUrl: './guide.component.html',
+  selector: 'app-experience',
+  templateUrl: './experience.component.html',
   styles: [
     `
       .star {
@@ -31,9 +33,8 @@ import { GuideService } from 'src/app/services/guide.service';
       }
     `
   ]
-  
 })
-export class GuideComponent implements OnInit {
+export class ExperienceComponent implements OnInit {
   currentRate = 8;
   currentRate2 = 2;
   selected = 0;
@@ -49,28 +50,28 @@ export class GuideComponent implements OnInit {
       this.ctrl.disable();
     }
   }
-
-  guideExtra : any = null;
-
-  results = [];
-  
-
-  constructor(private guideService : GuideService ) { }
+  list:any=null;
+  constructor(private experienceService:ExperienceService) { }
 
   ngOnInit(): void {
+    this.findall();
+    
   }
 
-  findAllGuides(){
-    this.guideService.findAllGuides().subscribe(data => {this.guideExtra = data});
-    console.log(this.guideExtra);
+  ratingorder(list:Observable<any>){
+    
   }
 
-  
+  findall(){
+    this.experienceService.findall().subscribe(data => {this.list = data});
+  }
 
-  
+  findcountry(country:string){
+    this.experienceService.findcountry(country).subscribe(data => {this.list = data});
+    
+  }
 
-  
 
- 
+  }
 
-}
+

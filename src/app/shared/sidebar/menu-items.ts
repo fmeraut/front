@@ -25,6 +25,7 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: []
   },
+<<<<<<< HEAD
   {
     path: '/component/admin',
     title: 'Gestion utilisateurs',
@@ -34,17 +35,36 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
+=======
+  /*{
+>>>>>>> f33a1bb2743b3bc2a88354e05fdbe81ba8102961
     path: '',
     title: 'UI Components',
     icon: 'mdi mdi-dots-horizontal',
     class: 'nav-small-cap',
     extralink: true,
     submenu: []
-  },
+  },*/
   {
     path: '/component/guide',
     title: 'Guide',
     icon: 'mdi mdi-book-open',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
+    path: '/component/experience',
+    title: 'Experience',
+    icon: 'mdi mdi-forum',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
+    path: '/component/place',
+    title: 'Place',
+    icon: 'mdi mdi-library',
     class: '',
     extralink: false,
     submenu: []
