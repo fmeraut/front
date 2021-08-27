@@ -120,44 +120,55 @@
 
         <div class="row my-5">
             <div class="col-lg-2 col-xl-2">
-              <div class="mb-lg-0 mb-2">
-                <img class="guide-img-top img-responsive" src="assets/images/big/img3.jpg" style="width: 170px; height: 190px;" alt="Guide image cap">
-              </div>
+                <div class="mb-lg-0 mb-2">
+                    <img class="guide-img-top img-responsive" src="assets/images/big/img3.jpg" style="width: 170px; height: 190px;" alt="Guide image cap">
+                </div>
             </div>
 
-        <div class="col-lg-5 col-xl-0">
-            <div class="experience-body">
-                <h4 class="guide-title" >Experience title <ngb-rating [(rate)]="currentRate">
-                    <ng-template let-fill="fill">
-                      <span class="star" [class.filled]="fill === 100">&#9733;</span>
-                    </ng-template>
-                  </ngb-rating></h4>
-                <p class="expérience-text">This is a wider experience with supporting text below as a natural lead-in to additional content. This guide has even longer content than the first to show that equal height action.</p>
-                <p class="expérience-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-            <div class="col-12 m-t-30">
-
-               
-                <div class="experience-group" *ngFor="let e of list">
-                    <div class="experience">
-                        <h4 class="experience-title">{{e.title}}</h4>
-                        <img class="experience-img-top img-responsive" src="assets/images/big/img1.jpg" style="width: 130px; height: 150px;" alt="Experience image cap">
-                        <p class="experience-text">{{e.text}}</p>
-                        <p class="experience-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        <p class="experience-text">{{e.rating}}</p>
-                        <ngb-rating [(rate)]=e.rating>
+            <div class="col-lg-5 col-xl-0">
+                <div class="experience-body">
+                    <h4 class="guide-title">Experience title
+                        <ngb-rating [(rate)]="currentRate">
                             <ng-template let-fill="fill">
                                 <span class="star" [class.filled]="fill === 100">&#9733;</span>
                             </ng-template>
                         </ngb-rating>
-                        <br/>
-                        <hr/>
-                        <br/>
-                    </div>
+                    </h4>
+                    <p class="expérience-text">This is a wider experience with supporting text below as a natural lead-in to additional content. This guide has even longer content than the first to show that equal height action.</p>
+                    <p class="expérience-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
             </div>
         </div>
-        <!-- End Row -->
+        <div class="row">
+            <div class="col-12 m-t-30">
+
+
+                <div class="experience-group" *ngFor="let e of list">
+                    <div class="row my-5">
+                        <div class="col-lg-2 col-xl-2">
+                            <div class="mb-lg-0 mb-2">
+                                <img class="experience-img-top img-responsive" src="assets/images/big/img1.jpg" style="width: 130px; height: 150px;" alt="Experience image cap">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-5 col-xl-0">
+                            <div class="experience-body">
+                                <h4 class="experience-title">{{e.title}}
+                                    <ngb-rating [(rate)]=e.rating>
+                                        <ng-template let-fill="fill">
+                                            <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                                        </ng-template>
+                                    </ngb-rating>
+                                </h4>
+
+                                <p class="experience-text">{{e.text}}</p>
+                                <p class="experience-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
+                                <br/>
+                                <hr/>
+                                <br/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Row -->

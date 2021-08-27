@@ -21,6 +21,8 @@ import { AdminComponent } from './admin/admin.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { PlaceComponent } from './place/place.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
+import { ExperienceDetailComponent } from './experience-detail/experience-detail.component';
+import { LoginComponent } from './login/login.component';
 
 export const ComponentsRoutes: Routes = [
   {
@@ -243,10 +245,34 @@ export const ComponentsRoutes: Routes = [
         }
       },
       {
+        path: 'login',
+        component: LoginComponent,
+        data: {
+          title: 'Login',
+          urls: [
+            { title: 'Dashboard', url: '/dashboard' },
+            { title: 'ngComponent' },
+            { title: 'Guide' }
+          ]
+        }
+      },
+      {
         path: 'experience',
         component: ExperienceComponent,
         data: {
           title: 'Experience',
+          urls: [
+            { title: 'Dashboard', url: '/dashboard' },
+            { title: 'ngComponent' },
+            { title: 'Experience' }
+          ]
+        }
+      },
+      {
+        path: 'experienceDetail',
+        component: ExperienceDetailComponent,
+        data: {
+          title: 'Detail Experience',
           urls: [
             { title: 'Dashboard', url: '/dashboard' },
             { title: 'ngComponent' },

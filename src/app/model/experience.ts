@@ -4,6 +4,7 @@ export class Experience {
     title:string="";
     country:string="";
     text:string="";
+    photos:string="";
     videos:string[]=[];
     rating:number=0;
     validated:boolean=false;
