@@ -26,6 +26,14 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
+    path: '/component/login',
+    title: 'Login',
+    icon: 'mdi mdi-human',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
     path: '/component/admin',
     title: 'Gestion utilisateurs',
     icon: 'mdi mdi-human',
@@ -52,6 +60,14 @@ export const ROUTES: RouteInfo[] = [
   {
     path: '/component/experience',
     title: 'Experience',
+    icon: 'mdi mdi-forum',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
+    path: '/component/experienceDetail',
+    title: 'Ajout Experience',
     icon: 'mdi mdi-forum',
     class: '',
     extralink: false,

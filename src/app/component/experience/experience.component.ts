@@ -68,7 +68,6 @@ export class ExperienceComponent implements OnInit {
 
   findcountry(country:string){
     this.experienceService.findcountry(country).subscribe(data => {this.list = data});
-    
   }
 
 

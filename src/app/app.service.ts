@@ -6,15 +6,19 @@ import { Injectable } from '@angular/core';
 })
 export class AppService {
   authenticated = false;
+  responseArr:any;
   constructor(private httpClient:HttpClient) { }
-  authenticate(credentials, callback){
+  authenticate(credentials:any, callback:any){
+    
     const headers = new HttpHeaders(
       credentials ? {
         authorization : 'Basic ' + btoa(credentials.username + ':' + credentials.password)
       } : {}
     );
-    this.httpClient.get('http://localhost:8080/login/user', {headers: headers}).subscribe(response => {
-      if(response['username']){
+    this.httpClient.get('http://localhost:9090/login/user', {headers: headers}).subscribe(response => {
+      
+      this.responseArr = response;
+      if(this.responseArr['username']){
         this.authenticated = true;
       }
       else{

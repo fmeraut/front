@@ -26,11 +26,13 @@
                     <label>Videos</label>
                     <input type="text" class="form-control" [(ngModel)]="experience.videos" name="videos" placeholder="Enter your video url">
                 </div>
-                <ngb-rating [(rate)]="currentRate">
-                    <ng-template let-fill="fill">
-                        <span class="star" [class.filled]="fill === 100">&#9733;</span>
-                    </ng-template>
-                </ngb-rating>
+                <div class="form-group">
+                    <ngb-rating [(rate)]="experience.rating">
+                        <ng-template let-fill="fill">
+                            <span type="number" [(ngModel)]="experience.rating" name="rating" class="star form-control" [class.filled]="fill === 100">&#9733;</span>
+                        </ng-template>
+                    </ngb-rating>
+                </div>
                 <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
                     <button class="btn btn-block btn-success">Ajouter</button>
 

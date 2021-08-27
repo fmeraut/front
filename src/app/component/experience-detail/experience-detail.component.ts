@@ -5,7 +5,32 @@ import { ExperienceService } from 'src/app/services/experience.service';
 @Component({
   selector: 'app-experience-detail',
   templateUrl: './experience-detail.component.html',
-  styleUrls: ['./experience-detail.component.css']
+  styles: [
+    `
+      .star {
+        font-size: 1.5rem;
+        color: #b0c4de;
+      }
+      .filled {
+        color: #1e90ff;
+      }
+      .heart {
+        position: relative;
+        display: inline-block;
+        font-size: 3rem;
+        color: #d3d3d3;
+      }
+      .full {
+        color: red;
+      }
+      .half {
+        position: absolute;
+        display: inline-block;
+        overflow: hidden;
+        color: red;
+      }
+    `
+  ]
 })
 export class ExperienceDetailComponent implements OnInit {
 
