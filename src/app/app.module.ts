@@ -27,6 +27,7 @@ import { SpinnerComponent } from './shared/spinner.component';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+import { ExperienceService } from './services/experience.service';
 
 
 
@@ -71,6 +72,7 @@ intercept(req:HttpRequest<any>, next: HttpHandler){
     FormsModule
   ],
   providers: [
+    ExperienceService,
     {
       provide: LocationStrategy,
       useClass: PathLocationStrategy
