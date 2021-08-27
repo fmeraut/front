@@ -19,9 +19,14 @@
 <!-- ============================================================== -->
 <ul class="navbar-nav float-right">
     <li class="mr-2">
-        <div class="float-left">
+        <div class="row button-group">
+            <div class="col-lg-0 col-md-5">
             <a href="http://localhost:4200/component/login" class="btn btn-dark text-white ml-3">Login</a>
-            <a class="dropdown-item" (click)="logout()"><i class="fa fa-lock"></i> Logout</a>
+        </div>
+        <div class="col-lg-6 col-md-5">
+            <button type="button" (click)="logout()" class="btn btn-block btn-warning">Logout</button>
+           
+        </div>
         </div>
     </li>
 </ul>
