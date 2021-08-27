@@ -4,7 +4,8 @@ export class Guide{
 	country:string ="";
 	file?:File;
 	validated:boolean = false;
-	rating:number = 0;
+	rating:string = "";
+	text:string="";
 
 
 	
