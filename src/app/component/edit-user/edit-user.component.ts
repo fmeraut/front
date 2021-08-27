@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import {AppService} from 'src/app/app.service';
 import { User } from 'src/app/model/user';
 import { UserService } from 'src/app/services/user.service';
 
@@ -12,7 +13,7 @@ import { UserService } from 'src/app/services/user.service';
 export class EditUserComponent implements OnInit {
   editForm!: FormGroup;
   user:User = new User();
-  constructor(private router:Router, private userService:UserService, 
+  constructor(private appService:AppService, private router:Router, private userService:UserService, 
     private formBuilder:FormBuilder) { }
 
   ngOnInit(): void {
@@ -32,6 +33,10 @@ export class EditUserComponent implements OnInit {
   updateUtilisateur(){
     var varJson = JSON.stringify(this.editForm.value);
     this.userService.updateUtilisateur(varJson).subscribe(()=>{this.router.navigate(['/component/admin']);});
+  }
+
+  authenticated(){
+    return this.appService.authenticated;
   }
 
 }

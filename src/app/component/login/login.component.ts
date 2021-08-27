@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    this.appService.authenticate(this.credentials,()=>{this.router.navigateByUrl('/base/tables')});
+    this.appService.authenticate(this.credentials,()=>{this.router.navigateByUrl('/dashboard')});
     return false;
   }
 }

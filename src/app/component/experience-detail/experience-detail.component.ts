@@ -36,6 +36,7 @@ export class ExperienceDetailComponent implements OnInit {
 
   experience:Experience=new Experience()
   currentRate = 0;
+  appService: any;
   constructor(private experienceService:ExperienceService) { }
   
   ngOnInit(): void {
