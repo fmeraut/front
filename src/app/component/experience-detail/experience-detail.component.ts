@@ -33,7 +33,8 @@ import { ExperienceService } from 'src/app/services/experience.service';
   ]
 })
 export class ExperienceDetailComponent implements OnInit {
-
+  selectedFiles!: FileList;
+  currentFileUpload: any;
   experience:Experience=new Experience()
   currentRate = 0;
   appService: any;
@@ -42,8 +43,13 @@ export class ExperienceDetailComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  selectFile(event:any){
+    this.selectedFiles = event.target.files;
+  }
+
   saveExperience(){
-    this.experienceService.saveExperience(this.experience).subscribe(
+    this.currentFileUpload = this.selectedFiles.item(0);
+    this.experienceService.save(this.currentFileUpload,this.experience).subscribe(
       () => {this.experience = new Experience();}
     )
   }

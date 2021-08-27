@@ -293,7 +293,7 @@ export const ComponentsRoutes: Routes = [
         }
       },
       {
-        path: 'editUser',
+        path: 'editUser/:id',
         component: EditUserComponent,
         data: {
           title: 'EditUser',
