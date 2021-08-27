@@ -1,0 +1,43 @@
+<div class="container-fluid mt--7">
+    <div class="card">
+        <div class="card-header">
+            <strong>Nouvelle experience</strong>
+            <small></small>
+        </div>
+        <form (ngSubmit)="saveExperience()">
+            <div class="card-body">
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" class="form-control" [(ngModel)]="experience.title" name="title" placeholder="Experience title">
+                </div>
+                <div class="form-group">
+                    <label>Country</label>
+                    <input type="text" class="form-control" [(ngModel)]="experience.country" name="country" placeholder="Enter the country">
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <input type="text" class="form-control" [(ngModel)]="experience.text" name="text" placeholder="Experience description">
+                </div>
+                <div class="form-group">
+                    <label>Photos</label>
+                    <input type="text" class="form-control" [(ngModel)]="experience.photos" name="photos" placeholder="Select photos">
+                </div>
+                <div class="form-group">
+                    <label>Videos</label>
+                    <input type="text" class="form-control" [(ngModel)]="experience.videos" name="videos" placeholder="Enter your video url">
+                </div>
+                <ngb-rating [(rate)]="currentRate">
+                    <ng-template let-fill="fill">
+                        <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                    </ng-template>
+                </ngb-rating>
+                <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                    <button class="btn btn-block btn-success">Ajouter</button>
+
+                </div>
+            </div>
+        </form>
+
+
+    </div>
+</div>

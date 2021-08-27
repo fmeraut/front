@@ -8,32 +8,36 @@ import { Observable } from 'rxjs';
 export class ExperienceService {
   private baseURL = "http://localhost:9090/gestionExperiences/experiences";
 
-  constructor(private HttpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
   public findall(): Observable<any>{
-    return this.HttpClient.get(this.baseURL);
+    return this.httpClient.get(this.baseURL);
   }
   public delete(id:number): Observable<any>{
-    return this.HttpClient.delete(this.baseURL+"/"+id);
+    return this.httpClient.delete(this.baseURL+"/"+id);
   }
 
   public save(experience:any): Observable<any>{
-    return this.HttpClient.post(this.baseURL,experience);
+    return this.httpClient.post(this.baseURL,experience);
   }
 
   public findone(id:number): Observable<any>{
-    return this.HttpClient.get(this.baseURL+"/"+id);
+    return this.httpClient.get(this.baseURL+"/"+id);
   }
 
   public findcountry(country:string): Observable<any>{
-    return this.HttpClient.get(this.baseURL+"/country/"+country);
+    return this.httpClient.get(this.baseURL+"/country/"+country);
   }
 
   public findtitle(title:string): Observable<any>{
-    return this.HttpClient.get(this.baseURL+"/title/"+title);
+    return this.httpClient.get(this.baseURL+"/title/"+title);
   }
 
   public findunvalidated(): Observable<any>{
-    return this.HttpClient.get(this.baseURL+"/"+"unvalidated");
+    return this.httpClient.get(this.baseURL+"/"+"unvalidated");
+  }
+
+  public saveExperience(experience : any): Observable<any>{
+    return this.httpClient.post(this.baseURL, experience);
   }
 }

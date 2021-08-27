@@ -25,6 +25,7 @@ import { UserComponent } from './user/user.component';
 import { GuideComponent } from './guide/guide.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { PlaceComponent } from './place/place.component';
+import { ExperienceDetailComponent } from './experience-detail/experience-detail.component';
 import { AdminComponent } from './admin/admin.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { LoginComponent } from './login/login.component';
@@ -59,7 +60,9 @@ import { LoginComponent } from './login/login.component';
     ExperienceComponent,
     PlaceComponent,
     EditUserComponent,
-    LoginComponent
+    LoginComponent,
+    ExperienceDetailComponent,
+    
   ]
 })
 export class ComponentsModule {}
