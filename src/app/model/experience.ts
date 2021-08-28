@@ -1,3 +1,5 @@
+
+
 export class Experience {
 
     id:number=0;
@@ -5,7 +7,7 @@ export class Experience {
     country:string="";
     text:string="";
     photos:any;
-    videos:string="";
+    videos:any;
     rating:string="";
     validated:boolean=false;
 

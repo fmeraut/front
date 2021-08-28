@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Experience } from 'src/app/model/experience';
 import { ExperienceService } from 'src/app/services/experience.service';
@@ -51,7 +52,7 @@ export class ExperienceComponent implements OnInit {
     }
   }
   list:any=null;
-  constructor(private experienceService:ExperienceService) { }
+  constructor(private experienceService:ExperienceService,private router: Router) { }
 
   ngOnInit(): void {
     this.findall();
@@ -68,6 +69,12 @@ export class ExperienceComponent implements OnInit {
 
   findcountry(country:string){
     this.experienceService.findcountry(country).subscribe(data => {this.list = data});
+  }
+
+  getExperience(experience:Experience){
+    localStorage.removeItem("expId");
+    localStorage.setItem("expId",experience.id.toString());
+    this.router.navigate(['/component/oneExperience',experience.id]);
   }
 
 

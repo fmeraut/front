@@ -31,6 +31,7 @@ import { EditUserComponent } from './edit-user/edit-user.component';
 import { LoginComponent } from './login/login.component';
 import { GuideDetailComponent } from './guide-detail/guide-detail.component';
 import { OneGuideComponent } from './one-guide/one-guide.component';
+import { OneExperienceComponent } from './one-experience/one-experience.component';
 
 @NgModule({
   imports: [
@@ -67,6 +68,7 @@ import { OneGuideComponent } from './one-guide/one-guide.component';
     ExperienceDetailComponent,
     GuideDetailComponent,
     OneGuideComponent,
+    OneExperienceComponent,
     
   ]
 })
