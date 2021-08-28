@@ -29,6 +29,8 @@ import { ExperienceDetailComponent } from './experience-detail/experience-detail
 import { AdminComponent } from './admin/admin.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { LoginComponent } from './login/login.component';
+import { GuideDetailComponent } from './guide-detail/guide-detail.component';
+import { OneGuideComponent } from './one-guide/one-guide.component';
 
 @NgModule({
   imports: [
@@ -63,6 +65,8 @@ import { LoginComponent } from './login/login.component';
     EditUserComponent,
     LoginComponent,
     ExperienceDetailComponent,
+    GuideDetailComponent,
+    OneGuideComponent,
     
   ]
 })

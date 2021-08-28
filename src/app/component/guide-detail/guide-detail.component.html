@@ -1,35 +1,31 @@
 <div class="container-fluid mt--7">
     <div class="card">
         <div class="card-header">
-            <strong>Nouvelle experience</strong>
+            <strong>Nouveau guide</strong>
             <small></small>
         </div>
-        <form (ngSubmit)="saveExperience()">
+        <form (ngSubmit)="saveGuide()">
             <div class="card-body">
                 <div class="form-group">
                     <label>Title</label>
-                    <input type="text" class="form-control" [(ngModel)]="experience.title" name="title" placeholder="Experience title">
+                    <input type="text" class="form-control" [(ngModel)]="guide.title" name="title" placeholder="Guide title">
                 </div>
                 <div class="form-group">
                     <label>Country</label>
-                    <input type="text" class="form-control" [(ngModel)]="experience.country" name="country" placeholder="Enter the country">
+                    <input type="text" class="form-control" [(ngModel)]="guide.country" name="country" placeholder="Enter the country">
                 </div>
                 <div class="form-group">
                     <label>Description</label>
-                    <input type="text" class="form-control" [(ngModel)]="experience.text" name="text" placeholder="Experience description">
+                    <input type="text" class="form-control" [(ngModel)]="guide.text" name="text" placeholder="Guide description">
                 </div>
                 <div class="form-group">
                     <label for="fileUform">Photos</label>
                     <input class="form-control-file" type="file" name="fileUform" (change)="selectFile($event)" />
                 </div>
                 <div class="form-group">
-                    <label>Videos</label>
-                    <input type="text" class="form-control" [(ngModel)]="experience.videos" name="videos" placeholder="Enter your video url">
-                </div>
-                <div class="form-group">
-                    <ngb-rating [(rate)]="experience.rating">
+                    <ngb-rating [(rate)]="guide.rating">
                         <ng-template let-fill="fill">
-                            <span type="text" [(ngModel)]="experience.rating" name="rating" class="star form-control" [class.filled]="fill === 100">&#9733;</span>
+                            <span type="text" [(ngModel)]="guide.rating" name="rating" class="star form-control" [class.filled]="fill === 100">&#9733;</span>
                         </ng-template>
                     </ngb-rating>
                 </div>

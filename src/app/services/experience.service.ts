@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Experience } from '../model/experience';
 
 @Injectable({
   providedIn: 'root'
@@ -15,10 +16,6 @@ export class ExperienceService {
   }
   public delete(id:number): Observable<any>{
     return this.httpClient.delete(this.baseURL+"/"+id);
-  }
-
-  public save(experience:any): Observable<any>{
-    return this.httpClient.post(this.baseURL,experience);
   }
 
   public findone(id:number): Observable<any>{
@@ -39,5 +36,17 @@ export class ExperienceService {
 
   public saveExperience(experience : any): Observable<any>{
     return this.httpClient.post(this.baseURL, experience);
+  }
+
+  public save(file:File, experience:Experience){
+    const formData: FormData = new FormData();
+    formData.append('title', experience.title);
+    formData.append('country', experience.country);
+    formData.append('text', experience.text);
+    formData.append('videos', experience.videos);
+    formData.append('photos', file);
+    formData.append('rating', experience.rating);
+    const req = new HttpRequest('POST',this.baseURL,formData,{reportProgress:true, responseType:'text'});
+    return this.httpClient.request(req);
   }
 }

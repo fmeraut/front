@@ -23,6 +23,8 @@ import { PlaceComponent } from './place/place.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { ExperienceDetailComponent } from './experience-detail/experience-detail.component';
 import { LoginComponent } from './login/login.component';
+import { GuideDetailComponent } from './guide-detail/guide-detail.component';
+import { OneGuideComponent } from './one-Guide/one-Guide.component';
 
 export const ComponentsRoutes: Routes = [
   {
@@ -241,6 +243,32 @@ export const ComponentsRoutes: Routes = [
             { title: 'Dashboard', url: '/dashboard' },
             { title: 'ngComponent' },
             { title: 'Guide' }
+          ]
+        }
+      },
+      {
+        path: 'oneGuide',
+        component: OneGuideComponent,
+        data: {
+          title: 'oneGuide',
+          urls: [
+            { title: 'Dashboard', url: '/dashboard' },
+            { title: 'ngComponent' },
+            { title: 'oneGuide' }
+          ]
+        }
+      },
+      
+
+      {
+        path: 'guideDetail',
+        component: GuideDetailComponent,
+        data: {
+          title: 'GuideDetail',
+          urls: [
+            { title: 'Dashboard', url: '/dashboard' },
+            { title: 'ngComponent' },
+            { title: 'GuideDetail' }
           ]
         }
       },

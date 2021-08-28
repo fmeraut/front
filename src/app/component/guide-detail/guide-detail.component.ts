@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Experience } from 'src/app/model/experience';
-import { ExperienceService } from 'src/app/services/experience.service';
+import { Guide } from 'src/app/model/guide';
+import { GuideService } from 'src/app/services/guide.service';
 
 @Component({
-  selector: 'app-experience-detail',
-  templateUrl: './experience-detail.component.html',
+  selector: 'app-guide-detail',
+  templateUrl: './guide-detail.component.html',
   styles: [
     `
       .star {
@@ -32,12 +32,12 @@ import { ExperienceService } from 'src/app/services/experience.service';
     `
   ]
 })
-export class ExperienceDetailComponent implements OnInit {
+export class GuideDetailComponent implements OnInit {
   selectedFiles!: FileList;
   currentFileUpload: any;
-  experience:Experience=new Experience()
+  guide:Guide=new Guide()
   currentRate = 0;
-  constructor(private experienceService:ExperienceService) { }
+  constructor(private guideService:GuideService) { }
   
   ngOnInit(): void {
   }
@@ -46,10 +46,10 @@ export class ExperienceDetailComponent implements OnInit {
     this.selectedFiles = event.target.files;
   }
 
-  saveExperience(){
+  saveGuide(){
     this.currentFileUpload = this.selectedFiles.item(0);
-    this.experienceService.save(this.currentFileUpload,this.experience).subscribe(
-      () => {this.experience = new Experience();}
+    this.guideService.save(this.currentFileUpload,this.guide).subscribe(
+      () => {this.guide = new Guide();}
     )
   }
 

@@ -26,14 +26,6 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
-    path: '/component/login',
-    title: 'Login',
-    icon: 'mdi mdi-human',
-    class: '',
-    extralink: false,
-    submenu: []
-  },
-  {
     path: '/component/admin',
     title: 'Gestion utilisateurs',
     icon: 'mdi mdi-human',
@@ -53,6 +45,22 @@ export const ROUTES: RouteInfo[] = [
     path: '/component/guide',
     title: 'Guide',
     icon: 'mdi mdi-book-open',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
+    path: '/component/guideDetail',
+    title: 'Ajout Guide',
+    icon: 'mdi mdi-plus',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
+    path: '/component/oneGuide',
+    title: 'Guide Complet',
+    icon: 'mdi mdi-plus',
     class: '',
     extralink: false,
     submenu: []

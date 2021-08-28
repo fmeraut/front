@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import {Guide} from '../model/guide';
 
 @Injectable({
 	providedIn: 'root'
@@ -22,13 +23,15 @@ import { Observable } from 'rxjs';
 		return this.httpClient.get(this.baseURL+"/title/"+title);
 	  }
 
-	 
-	
-
-	
-  
-	
-  
-	
+	  public save(file:File, guide:Guide){
+		const formData: FormData = new FormData();
+		formData.append('title', guide.title);
+		formData.append('country', guide.country);
+		formData.append('text', guide.text);
+		formData.append('photos', file);
+		formData.append('rating', guide.rating);
+		const req = new HttpRequest('POST',this.baseURL,formData,{reportProgress:true, responseType:'text'});
+		return this.httpClient.request(req);
+	  }
 	
   }
