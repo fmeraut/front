@@ -26,4 +26,8 @@ export class ExpcommentService {
     return this.httpClient.get(this.baseURL+"/"+id);
   }
 
+  public findByExperience(id: number): Observable<any>{
+    return this.httpClient.get(this.baseURL+"/experience/"+id);
+  }
+
 }

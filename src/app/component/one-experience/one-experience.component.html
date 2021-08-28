@@ -17,4 +17,67 @@
         </div>
     </div>
     <!-- Experience -->
+    <br/>
+    <hr/>
+    <!-- Commentaires -->
+    <div class="experience-title">
+        <h2>Commentaires</h2>
+    </div>
+    <div class="experience-group" *ngFor="let c of expCommentExtra">
+        <div class="row my-5">
+            <div class="col-lg-5 col-xl-0">
+                <div class="experience-body">
+                    <h4 class="experience-title">
+                        <ngb-rating [(rate)]=c.rating>
+                            <ng-template let-fill="fill">
+                                <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                            </ng-template>
+                        </ngb-rating>
+                    </h4>
+
+                    <p class="experience-text">{{c.text}}</p>
+                    <p class="experience-text"><small class="text-muted">{{c.date}}</small></p>
+                    <br/>
+                    <div>
+                        <button type="button" class="btn btn-rounded btn-warning" (click)="deleteComment(c.id)">Delete</button>
+                    </div>
+                    <br/>
+                    <hr/>
+                    <br/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Commentaires -->
 </div>
+<!-- Formulaire commentaires -->
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header">
+            <strong>Rediger un commentaire</strong>
+            <small></small>
+        </div>
+        <form (ngSubmit)="saveComment()">
+            <div class="card-body">
+                <div class="form-group">
+                    <label>Texte</label>
+                    <input type="text" class="form-control" [(ngModel)]="expComment.text" name="text" placeholder="Comment">
+                </div>
+                <div class="form-group">
+                    <ngb-rating [(rate)]="expComment.rating">
+                        <ng-template let-fill="fill">
+                            <span type="text" [(ngModel)]="expComment.rating" name="rating" class="star form-control" [class.filled]="fill === 100">&#9733;</span>
+                        </ng-template>
+                    </ngb-rating>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                    <button class="btn btn-block btn-success">Ajouter</button>
+
+                </div>
+            </div>
+        </form>
+
+
+    </div>
+</div>
+<!-- Formulaire commentaires -->

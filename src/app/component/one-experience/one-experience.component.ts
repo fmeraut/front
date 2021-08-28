@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
-import { Router } from '@angular/router';
-import { Experience } from 'src/app/model/experience';
+import { Expcomment } from 'src/app/model/expcomment';
+import { ExpcommentService } from 'src/app/services/expcomment.service';
 import { ExperienceService } from 'src/app/services/experience.service';
 
 @Component({
@@ -37,7 +36,12 @@ import { ExperienceService } from 'src/app/services/experience.service';
 export class OneExperienceComponent implements OnInit {
 
   experience:any;
-  constructor(private experienceService:ExperienceService) { }
+ 
+  // commentaires
+  expCommentExtra:any = null;
+  expComment: Expcomment = new Expcomment();
+
+  constructor(private experienceService:ExperienceService,private expcommentService: ExpcommentService) { }
 
   ngOnInit(): void {
     
@@ -45,7 +49,28 @@ export class OneExperienceComponent implements OnInit {
     if(expId!=null){
     
     this.experienceService.findone(+expId).subscribe(data => {this.experience=data});
+    this.findByExperience(+expId);
+    this.expComment.experience.id=+expId;
   }
+  }
+
+  // fonctions liées aux commentaires
+  findByExperience(id : number){
+    this.expcommentService.findByExperience(id).subscribe(data => {this.expCommentExtra = data});
+  }
+
+  deleteComment(id : number){
+    this.expcommentService.delete(id).subscribe(
+      () => {this.findByExperience(this.experience.id)}
+    )
+  }
+
+  saveComment(){
+    this.expcommentService.save(this.expComment).subscribe(
+      () => {this.findByExperience(this.experience.id);
+      this.expComment = new Expcomment();
+    }
+    )
   }
 
  

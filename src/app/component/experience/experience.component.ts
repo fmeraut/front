@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Expcomment } from 'src/app/model/expcomment';
 import { Experience } from 'src/app/model/experience';
-import { ExpcommentService } from 'src/app/services/expcomment.service';
 import { ExperienceService } from 'src/app/services/experience.service';
 
 @Component({
@@ -54,21 +52,11 @@ export class ExperienceComponent implements OnInit {
     }
   }
   list:any=null;
-<<<<<<< HEAD
-  
-  // commentaires
-  expCommentExtra:any = null;
-  expComment: Expcomment = new Expcomment();
-
-  constructor(private experienceService:ExperienceService, 
-    private expcommentService: ExpcommentService) { }
-=======
-  constructor(private experienceService:ExperienceService,private router: Router) { }
->>>>>>> 66dbcaa05b59b2ca6f8037cb5b8d3cf837b1b479
+ 
+  constructor(private experienceService:ExperienceService, private router: Router) { }
 
   ngOnInit(): void {
     this.findall();
-    this.findAllComments();
   }
 
   ratingorder(list:Observable<any>){
@@ -83,32 +71,10 @@ export class ExperienceComponent implements OnInit {
     this.experienceService.findcountry(country).subscribe(data => {this.list = data});
   }
 
-<<<<<<< HEAD
-  // fonctions liées aux commentaires
-  findAllComments(){
-    this.expcommentService.findAll().subscribe(data => {this.expCommentExtra = data});
-  }
-
-  deleteComment(id : number){
-    this.expcommentService.delete(id).subscribe(
-      () => {this.findAllComments()}
-    )
-  }
-=======
   getExperience(experience:Experience){
     localStorage.removeItem("expId");
     localStorage.setItem("expId",experience.id.toString());
     this.router.navigate(['/component/oneExperience',experience.id]);
-  }
-
->>>>>>> 66dbcaa05b59b2ca6f8037cb5b8d3cf837b1b479
-
-  saveComment(){
-    this.expcommentService.save(this.expComment).subscribe(
-      () => {this.findAllComments();
-      this.expComment = new Expcomment();
-    }
-    )
   }
 
 }
