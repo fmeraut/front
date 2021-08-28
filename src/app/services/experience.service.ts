@@ -46,6 +46,10 @@ export class ExperienceService {
     return this.httpClient.get(this.baseURL+"/top4");
   }
 
+  public findCountryList(): Observable<any>{
+    return this.httpClient.get(this.baseURL+"/countryList");
+  }
+
   public save(file:File, experience:Experience){
     const formData: FormData = new FormData();
     formData.append('title', experience.title);

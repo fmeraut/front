@@ -6,11 +6,8 @@
                   Pays
                 </button>
             <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                <button (click)="findcountry('france')" class="dropdown-item">France</button>
-                <button (click)="findcountry('espagne')" class="dropdown-item">Espagne</button>
-                <button (click)="findcountry('grece')" class="dropdown-item">Grèce</button>
-                <button (click)="findcountry('italie')" class="dropdown-item">Italie</button>
-                <button (click)="findcountry('allemagne')" class="dropdown-item">Allemagne</button>
+                <button (click)="findcountry(c.country)" class="dropdown-item" *ngFor="let c of countryList">{{c.country}}</button>
+
 
             </div>
         </div>
