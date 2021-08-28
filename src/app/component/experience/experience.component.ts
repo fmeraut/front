@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { Expcomment } from 'src/app/model/expcomment';
 import { Experience } from 'src/app/model/experience';
+import { ExpcommentService } from 'src/app/services/expcomment.service';
 import { ExperienceService } from 'src/app/services/experience.service';
 
 @Component({
@@ -51,15 +53,21 @@ export class ExperienceComponent implements OnInit {
     }
   }
   list:any=null;
-  constructor(private experienceService:ExperienceService) { }
+  
+  // commentaires
+  expCommentExtra:any = null;
+  expComment: Expcomment = new Expcomment();
+
+  constructor(private experienceService:ExperienceService, 
+    private expcommentService: ExpcommentService) { }
 
   ngOnInit(): void {
     this.findall();
-    
+    this.findAllComments();
   }
 
   ratingorder(list:Observable<any>){
-    
+  
   }
 
   findall(){
@@ -70,7 +78,25 @@ export class ExperienceComponent implements OnInit {
     this.experienceService.findcountry(country).subscribe(data => {this.list = data});
   }
 
-
+  // fonctions liées aux commentaires
+  findAllComments(){
+    this.expcommentService.findAll().subscribe(data => {this.expCommentExtra = data});
   }
+
+  deleteComment(id : number){
+    this.expcommentService.delete(id).subscribe(
+      () => {this.findAllComments()}
+    )
+  }
+
+  saveComment(){
+    this.expcommentService.save(this.expComment).subscribe(
+      () => {this.findAllComments();
+      this.expComment = new Expcomment();
+    }
+    )
+  }
+
+}
 
 
