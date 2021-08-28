@@ -1,9 +1,10 @@
 <div class="center-div">
 				 <!-- Guide -->
-				 <div class="guide">
-					<img class="guide-img-top img-responsive" src="data:image/jpeg;base64,{{guide.images}}" style="width: 330px; height: 400px;" alt="Guide image cap">
-					<div class="guide-body">
-						<h4 class="guide-title">{{guide.title}}
+				
+				 
+					<img class="guide-img-top img-responsive" src="data:image/jpeg;base64,{{guide.images}}" style="width: 330px; height: 300px;" alt="Guide image cap">
+				
+						<h4>{{guide.title}}
 							<ngb-rating [(rate)]="guide.rating">
 								<ng-template let-fill="fill">
 									<span class="star" [class.filled]="fill === 100">&#9733;</span>
@@ -11,7 +12,8 @@
 							</ngb-rating>
 						</h4>
 						<p class="guide-text">{{guide.text}}</p>
-			</div>
-		</div>
+
+		
+	
 	
 </div>
