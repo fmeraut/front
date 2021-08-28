@@ -52,11 +52,12 @@ export class ExperienceComponent implements OnInit {
     }
   }
   list:any=null;
+  top:any=null;
   constructor(private experienceService:ExperienceService,private router: Router) { }
 
   ngOnInit(): void {
     this.findall();
-    
+    this.findtop4();
   }
 
   ratingorder(list:Observable<any>){
@@ -69,6 +70,14 @@ export class ExperienceComponent implements OnInit {
 
   findcountry(country:string){
     this.experienceService.findcountry(country).subscribe(data => {this.list = data});
+  }
+
+  findtop(){
+    this.experienceService.findtop().subscribe(data => {this.list = data});
+  }
+
+  findtop4(){
+    this.experienceService.findtop4().subscribe(data => {this.top = data});
   }
 
   getExperience(experience:Experience){
