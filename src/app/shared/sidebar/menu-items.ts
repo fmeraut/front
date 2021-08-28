@@ -58,14 +58,6 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
-    path: '/component/oneGuide',
-    title: 'Guide Complet',
-    icon: 'mdi mdi-plus',
-    class: '',
-    extralink: false,
-    submenu: []
-  },
-  {
     path: '/component/experience',
     title: 'Experience',
     icon: 'mdi mdi-forum',

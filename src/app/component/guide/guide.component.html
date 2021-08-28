@@ -179,6 +179,35 @@
               </div>
             </div>
 
+            <div class="guide-group" *ngFor="let e of list">
+              <div class="row my-5">
+                  <div class="col-lg-2 col-xl-2">
+                      <div class="mb-lg-0 mb-2">
+                          <img class="guide-img-top img-responsive" src="data:image/jpeg;base64,{{e.images}}" style="width: 130px; height: 150px;">
+                      </div>
+                  </div>
+
+                  <div class="col-lg-5 col-xl-0">
+                      <div class="guide-body">
+                          <h4 class="guide-title"><a (click)="getGuide(e)">{{e.title}}</a>
+                              <ngb-rating [(rate)]=e.rating>
+                                  <ng-template let-fill="fill">
+                                      <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                                  </ng-template>
+                              </ngb-rating>
+                          </h4>
+
+                          <p class="guide-text">{{e.text}}</p>
+                          <p class="guide-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
+                          <br/>
+                          <hr/>
+                          <br/>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
             
 
             

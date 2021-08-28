@@ -33,5 +33,22 @@ import {Guide} from '../model/guide';
 		const req = new HttpRequest('POST',this.baseURL,formData,{reportProgress:true, responseType:'text'});
 		return this.httpClient.request(req);
 	  }
+
+	  public findone(id:number): Observable<any>{
+		return this.httpClient.get(this.baseURL+"/"+id);
+	  }
+	
+	  public findcountry(country:string): Observable<any>{
+		return this.httpClient.get(this.baseURL+"/country/"+country);
+	  }
+	
+	  public findtitle(title:string): Observable<any>{
+		return this.httpClient.get(this.baseURL+"/title/"+title);
+	  }
+
+	  public saveGuide(guide : any): Observable<any>{
+		return this.httpClient.post(this.baseURL, guide);
+	  }
+	
 	
   }

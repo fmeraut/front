@@ -38,7 +38,6 @@ import { OneExperienceComponent } from './one-experience/one-experience.componen
     CommonModule,
     RouterModule.forChild(ComponentsRoutes),
     FormsModule,
-    ReactiveFormsModule,
     NgbModule,
     ReactiveFormsModule
   ],

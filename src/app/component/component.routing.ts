@@ -248,7 +248,7 @@ export const ComponentsRoutes: Routes = [
         }
       },
       {
-        path: 'oneGuide',
+        path: 'oneGuide/:id',
         component: OneGuideComponent,
         data: {
           title: 'oneGuide',
