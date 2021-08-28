@@ -31,6 +31,7 @@ import { ExperienceService } from './services/experience.service';
 
 
 
+
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
   wheelSpeed: 1,
@@ -56,6 +57,7 @@ intercept(req:HttpRequest<any>, next: HttpHandler){
     NavigationComponent,
     SidebarComponent,
     BreadcrumbComponent,
+   
   
  
   ],
