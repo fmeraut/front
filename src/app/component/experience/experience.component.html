@@ -5,7 +5,7 @@
             <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
                   Pays
                 </button>
-            <div ngbDropdownMenu aria-labelledby="dropdownBasic1" *ngFor="let e of list">
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                 <button (click)="findcountry('france')" class="dropdown-item">France</button>
                 <button (click)="findcountry('espagne')" class="dropdown-item">Espagne</button>
                 <button (click)="findcountry('grece')" class="dropdown-item">Grèce</button>
@@ -13,137 +13,56 @@
                 <button (click)="findcountry('allemagne')" class="dropdown-item">Allemagne</button>
 
             </div>
-            <div ngbDropdown class="d-inline-block">
-                <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+        </div>
+        <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
                       Filtre de recherche
                     </button>
-                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                    <button class="dropdown-item">Par note</button>
-                </div>
-
-
-                <br>
-
-                <h4 class="d-inline">Les Experiences les plus aimés</h4>
-                <!-- Row -->
-                <div class="row">
-                    <!-- column -->
-                    <div class="col-lg-3 col-md-6">
-                        <!-- Experience -->
-                        <div class="experience">
-                            <img class="experience-img-top img-responsive" src="assets/images/big/img1.jpg" style="width: 330px; height: 400px;" alt="Experience image cap">
-                            <div class="experience-body">
-                                <h4 class="experience-title">Experience title
-                                    <ngb-rating [(rate)]="currentRate">
-                                        <ng-template let-fill="fill">
-                                            <span class="star" [class.filled]="fill === 100">&#9733;</span>
-                                        </ng-template>
-                                    </ngb-rating>
-                                </h4>
-                                <p class="experience-text">Some quick example text to build on the experience title and make up the bulk of the experience's content.</p>
-                                <a href="#" class="btn btn-primary">En savoir plus</a>
-                            </div>
-                        </div>
-                        <!-- Experience -->
-                    </div>
-                    <!-- column -->
-                    <!-- column -->
-                    <div class="col-lg-3 col-md-6">
-                        <!-- Experience -->
-                        <div class="experience">
-                            <img class="experience-img-top img-responsive" src="assets/images/big/img2.jpg" style="width: 330px; height: 400px;" alt="Experience image cap">
-                            <div class="experience-body">
-                                <h4 class="experience-title">Experience title
-                                    <ngb-rating [(rate)]="currentRate">
-                                        <ng-template let-fill="fill">
-                                            <span class="star" [class.filled]="fill === 100">&#9733;</span>
-                                        </ng-template>
-                                    </ngb-rating>
-                                </h4>
-                                <p class="experience-text">Some quick example text to build on the experience title and make up the bulk of the experience's content.</p>
-                                <a href="#" class="btn btn-primary">En savoir plus</a>
-                            </div>
-                        </div>
-                        <!-- Experience -->
-                    </div>
-                    <!-- column -->
-                    <!-- column -->
-                    <div class="col-lg-3 col-md-6">
-                        <!-- Experience -->
-                        <div class="experience">
-                            <img class="experience-img-top img-responsive" src="assets/images/big/img3.jpg" style="width: 330px; height: 400px;" alt="Experience image cap">
-                            <div class="experience-body">
-                                <h4 class="experience-title">Experience title
-                                    <ngb-rating [(rate)]="currentRate">
-                                        <ng-template let-fill="fill">
-                                            <span class="star" [class.filled]="fill === 100">&#9733;</span>
-                                        </ng-template>
-                                    </ngb-rating>
-                                </h4>
-                                <p class="experience-text">Some quick example text to build on the experience title and make up the bulk of the experience's content.</p>
-                                <a href="#" class="btn btn-primary">En savoir plus</a>
-                            </div>
-                        </div>
-                        <!-- Experience -->
-                    </div>
-                    <!-- column -->
-                    <!-- column -->
-                    <div class="col-lg-3 col-md-6 img-responsive">
-                        <!-- Experience -->
-                        <div class="experience">
-                            <img class="experience-img-top img-responsive" src="assets/images/big/img4.jpg" style="width: 330px; height: 400px;" alt="Experience image cap">
-                            <div class="experience-body">
-                                <h4 class="experience-title">Experience title
-                                    <ngb-rating [(rate)]="currentRate">
-                                        <ng-template let-fill="fill">
-                                            <span class="star" [class.filled]="fill === 100">&#9733;</span>
-                                        </ng-template>
-                                    </ngb-rating>
-                                </h4>
-
-                                <p class="experience-text">Some quick example text to build on the experience title and make up the bulk of the experience's content.</p>
-                                <a href="#" class="btn btn-primary">En savoir plus</a>
-                            </div>
-                        </div>
-                        <!-- Experience -->
-                    </div>
-                    <!-- column -->
-                </div>
-                <!-- Row -->
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <button (click)="findtop()" class="dropdown-item">Par note</button>
             </div>
         </div>
+
+
+        <br>
+
+        <h4 class="d-inline">Les Experiences les plus aimées</h4>
+        <!-- Row -->
+        <div class="row">
+            <!-- column -->
+            <div class="col-lg-3 col-md-6" *ngFor="let t of top">
+                <!-- Experience -->
+                <div class="experience">
+                    <img class="experience-img-top img-responsive" src="data:image/jpeg;base64,{{t.photos}}" style="width: 400px; height: 400px;" alt="Experience image cap">
+                    <div class="experience-body">
+                        <h4 class="experience-title">
+                            <a (click)="getExperience(t)">{{t.title}}</a>
+                            <ngb-rating [(rate)]=t.rating>
+                                <ng-template let-fill="fill">
+                                    <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                                </ng-template>
+                            </ngb-rating>
+                        </h4>
+                        <p class="experience-text">{{t.text}}</p>
+                        <a href="#" class="btn btn-primary">En savoir plus</a>
+                    </div>
+                </div>
+                <!-- Experience -->
+            </div>
+            <!-- column -->
+        </div>
+        <!-- Row -->
+
+
         <!-- End Row -->
         <!-- Row -->
 
         <h4 class="m-b-0">Nos experiences</h4>
         <p class="text-muted m-t-0 font-12">Pour que vos voyages riment avec aventure</p>
 
-        <div class="row my-5">
-            <div class="col-lg-2 col-xl-2">
-                <div class="mb-lg-0 mb-2">
-                    <img class="guide-img-top img-responsive" src="assets/images/big/img3.jpg" style="width: 170px; height: 190px;" alt="Guide image cap">
-                </div>
-            </div>
-
-            <div class="col-lg-5 col-xl-0">
-                <div class="experience-body">
-                    <h4 class="guide-title">Experience title
-                        <ngb-rating [(rate)]="currentRate">
-                            <ng-template let-fill="fill">
-                                <span class="star" [class.filled]="fill === 100">&#9733;</span>
-                            </ng-template>
-                        </ngb-rating>
-                    </h4>
-                    <p class="expérience-text">This is a wider experience with supporting text below as a natural lead-in to additional content. This guide has even longer content than the first to show that equal height action.</p>
-                    <p class="expérience-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
+        <div class="row" *ngFor="let e of list">
             <div class="col-12 m-t-30">
-
-
-                <div class="experience-group" *ngFor="let e of list">
+                <div class="experience-group">
                     <div class="row my-5">
                         <div class="col-lg-2 col-xl-2">
                             <div class="mb-lg-0 mb-2">

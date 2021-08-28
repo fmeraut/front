@@ -38,6 +38,14 @@ export class ExperienceService {
     return this.httpClient.post(this.baseURL, experience);
   }
 
+  public findtop(): Observable<any>{
+    return this.httpClient.get(this.baseURL+"/top");
+  }
+
+  public findtop4(): Observable<any>{
+    return this.httpClient.get(this.baseURL+"/top4");
+  }
+
   public save(file:File, experience:Experience){
     const formData: FormData = new FormData();
     formData.append('title', experience.title);

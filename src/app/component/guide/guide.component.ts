@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import {Router} from '@angular/router';
+import {Guide} from 'src/app/model/guide';
 import { GuideService } from 'src/app/services/guide.service';
 
 @Component({
@@ -50,20 +52,34 @@ export class GuideComponent implements OnInit {
     }
   }
 
-  guideExtra : any = null;
-
-  results = [];
   
 
-  constructor(private guideService : GuideService ) { }
+  
+  list:any=null;
+  
+
+  constructor(private guideService : GuideService, private router: Router ) { }
 
   ngOnInit(): void {
+    this.findAllGuides();
   }
 
+ 
   findAllGuides(){
-    this.guideService.findAllGuides().subscribe(data => {this.guideExtra = data});
-    console.log(this.guideExtra);
+    this.guideService.findAllGuides().subscribe(data => {this.list = data});
+    
   }
+
+  findcountry(country:string){
+    this.guideService.findcountry(country).subscribe(data => {this.list = data});
+  }
+
+  getGuide(guide:Guide){
+    localStorage.removeItem("guideId");
+    localStorage.setItem("guideId",guide.id.toString());
+    this.router.navigate(['/component/oneGuide',guide.id]);
+  }
+
 
   
 
