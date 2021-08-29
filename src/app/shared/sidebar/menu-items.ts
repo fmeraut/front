@@ -65,6 +65,15 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: []
   },
+
+  {
+    path: '/component/lieuDetail',
+    title: 'Place',
+    icon: 'mdi mdi-library',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
   {
     path: '/component/accordion',
     title: 'Accordion',

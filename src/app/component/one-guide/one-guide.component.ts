@@ -39,8 +39,10 @@ export class OneGuideComponent implements OnInit {
     this.guideService.findone(+guideId).subscribe(data => {this.guide=data});
     this.findByGuide(+guideId);
     this.findByCountry(guideCountry);
+    this.findByGuideBis(+guideId);
   }
   }
+  
 
   // fonction liees aux guides
   associatePlace(id:number){
@@ -84,13 +86,13 @@ export class OneGuideComponent implements OnInit {
 
   deleteComment(id : number){
     this.guidecommentService.delete(id).subscribe(
-      () => {this.findByGuide(this.guide.id)}
+      () => {this.findByGuideBis(this.guide.id)}
     )
   }
 
   saveComment(){
     this.guidecommentService.save(this.guideComment).subscribe(
-      () => {this.findByGuide(this.guide.id);
+      () => {this.findByGuideBis(this.guide.id);
       this.guideComment = new Guidecomment();
     }
     )

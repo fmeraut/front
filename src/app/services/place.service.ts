@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import {Place} from '../model/place';
 
 @Injectable({
 	providedIn: 'root'
@@ -14,7 +15,11 @@ import { Observable } from 'rxjs';
 	  return this.httpClient.get(this.baseURL);
 	}
 
-	public findPlaceByCountry(country : string): Observable<any>{
+	public findone(id:number): Observable<any>{
+		return this.httpClient.get(this.baseURL+"/"+id);
+	  }
+
+	public findPlaceByCountry(country : any): Observable<any>{
 		return this.httpClient.get(this.baseURL+"/country/"+country);
 	  }
 
@@ -22,17 +27,29 @@ import { Observable } from 'rxjs';
 		return this.httpClient.get(this.baseURL+"/title/"+title);
 	  }
 
-	public findByGuide(id: number): Observable<any>{
+	public findByPlace(id: number): Observable<any>{
+		return this.httpClient.get(this.baseURL+"/place/"+id);
+	}
+
+	public findByGuide(id:number): Observable<any>{
 		return this.httpClient.get(this.baseURL+"/guide/"+id);
 	}
 
-	 
-	
+	public save(file:File, place:Place){
+		const formData: FormData = new FormData();
+		formData.append('title', place.title);
+		formData.append('country', place.country);
+		formData.append('region', place.region);
+		formData.append('city', place.city);
+		formData.append('description', place.description);
+		formData.append('adress', place.adress);
+		formData.append('schedules', place.schedules);
+		formData.append('cost', place.cost);
+		formData.append('photos', file);
+		formData.append('rating', place.rating);
+		const req = new HttpRequest('POST',this.baseURL,formData,{reportProgress:true, responseType:'text'});
+		return this.httpClient.request(req);
+	  }
 
-	
-  
-	
-  
-	
 	
   }
