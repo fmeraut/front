@@ -60,6 +60,7 @@ export class PlaceComponent implements OnInit {
   constructor(private placeService : PlaceService,private router: Router ) { }
 
   ngOnInit(): void {
+    this.findAllPlaces();
   }
 
   findAllPlaces(){
@@ -70,7 +71,7 @@ export class PlaceComponent implements OnInit {
   getPlace(place:Place){
     localStorage.removeItem("placeId");
     localStorage.setItem("placeId",place.id.toString());
-    this.router.navigate(['/component/oneExperience',place.id]);
+    this.router.navigate(['/component/onePlace',place.id]);
   }
 
   
