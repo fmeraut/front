@@ -6,112 +6,56 @@
                   Pays
                 </button>
             <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                <button class="dropdown-item">France</button>
-                <button class="dropdown-item">Espagne</button>
-                <button class="dropdown-item">Grèce</button>
-                <button class="dropdown-item">Italie</button>
-                <button class="dropdown-item">Allemagne</button>
+                <button (click)="findcountry(c.country)" class="dropdown-item" *ngFor="let c of countryList">{{c.country}}</button>
+
 
             </div>
-            <div ngbDropdown class="d-inline-block">
-                <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+        </div>
+        <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
                       Filtre de recherche
                     </button>
-                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                    <button class="dropdown-item">Par note</button>
-                </div>
-
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <button (click)="findtop()" class="dropdown-item">Par note</button>
+            </div>
+        </div>
 
                 <br>
 
                 <h4 class="d-inline">Les Places les plus aimés</h4>
+                <div class="card">
+                    <div class="row">
+                       
+                        <!-- column -->
+                        <div class="col-lg-3 col-md-6" *ngFor="let t of top">
+                            <!-- Experience -->
+                            <div class="experience">
+                                <img class="experience-img-top img-responsive" src="data:image/jpeg;base64,{{t.photos}}" style="width: 330px; height: 300px;" alt="Experience image cap">
+                                <div class="experience-body">
+                                    <h4 class="experience-title">
+                                        <a (click)="getPlace(t)">{{t.title}}</a>
+                                        <ngb-rating [(rate)]=t.rating>
+                                            <ng-template let-fill="fill">
+                                                <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                                            </ng-template>
+                                        </ngb-rating>
+                                    </h4>
+                                    <p class="place-text">{{t.text}}</p>
+                                    <a href="#" class="btn btn-primary">En savoir plus</a>
+                                </div>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+               
+                        
+                        <!-- Place -->
+                    
+                    <!-- column -->
+            
                 <!-- Row -->
-                <div class="row">
-                    <!-- column -->
-                    <div class="col-lg-3 col-md-6">
-                        <!-- Place -->
-                        <div class="place">
-                            <img class="place-img-top img-responsive" src="assets/images/big/img1.jpg" style="width: 330px; height: 400px;" alt="Place image cap">
-                            <div class="place-body">
-                                <h4 class="place-title">Place title
-                                    <ngb-rating [(rate)]="currentRate">
-                                        <ng-template let-fill="fill">
-                                            <span class="star" [class.filled]="fill === 100">&#9733;</span>
-                                        </ng-template>
-                                    </ngb-rating>
-                                </h4>
-                                <p class="place-text">Some quick example text to build on the place title and make up the bulk of the place's content.</p>
-                                <a href="#" class="btn btn-primary">En savoir plus</a>
-                            </div>
-                        </div>
-                        <!-- Place -->
-                    </div>
-                    <!-- column -->
-                    <!-- column -->
-                    <div class="col-lg-3 col-md-6">
-                        <!-- Place -->
-                        <div class="place">
-                            <img class="place-img-top img-responsive" src="assets/images/big/img2.jpg" style="width: 330px; height: 400px;" alt="Place image cap">
-                            <div class="place-body">
-                                <h4 class="place-title">Place title
-                                    <ngb-rating [(rate)]="currentRate">
-                                        <ng-template let-fill="fill">
-                                            <span class="star" [class.filled]="fill === 100">&#9733;</span>
-                                        </ng-template>
-                                    </ngb-rating>
-                                </h4>
-                                <p class="place-text">Some quick example text to build on the place title and make up the bulk of the place's content.</p>
-                                <a href="#" class="btn btn-primary">En savoir plus</a>
-                            </div>
-                        </div>
-                        <!-- Place -->
-                    </div>
-                    <!-- column -->
-                    <!-- column -->
-                    <div class="col-lg-3 col-md-6">
-                        <!-- Place -->
-                        <div class="place">
-                            <img class="place-img-top img-responsive" src="assets/images/big/img3.jpg" style="width: 330px; height: 400px;" alt="Place image cap">
-                            <div class="place-body">
-                                <h4 class="place-title">Place title
-                                    <ngb-rating [(rate)]="currentRate">
-                                        <ng-template let-fill="fill">
-                                            <span class="star" [class.filled]="fill === 100">&#9733;</span>
-                                        </ng-template>
-                                    </ngb-rating>
-                                </h4>
-                                <p class="place-text">Some quick example text to build on the place title and make up the bulk of the place's content.</p>
-                                <a href="#" class="btn btn-primary">En savoir plus</a>
-                            </div>
-                        </div>
-                        <!-- Place -->
-                    </div>
-                    <!-- column -->
-                    <!-- column -->
-                    <div class="col-lg-3 col-md-6 img-responsive">
-                        <!-- Place -->
-                        <div class="place">
-                            <img class="place-img-top img-responsive" src="assets/images/big/img4.jpg" style="width: 330px; height: 400px;" alt="Place image cap">
-                            <div class="place-body">
-                                <h4 class="place-title">Place title
-                                    <ngb-rating [(rate)]="currentRate">
-                                        <ng-template let-fill="fill">
-                                            <span class="star" [class.filled]="fill === 100">&#9733;</span>
-                                        </ng-template>
-                                    </ngb-rating>
-                                </h4>
-
-                                <p class="place-text">Some quick example text to build on the place title and make up the bulk of the place's content.</p>
-                                <a href="#" class="btn btn-primary">En savoir plus</a>
-                            </div>
-                        </div>
-                        <!-- Place -->
-                    </div>
-                    <!-- column -->
-                </div>
-                <!-- Row -->
-            </div>
-        </div>
+           
+     
         <!-- End Row -->
         <!-- Row -->
         <div class="row">
@@ -164,7 +108,7 @@
 
             </div>
         </div>
-    </div>
+   
 
 
     <!-- End Row -->

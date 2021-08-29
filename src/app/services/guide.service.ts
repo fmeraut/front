@@ -70,6 +70,18 @@ import { Place } from '../model/place';
 	  public findvalidated(): Observable<any>{
 		return this.httpClient.get(this.baseURL+"/validated");
 	  }
+
+	  public findCountryList(): Observable<any>{
+		return this.httpClient.get(this.baseURL+"/countryList");
+	  }
+
+	  public findtop(): Observable<any>{
+		return this.httpClient.get(this.baseURL+"/top");
+	  }
+	
+	  public findtop4(): Observable<any>{
+		return this.httpClient.get(this.baseURL+"/top4");
+	  }
 	
 	  public savePlace(gid:number,pid:number): Observable<any>{
 		return this.httpClient.get(this.baseURL+"/guide/"+gid+"/place/"+pid);

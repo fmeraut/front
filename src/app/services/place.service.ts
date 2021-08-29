@@ -51,5 +51,17 @@ import {Place} from '../model/place';
 		return this.httpClient.request(req);
 	  }
 
+	  public findtop(): Observable<any>{
+		return this.httpClient.get(this.baseURL+"/top");
+	  }
+	
+	  public findtop4(): Observable<any>{
+		return this.httpClient.get(this.baseURL+"/top4");
+	  }
+
+	  public findCountryList(): Observable<any>{
+		return this.httpClient.get(this.baseURL+"/countryList");
+	  }
+
 	
   }
