@@ -46,6 +46,37 @@
 		
     </div>
     <!-- Lieux associés-->
+     <!-- Commentaires -->
+     <div class="guidee-title">
+        <h2>Commentaires</h2>
+    </div>
+    <div class="guide-group" *ngFor="let c of guideCommentExtra">
+        <div class="row my-5">
+            <div class="col-lg-5 col-xl-0">
+                <div class="guide-body">
+                    <h4 class="guide-title">
+                        <ngb-rating [(rate)]=c.rating>
+                            <ng-template let-fill="fill">
+                                <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                            </ng-template>
+                        </ngb-rating>
+                    </h4>
+
+                    <p class="guide-text">{{c.text}}</p>
+                    <p class="guide-text"><small class="text-muted">{{c.date}}</small></p>
+                    <br/>
+                    <div>
+                        <button type="button" class="btn btn-rounded btn-warning" (click)="deleteComment(c.id)">Delete</button>
+                    </div>
+                    <br/>
+                    <hr/>
+                    <br/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Commentaires -->
+</div>
 	<div class="container-fluid">
         <div class="card">
             <div class="card-header">
@@ -80,4 +111,3 @@
 
 
 
-</div>
