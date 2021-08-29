@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 import { Expcomment } from 'src/app/model/expcomment';
 import { ExpcommentService } from 'src/app/services/expcomment.service';
 import { ExperienceService } from 'src/app/services/experience.service';
@@ -73,5 +75,21 @@ export class OneExperienceComponent implements OnInit {
     )
   }
 
- 
+  @ViewChild('content')content!: ElementRef;  
+  public SavePDF():void{  
+    let DATA:any= document.getElementById('content');
+      
+    html2canvas(DATA).then(canvas => {
+        
+        let fileWidth = 208;
+        let fileHeight = canvas.height * fileWidth / canvas.width;
+        
+        const FILEURI = canvas.toDataURL('image/png')
+        let PDF = new jsPDF('p', 'mm', 'a4');
+        let position = 0;
+        PDF.addImage(FILEURI, 'PNG', 0, position, fileWidth, fileHeight)
+        
+        PDF.save('experience.pdf');
+    });  
+  }
 }
