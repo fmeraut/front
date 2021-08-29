@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import {Router} from '@angular/router';
+import {Observable} from 'rxjs';
 import {Guide} from 'src/app/model/guide';
 import { GuideService } from 'src/app/services/guide.service';
 
@@ -54,12 +55,16 @@ export class GuideComponent implements OnInit {
 
   
   list:any=null;
+  top:any=null;
+  countryList=null;
   
 
   constructor(private guideService : GuideService, private router: Router ) { }
 
   ngOnInit(): void {
     this.findvalidated();
+    this.findtop4();
+    this.findCountryList();
   }
 
  
@@ -82,6 +87,22 @@ export class GuideComponent implements OnInit {
 
   findvalidated(){
     this.guideService.findvalidated().subscribe(data => {this.list = data});
+  }
+
+  ratingorder(list:Observable<any>){
+  
+  }
+
+  findtop(){
+    this.guideService.findtop().subscribe(data => {this.list = data});
+  }
+
+  findtop4(){
+    this.guideService.findtop4().subscribe(data => {this.top = data});
+  }
+
+  findCountryList(){
+    this.guideService.findCountryList().subscribe(data => {this.countryList = data});
   }
   
 

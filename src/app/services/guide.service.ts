@@ -69,6 +69,18 @@ import {Guide} from '../model/guide';
 	  public findvalidated(): Observable<any>{
 		return this.httpClient.get(this.baseURL+"/validated");
 	  }
+
+	  public findCountryList(): Observable<any>{
+		return this.httpClient.get(this.baseURL+"/countryList");
+	  }
+
+	  public findtop(): Observable<any>{
+		return this.httpClient.get(this.baseURL+"/top");
+	  }
+	
+	  public findtop4(): Observable<any>{
+		return this.httpClient.get(this.baseURL+"/top4");
+	  }
 	
 	
   }
