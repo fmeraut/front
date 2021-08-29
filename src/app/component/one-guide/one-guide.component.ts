@@ -97,6 +97,10 @@ export class OneGuideComponent implements OnInit {
     }
     )
   }
+
+  savePlace(gid:number,pid:number){
+    this.guideService.savePlace(gid,pid);
+  }
 }
 
 

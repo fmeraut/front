@@ -2,6 +2,7 @@ import { HttpClient, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import {Guide} from '../model/guide';
+import { Place } from '../model/place';
 
 @Injectable({
 	providedIn: 'root'
@@ -70,5 +71,8 @@ import {Guide} from '../model/guide';
 		return this.httpClient.get(this.baseURL+"/validated");
 	  }
 	
+	  public savePlace(gid:number,pid:number): Observable<any>{
+		return this.httpClient.get(this.baseURL+"/guide/"+gid+"/place/"+pid);
+	  }
 	
   }

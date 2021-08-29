@@ -47,7 +47,7 @@
         </div>
         <!-- Lieux associés-->
         <!-- Associer un lieu -->
-        <!--<div class="place-group" *ngFor="let pc of placesCountry">
+        <div class="place-group" *ngFor="let pc of placesCountry">
             <div class="row my-5">
                 <div class="col-lg-5 col-xl-0">
                     <div class="place-body">
@@ -58,15 +58,15 @@
                                 </ng-template>
                             </ngb-rating>
                         </h4>
+                        <button class="btn btn-rounded btn-danger" (click)="savePlace(guide.id,pc.id)">Ajouter lieu</button>
                         <br/>
                         <hr/>
                         <br/>
                     </div>
                 </div>
-
             </div>
 
-        </div>-->
+        </div>
         <!--<div class="form-group col-sm-3">
             <form>
                 <label>Lieux à associer</label>
