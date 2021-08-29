@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import {GuideService} from 'src/app/services/guide.service';
+import { PlaceService } from 'src/app/services/place.service';
 
 @Component({
   selector: 'app-one-guide',
@@ -13,7 +14,10 @@ export class OneGuideComponent implements OnInit {
   showNavigationIndicators = false;
   guide:any;
 
-  constructor(config: NgbCarouselConfig, private guideService:GuideService) {
+  placesExtra :any = null; 
+
+  constructor(config: NgbCarouselConfig, private guideService:GuideService,
+    private placeService: PlaceService) {
     // customize default values of carousels used by this component tree
     config.interval = 10000;
     config.wrap = false;
@@ -30,7 +34,13 @@ export class OneGuideComponent implements OnInit {
     if(guideId!=null){
     
     this.guideService.findone(+guideId).subscribe(data => {this.guide=data});
+    this.findByGuide(+guideId);
   }
+  }
+
+  //fonctions liees aux places
+  findByGuide(id:number){
+    this.placeService.findByGuide(id).subscribe(data => {this.placesExtra = data});
   }
   }
 

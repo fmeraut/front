@@ -1,19 +1,49 @@
 <div class="center-div">
-				 <!-- Guide -->
-				
-				 
-					<img class="guide-img-top img-responsive" src="data:image/jpeg;base64,{{guide.images}}" style="width: 330px; height: 300px;" alt="Guide image cap">
-				
-						<h4>{{guide.title}}
-							<ngb-rating [(rate)]="guide.rating">
-								<ng-template let-fill="fill">
-									<span class="star" [class.filled]="fill === 100">&#9733;</span>
-								</ng-template>
-							</ngb-rating>
-						</h4>
-						<p class="guide-text">{{guide.text}}</p>
+    <!-- Guide -->
 
-		
-	
-	
+
+    <img class="guide-img-top img-responsive" src="data:image/jpeg;base64,{{guide.images}}" style="width: 330px; height: 300px;" alt="Guide image cap">
+
+    <h4>{{guide.title}}
+        <ngb-rating [(rate)]="guide.rating">
+            <ng-template let-fill="fill">
+                <span class="star" [class.filled]="fill === 100">&#9733;</span>
+            </ng-template>
+        </ngb-rating>
+    </h4>
+    <p class="guide-text">{{guide.text}}</p>
+    <!-- Guide -->
+    <!-- Lieux associés -->
+    <div class="place-group" *ngFor="let p of placesExtra">
+        <div class="row my-5">
+            <div class="col-lg-2 col-xl-2">
+                <div class="mb-lg-0 mb-2">
+                    <img class="place-img-top img-responsive" src="data:image/jpeg;base64,{{p.images}}" style="width: 130px; height: 150px;">
+                </div>
+            </div>
+
+            <div class="col-lg-5 col-xl-0">
+                <div class="place-body">
+                    <h4 class="place-title">{{p.title}}
+                        <ngb-rating [(rate)]=p.rating>
+                            <ng-template let-fill="fill">
+                                <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                            </ng-template>
+                        </ngb-rating>
+                    </h4>
+
+                    <p class="place-text">{{p.description}}</p>
+                    <p class="place-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
+                    <br/>
+                    <hr/>
+                    <br/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Lieux associés-->
+
+
+
 </div>

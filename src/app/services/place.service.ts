@@ -22,6 +22,10 @@ import { Observable } from 'rxjs';
 		return this.httpClient.get(this.baseURL+"/title/"+title);
 	  }
 
+	public findByGuide(id: number): Observable<any>{
+		return this.httpClient.get(this.baseURL+"/guide/"+id);
+	}
+
 	 
 	
 
