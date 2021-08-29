@@ -1,4 +1,5 @@
 <div class="center-div">
+	<div class="container" id="content" #content>
     <!-- Guide -->
 
 
@@ -40,9 +41,42 @@
                     <br/>
                 </div>
             </div>
+			
         </div>
+		
     </div>
     <!-- Lieux associés-->
+	<div class="container-fluid">
+        <div class="card">
+            <div class="card-header">
+                <strong>Rediger un commentaire</strong>
+                <small></small>
+            </div>
+            <form (ngSubmit)="saveComment()">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>Texte</label>
+                        <input type="text" class="form-control" [(ngModel)]="guideComment.text" name="text" placeholder="Comment">
+                    </div>
+                    <div class="form-group">
+                        <ngb-rating [(rate)]="guideComment.rating">
+                            <ng-template let-fill="fill">
+                                <span type="text" [(ngModel)]="guideComment.rating" name="rating" class="star form-control" [class.filled]="fill === 100">&#9733;</span>
+                            </ng-template>
+                        </ngb-rating>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                        <button class="btn btn-block btn-success">Ajouter</button>
+
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+</div>
+<input type="button" value="Download PDF" class="btn btn-success" (click)="SavePDF()">
 
 
 

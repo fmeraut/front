@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import {GuideService} from 'src/app/services/guide.service';
+import {GuidecommentService} from 'src/app/services/guidecomment.service';
+import{Guidecomment} from 'src/app/model/guidecomment'
 import { PlaceService } from 'src/app/services/place.service';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 
 @Component({
   selector: 'app-one-guide',
@@ -16,16 +19,13 @@ export class OneGuideComponent implements OnInit {
 
   placesExtra :any = null; 
 
-  constructor(config: NgbCarouselConfig, private guideService:GuideService,
-    private placeService: PlaceService) {
-    // customize default values of carousels used by this component tree
-    config.interval = 10000;
-    config.wrap = false;
-    config.keyboard = false;
+     // commentaires
+     guideCommentExtra:any = null;
+     guideComment: Guidecomment = new Guidecomment();
 
-    config.showNavigationArrows = true;
-    config.showNavigationIndicators = true;
-  }
+  constructor(private guideService:GuideService,
+    private placeService: PlaceService, private guidecommentService: GuidecommentService) {}
+   
 
 
 
@@ -42,6 +42,50 @@ export class OneGuideComponent implements OnInit {
   findByGuide(id:number){
     this.placeService.findByGuide(id).subscribe(data => {this.placesExtra = data});
   }
+
+  // fonction pdf
+
+  @ViewChild('content')content!: ElementRef;  
+  public SavePDF():void{  
+    let DATA:any= document.getElementById('content');
+      
+    html2canvas(DATA).then(canvas => {
+        
+        let fileWidth = 208;
+        let fileHeight = canvas.height * fileWidth / canvas.width;
+        
+        const FILEURI = canvas.toDataURL('image/png')
+        let PDF = new jsPDF('p', 'mm', 'a4');
+        let position = 0;
+        PDF.addImage(FILEURI, 'PNG', 0, position, fileWidth, fileHeight)
+        
+        PDF.save('guide.pdf');
+    });  
   }
+
+  // fonctions liées aux commentaires
+  findByGuideBis(id : number){
+    this.guidecommentService.findByGuideBis(id).subscribe(data => {this.guideCommentExtra = data});
+  }
+
+  deleteComment(id : number){
+    this.guidecommentService.delete(id).subscribe(
+      () => {this.findByGuide(this.guide.id)}
+    )
+  }
+
+  saveComment(){
+    this.guidecommentService.save(this.guideComment).subscribe(
+      () => {this.findByGuide(this.guide.id);
+      this.guideComment = new Guidecomment();
+    }
+    )
+  }
+}
+
+
+  
+
+
 
 
