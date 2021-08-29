@@ -31,7 +31,10 @@ import {Place} from '../model/place';
 		return this.httpClient.get(this.baseURL+"/place/"+id);
 	}
 
-	
+	public findByGuide(id:number): Observable<any>{
+		return this.httpClient.get(this.baseURL+"/guide/"+id);
+	}
+
 	public save(file:File, place:Place){
 		const formData: FormData = new FormData();
 		formData.append('title', place.title);

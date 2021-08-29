@@ -11,7 +11,6 @@ export class Place{
 	photos:any;
 	rating:string ="";
 
-
 	
 
 }

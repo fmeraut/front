@@ -53,8 +53,6 @@ export class GuideComponent implements OnInit {
   }
 
   
-
-  
   list:any=null;
   
 
@@ -77,6 +75,8 @@ export class GuideComponent implements OnInit {
   getGuide(guide:Guide){
     localStorage.removeItem("guideId");
     localStorage.setItem("guideId",guide.id.toString());
+    localStorage.removeItem("guideCountry");
+    localStorage.setItem("guideCountry",guide.country);
     this.router.navigate(['/component/oneGuide',guide.id]);
   }
 
