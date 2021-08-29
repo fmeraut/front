@@ -12,7 +12,6 @@ export class Place{
 	file?:File;
 	rating:number = 0;
 
-
 	
 
 }

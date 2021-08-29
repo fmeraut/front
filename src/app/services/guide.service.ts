@@ -49,6 +49,10 @@ import {Guide} from '../model/guide';
 	  public saveGuide(guide : any): Observable<any>{
 		return this.httpClient.post(this.baseURL, guide);
 	  }
+
+	  public associatePlace(guide : any): Observable<any>{
+		  return this.httpClient.put(this.baseURL+"/asso", guide);
+	  }
 	
 	
   }

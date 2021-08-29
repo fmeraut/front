@@ -5,6 +5,7 @@ import{Guidecomment} from 'src/app/model/guidecomment'
 import { PlaceService } from 'src/app/services/place.service';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
+import { Guide } from 'src/app/model/guide';
 
 @Component({
   selector: 'app-one-guide',
@@ -15,9 +16,10 @@ export class OneGuideComponent implements OnInit {
 
   showNavigationArrows = false;
   showNavigationIndicators = false;
-  guide:any;
+  guide:Guide = new Guide();
 
-  placesExtra :any = null; 
+  placesExtra :any = null;
+  placesCountry: any = null;
 
      // commentaires
      guideCommentExtra:any = null;
@@ -31,16 +33,28 @@ export class OneGuideComponent implements OnInit {
 
   ngOnInit(): void {
     let guideId = localStorage.getItem("guideId");
-    if(guideId!=null){
+    let guideCountry = localStorage.getItem("guideCountry");
+    if(guideId!=null && guideCountry!=null){
     
     this.guideService.findone(+guideId).subscribe(data => {this.guide=data});
     this.findByGuide(+guideId);
+    this.findByCountry(guideCountry);
   }
+  }
+
+  // fonction liees aux guides
+  associatePlace(id:number){
+    this.guide.place.id=id;
+    this.guideService.associatePlace(this.guide);
   }
 
   //fonctions liees aux places
   findByGuide(id:number){
     this.placeService.findByGuide(id).subscribe(data => {this.placesExtra = data});
+  }
+
+  findByCountry(country: any){
+    this.placeService.findPlaceByCountry(country).subscribe(data => {this.placesCountry= data});
   }
 
   // fonction pdf

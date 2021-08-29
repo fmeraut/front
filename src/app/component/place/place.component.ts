@@ -65,6 +65,7 @@ export class PlaceComponent implements OnInit {
     console.log(this.placeExtra);
   }
 
+
   
 
   
