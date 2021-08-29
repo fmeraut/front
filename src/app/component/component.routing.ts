@@ -26,7 +26,10 @@ import { LoginComponent } from './login/login.component';
 import { GuideDetailComponent } from './guide-detail/guide-detail.component';
 import { OneGuideComponent } from './one-Guide/one-Guide.component';
 import { OneExperienceComponent } from './one-experience/one-experience.component';
+import { OnePlaceComponent } from './one-place/one-place.component';
 import {LieuDetailComponent} from './lieu-detail/lieu-detail.component';
+import { ValidateExperienceComponent } from './validate-experience/validate-experience.component';
+import { ValidateGuideComponent } from './validate-guide/validate-guide.component';
 
 export const ComponentsRoutes: Routes = [
   {
@@ -355,6 +358,42 @@ export const ComponentsRoutes: Routes = [
             { title: 'Dashboard', url: '/dashboard' },
             { title: 'ngComponent' },
             { title: 'oneExperience' }
+          ]
+        }
+      },
+      {
+        path: 'onePlace/:id',
+        component: OnePlaceComponent,
+        data: {
+          title: 'Description experience',
+          urls: [
+            { title: 'Dashboard', url: '/dashboard' },
+            { title: 'ngComponent' },
+            { title: 'onePlace' }
+          ]
+        }
+      },
+      {
+        path: 'valideExperience',
+        component: ValidateExperienceComponent,
+        data: {
+          title: 'Validate Experience',
+          urls: [
+            { title: 'Dashboard', url: '/dashboard' },
+            { title: 'ngComponent' },
+            { title: 'validateExperience' }
+          ]
+        }
+      },
+      {
+        path: 'valideGuide',
+        component: ValidateGuideComponent,
+        data: {
+          title: 'Validate Guide',
+          urls: [
+            { title: 'Dashboard', url: '/dashboard' },
+            { title: 'ngComponent' },
+            { title: 'validateGuide' }
           ]
         }
       }

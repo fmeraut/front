@@ -30,10 +30,6 @@ export class ExperienceService {
     return this.httpClient.get(this.baseURL+"/title/"+title);
   }
 
-  public findunvalidated(): Observable<any>{
-    return this.httpClient.get(this.baseURL+"/"+"unvalidated");
-  }
-
   public saveExperience(experience : any): Observable<any>{
     return this.httpClient.post(this.baseURL, experience);
   }
@@ -60,5 +56,17 @@ export class ExperienceService {
     formData.append('rating', experience.rating);
     const req = new HttpRequest('POST',this.baseURL,formData,{reportProgress:true, responseType:'text'});
     return this.httpClient.request(req);
+  }
+
+  public validate(id:number): Observable<any>{
+    return this.httpClient.get(this.baseURL+"/validate/"+id);
+  }
+
+  public findUnvalidated(): Observable<any>{
+    return this.httpClient.get(this.baseURL+"/unvalidated");
+  }
+
+  public findvalidated(): Observable<any>{
+    return this.httpClient.get(this.baseURL+"/validated");
   }
 }

@@ -8,9 +8,8 @@ export class Place{
 	adress:string="";
 	schedules:string="";
 	cost:string="";
-	file?:File;
+	photos:any;
 	rating:string ="";
-
 
 	
 

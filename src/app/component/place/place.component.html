@@ -1,194 +1,170 @@
 <div class="row">
     <div class="col-12">
-        
-              <div ngbDropdown class="d-inline-block">
-                <button
-                  class="btn btn-outline-primary"
-                  id="dropdownBasic1"
-                  ngbDropdownToggle
-                >
+
+        <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
                   Pays
                 </button>
-                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                  <button class="dropdown-item">France</button>
-                  <button class="dropdown-item">Espagne</button>
-                  <button class="dropdown-item">Grèce</button>
-                  <button class="dropdown-item">Italie</button>
-                  <button class="dropdown-item">Allemagne</button>
-                  
-                </div>
-                <div ngbDropdown class="d-inline-block">
-                    <button
-                      class="btn btn-outline-primary"
-                      id="dropdownBasic1"
-                      ngbDropdownToggle
-                    >
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <button class="dropdown-item">France</button>
+                <button class="dropdown-item">Espagne</button>
+                <button class="dropdown-item">Grèce</button>
+                <button class="dropdown-item">Italie</button>
+                <button class="dropdown-item">Allemagne</button>
+
+            </div>
+            <div ngbDropdown class="d-inline-block">
+                <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
                       Filtre de recherche
                     </button>
-                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                      <button class="dropdown-item">Par note</button>
-                    </div>
-             
-            
-            <br>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <button class="dropdown-item">Par note</button>
+                </div>
 
-        <h4 class="d-inline">Les Places les plus aimés</h4>
+
+                <br>
+
+                <h4 class="d-inline">Les Places les plus aimés</h4>
+                <!-- Row -->
+                <div class="row">
+                    <!-- column -->
+                    <div class="col-lg-3 col-md-6">
+                        <!-- Place -->
+                        <div class="place">
+                            <img class="place-img-top img-responsive" src="assets/images/big/img1.jpg" style="width: 330px; height: 400px;" alt="Place image cap">
+                            <div class="place-body">
+                                <h4 class="place-title">Place title
+                                    <ngb-rating [(rate)]="currentRate">
+                                        <ng-template let-fill="fill">
+                                            <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                                        </ng-template>
+                                    </ngb-rating>
+                                </h4>
+                                <p class="place-text">Some quick example text to build on the place title and make up the bulk of the place's content.</p>
+                                <a href="#" class="btn btn-primary">En savoir plus</a>
+                            </div>
+                        </div>
+                        <!-- Place -->
+                    </div>
+                    <!-- column -->
+                    <!-- column -->
+                    <div class="col-lg-3 col-md-6">
+                        <!-- Place -->
+                        <div class="place">
+                            <img class="place-img-top img-responsive" src="assets/images/big/img2.jpg" style="width: 330px; height: 400px;" alt="Place image cap">
+                            <div class="place-body">
+                                <h4 class="place-title">Place title
+                                    <ngb-rating [(rate)]="currentRate">
+                                        <ng-template let-fill="fill">
+                                            <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                                        </ng-template>
+                                    </ngb-rating>
+                                </h4>
+                                <p class="place-text">Some quick example text to build on the place title and make up the bulk of the place's content.</p>
+                                <a href="#" class="btn btn-primary">En savoir plus</a>
+                            </div>
+                        </div>
+                        <!-- Place -->
+                    </div>
+                    <!-- column -->
+                    <!-- column -->
+                    <div class="col-lg-3 col-md-6">
+                        <!-- Place -->
+                        <div class="place">
+                            <img class="place-img-top img-responsive" src="assets/images/big/img3.jpg" style="width: 330px; height: 400px;" alt="Place image cap">
+                            <div class="place-body">
+                                <h4 class="place-title">Place title
+                                    <ngb-rating [(rate)]="currentRate">
+                                        <ng-template let-fill="fill">
+                                            <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                                        </ng-template>
+                                    </ngb-rating>
+                                </h4>
+                                <p class="place-text">Some quick example text to build on the place title and make up the bulk of the place's content.</p>
+                                <a href="#" class="btn btn-primary">En savoir plus</a>
+                            </div>
+                        </div>
+                        <!-- Place -->
+                    </div>
+                    <!-- column -->
+                    <!-- column -->
+                    <div class="col-lg-3 col-md-6 img-responsive">
+                        <!-- Place -->
+                        <div class="place">
+                            <img class="place-img-top img-responsive" src="assets/images/big/img4.jpg" style="width: 330px; height: 400px;" alt="Place image cap">
+                            <div class="place-body">
+                                <h4 class="place-title">Place title
+                                    <ngb-rating [(rate)]="currentRate">
+                                        <ng-template let-fill="fill">
+                                            <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                                        </ng-template>
+                                    </ngb-rating>
+                                </h4>
+
+                                <p class="place-text">Some quick example text to build on the place title and make up the bulk of the place's content.</p>
+                                <a href="#" class="btn btn-primary">En savoir plus</a>
+                            </div>
+                        </div>
+                        <!-- Place -->
+                    </div>
+                    <!-- column -->
+                </div>
+                <!-- Row -->
+            </div>
+        </div>
+        <!-- End Row -->
         <!-- Row -->
         <div class="row">
-            <!-- column -->
-            <div class="col-lg-3 col-md-6">
-                <!-- Place -->
-                <div class="place">
-                    <img class="place-img-top img-responsive" src="assets/images/big/img1.jpg" style="width: 330px; height: 400px;" alt="Place image cap">
-                    <div class="place-body">
-                        <h4 class="place-title">Place title <ngb-rating [(rate)]="currentRate">
-                            <ng-template let-fill="fill">
-                              <span class="star" [class.filled]="fill === 100">&#9733;</span>
-                            </ng-template>
-                          </ngb-rating></h4>
-                        <p class="place-text">Some quick example text to build on the place title and make up the bulk of the place's content.</p>
-                        <a href="#" class="btn btn-primary">En savoir plus</a>
+            <div class="col-12 m-t-30">
+                <h4 class="m-b-0">Nos places</h4>
+                <p class="text-muted m-t-0 font-12">Pour que vos voyages riment avec aventure</p>
+
+                <div class="row" *ngFor="let p of placeExtra">
+
+                    <div class="col-12 m-t-30">
+                        <div class="card">
+                            <div class="experience-group">
+                                <div class="row my-5">
+                                    <div class="col-lg-2 col-xl-2">
+                                        <div class="mb-lg-0 mb-2">
+                                            <img class="experience-img-top img-responsive" src="data:image/jpeg;base64,{{p.photos}}" style="width: 170px; height: 150px;">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-5 col-xl-0">
+                                        <div class="experience-body">
+                                            <h4 class="experience-title"><a (click)="getPlace(p)">{{p.title}}</a>
+                                                <ngb-rating [(rate)]=p.rating>
+                                                    <ng-template let-fill="fill">
+                                                        <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                                                    </ng-template>
+                                                </ngb-rating>
+                                            </h4>
+
+                                            <p class="experience-text">{{p.text}}</p>
+                                            <p class="experience-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
+                                            <hr/>
+                                            <br>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!-- Place -->
+
+                <a class="btn btn-primary" href="http://localhost:4200/component/lieuDetail"><strong>Ajouter mon lieu</strong></a>
+
+
+
+
+
+
             </div>
-            <!-- column -->
-            <!-- column -->
-            <div class="col-lg-3 col-md-6">
-                <!-- Place -->
-                <div class="place">
-                    <img class="place-img-top img-responsive" src="assets/images/big/img2.jpg" style="width: 330px; height: 400px;" alt="Place image cap">
-                    <div class="place-body">
-                        <h4 class="place-title">Place title <ngb-rating [(rate)]="currentRate">
-                            <ng-template let-fill="fill">
-                              <span class="star" [class.filled]="fill === 100">&#9733;</span>
-                            </ng-template>
-                          </ngb-rating></h4>
-                        <p class="place-text">Some quick example text to build on the place title and make up the bulk of the place's content.</p>
-                        <a href="#" class="btn btn-primary">En savoir plus</a>
-                    </div>
-                </div>
-                <!-- Place -->
-            </div>
-            <!-- column -->
-            <!-- column -->
-            <div class="col-lg-3 col-md-6">
-                <!-- Place -->
-                <div class="place">
-                    <img class="place-img-top img-responsive" src="assets/images/big/img3.jpg" style="width: 330px; height: 400px;" alt="Place image cap">
-                    <div class="place-body">
-                        <h4 class="place-title">Place title <ngb-rating [(rate)]="currentRate">
-                            <ng-template let-fill="fill">
-                              <span class="star" [class.filled]="fill === 100">&#9733;</span>
-                            </ng-template>
-                          </ngb-rating></h4>
-                        <p class="place-text">Some quick example text to build on the place title and make up the bulk of the place's content.</p>
-                        <a href="#" class="btn btn-primary">En savoir plus</a>
-                    </div>
-                </div>
-                <!-- Place -->
-            </div>
-            <!-- column -->
-            <!-- column -->
-            <div class="col-lg-3 col-md-6 img-responsive">
-                <!-- Place -->
-                <div class="place">
-                    <img class="place-img-top img-responsive" src="assets/images/big/img4.jpg" style="width: 330px; height: 400px;" alt="Place image cap">
-                    <div class="place-body">
-                        <h4 class="place-title" >Place title <ngb-rating [(rate)]="currentRate">
-                            <ng-template let-fill="fill">
-                              <span class="star" [class.filled]="fill === 100">&#9733;</span>
-                            </ng-template>
-                          </ngb-rating></h4>
-                        
-                        <p class="place-text">Some quick example text to build on the place title and make up the bulk of the place's content.</p>
-                        <a href="#" class="btn btn-primary">En savoir plus</a>
-                    </div>
-                </div>
-                <!-- Place -->
-            </div>
-            <!-- column -->
-        </div>
-        <!-- Row -->
-    </div>
-</div>
-<!-- End Row -->
-<!-- Row -->
-<div class="row">
-    <div class="col-12 m-t-30">
-        <h4 class="m-b-0">Nos places</h4>
-        <p class="text-muted m-t-0 font-12">Pour que vos voyages riment avec aventure</p>
-        
-            <div class="row my-5">
-                <div class="col-lg-2 col-xl-2">
-                  <div class="mb-lg-0 mb-2">
-                    <img class="place-img-top img-responsive" src="assets/images/big/img3.jpg" style="width: 170px; height: 190px;" alt="Place image cap">
-                  </div>
-                </div>
-
-            <div class="col-lg-5 col-xl-0">
-                <div class="place-body">
-                    <h4 class="place-title" >Place title <ngb-rating [(rate)]="currentRate">
-                        <ng-template let-fill="fill">
-                          <span class="star" [class.filled]="fill === 100">&#9733;</span>
-                        </ng-template>
-                      </ngb-rating></h4>
-                    <p class="place-text">This is a wider place with supporting text below as a natural lead-in to additional content. This place has even longer content than the first to show that equal height action.</p>
-                    <p class="place-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-              </div>
-            </div>
-
-            <div class="row my-5">
-                <div class="col-lg-2 col-xl-2">
-                  <div class="mb-lg-0 mb-2">
-                    <img class="place-img-top img-responsive" src="assets/images/big/img2.jpg" style="width: 170px; height: 190px;" alt="Place image cap">
-                  </div>
-                </div>
-
-            <div class="col-lg-5 col-xl-0">
-                <div class="place-body">
-                    <h4 class="place-title" >Place title <ngb-rating [(rate)]="currentRate">
-                        <ng-template let-fill="fill">
-                          <span class="star" [class.filled]="fill === 100">&#9733;</span>
-                        </ng-template>
-                      </ngb-rating></h4>
-                    <p class="place-text">This is a wider place with supporting text below as a natural lead-in to additional content. This place has even longer content than the first to show that equal height action.</p>
-                    <p class="place-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-              </div>
-            </div>
-
-            <div class="row my-5">
-                <div class="col-lg-2 col-xl-2">
-                  <div class="mb-lg-0 mb-2">
-                    <img class="place-img-top img-responsive" src="assets/images/big/img1.jpg" style="width: 170px; height: 190px;" alt="Place image cap">
-                  </div>
-                </div>
-
-            <div class="col-lg-5 col-xl-0">
-                <div class="place-body">
-                    <h4 class="place-title" >Place title <ngb-rating [(rate)]="currentRate">
-                        <ng-template let-fill="fill">
-                          <span class="star" [class.filled]="fill === 100">&#9733;</span>
-                        </ng-template>
-                      </ngb-rating></h4>
-                    <p class="place-text">This is a wider place with supporting text below as a natural lead-in to additional content. This place has even longer content than the first to show that equal height action.</p>
-                    <p class="place-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-              </div>
-            </div>
-
-            <a class="btn btn-primary" href="http://localhost:4200/component/lieuDetail"><strong>Ajouter mon lieu</strong></a>
-
-            
-
-            
-           
-
         </div>
     </div>
-</div>
 
 
-<!-- End Row -->
+    <!-- End Row -->

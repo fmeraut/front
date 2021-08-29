@@ -1,0 +1,95 @@
+<div class="container" id="content" #content>
+    <div class="col-lg-3 col-md-6">
+        <!-- Place -->
+
+        <div class="place">
+            <img class="place-img-top img-responsive" src="data:image/jpeg;base64,{{place.photos}}" style="width: 330px; height: 300px;" alt="Place image cap">
+
+            <div class="place-body">
+
+                <h4 class="place-title">{{place.title}}
+                    <ngb-rating [(rate)]="place.rating">
+                        <ng-template let-fill="fill">
+                            <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                        </ng-template>
+                    </ngb-rating>
+                </h4>
+                <h5 class="place-title">
+                    {{place.adress}}, {{place.city}}, {{place.region}}, {{place.country}}
+                </h5>
+                <h4>Description</h4>
+                <p class="place-text">{{place.description}}</p>
+                <h4>Cost</h4>
+                <p class="place-text">{{place.cost}}</p>
+                <h4>Schedules</h4>
+                <p class="place-text">{{place.schedules}}</p>
+                <a href="#" class="btn btn-primary">En savoir plus</a>
+            </div>
+
+        </div>
+        <!-- Place -->
+        <br/>
+        <hr/>
+        <!-- Commentaires -->
+        <div class="place-title">
+            <h2>Commentaires</h2>
+        </div>
+        <div class="place-group" *ngFor="let c of placeCommentExtra">
+            <div class="row my-5">
+                <div class="col-lg-5 col-xl-0">
+                    <div class="place-body">
+                        <h4 class="place-title">
+                            <ngb-rating [(rate)]=c.rating>
+                                <ng-template let-fill="fill">
+                                    <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                                </ng-template>
+                            </ngb-rating>
+                        </h4>
+
+                        <p class="place-text">{{c.text}}</p>
+                        <p class="place-text"><small class="text-muted">{{c.date}}</small></p>
+                        <br/>
+                        <div>
+                            <button type="button" class="btn btn-rounded btn-warning" (click)="deleteComment(c.id)">Delete</button>
+                        </div>
+                        <br/>
+                        <hr/>
+                        <br/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Commentaires -->
+    </div>
+    <!-- Formulaire commentaires -->
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header">
+                <strong>Rediger un commentaire</strong>
+                <small></small>
+            </div>
+            <form (ngSubmit)="saveComment()">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>Texte</label>
+                        <input type="text" class="form-control" [(ngModel)]="placeComment.text" name="text" placeholder="Comment">
+                    </div>
+                    <div class="form-group">
+                        <ngb-rating [(rate)]="placeComment.note">
+                            <ng-template let-fill="fill">
+                                <span type="text" [(ngModel)]="placeComment.note" name="note" class="star form-control" [class.filled]="fill === 100">&#9733;</span>
+                            </ng-template>
+                        </ngb-rating>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                        <button class="btn btn-block btn-success">Ajouter</button>
+
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+</div>
+<!-- Formulaire commentaires -->

@@ -1,3 +1,5 @@
+import { Place } from "./place";
+
 export class Guide{
 	id:number = 0;
 	title:string ="";
@@ -6,6 +8,7 @@ export class Guide{
 	validated:boolean = false;
 	rating:string = "";
 	text:string="";
+	place:Place=new Place();
 
 
 	

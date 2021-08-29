@@ -15,6 +15,10 @@ import {Place} from '../model/place';
 	  return this.httpClient.get(this.baseURL);
 	}
 
+	public findone(id:number): Observable<any>{
+		return this.httpClient.get(this.baseURL+"/"+id);
+	  }
+
 	public findPlaceByCountry(country : any): Observable<any>{
 		return this.httpClient.get(this.baseURL+"/country/"+country);
 	  }
@@ -25,6 +29,10 @@ import {Place} from '../model/place';
 
 	public findByPlace(id: number): Observable<any>{
 		return this.httpClient.get(this.baseURL+"/place/"+id);
+	}
+
+	public findByGuide(id:number): Observable<any>{
+		return this.httpClient.get(this.baseURL+"/guide/"+id);
 	}
 
 	public save(file:File, place:Place){
@@ -43,13 +51,5 @@ import {Place} from '../model/place';
 		return this.httpClient.request(req);
 	  }
 
-	 
-	
-
-	
-  
-	
-  
-	
 	
   }

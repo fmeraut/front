@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Place } from 'src/app/model/place';
 import { PlaceService } from 'src/app/services/place.service';
 
 @Component({
@@ -55,14 +57,21 @@ export class PlaceComponent implements OnInit {
   results = [];
   
 
-  constructor(private placeService : PlaceService ) { }
+  constructor(private placeService : PlaceService,private router: Router ) { }
 
   ngOnInit(): void {
+    this.findAllPlaces();
   }
 
   findAllPlaces(){
     this.placeService.findAllPlaces().subscribe(data => {this.placeExtra = data});
     console.log(this.placeExtra);
+  }
+
+  getPlace(place:Place){
+    localStorage.removeItem("placeId");
+    localStorage.setItem("placeId",place.id.toString());
+    this.router.navigate(['/component/onePlace',place.id]);
   }
 
   
