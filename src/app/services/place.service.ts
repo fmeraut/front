@@ -14,17 +14,23 @@ import { Observable } from 'rxjs';
 	  return this.httpClient.get(this.baseURL);
 	}
 
-	public findGuideByCountry(country : any): Observable<any>{
+	public findone(id:number): Observable<any>{
+		return this.httpClient.get(this.baseURL+"/"+id);
+	  }
+
+	public findPlaceByCountry(country : any): Observable<any>{
 		return this.httpClient.get(this.baseURL+"/country/"+country);
 	  }
 
-	public findGuideByTitle(title : any): Observable<any>{
+	public findPlaceByTitle(title : any): Observable<any>{
 		return this.httpClient.get(this.baseURL+"/title/"+title);
 	  }
 
 	public findByGuide(id: number): Observable<any>{
 		return this.httpClient.get(this.baseURL+"/guide/"+id);
 	}
+
+	
 
 	 
 	
