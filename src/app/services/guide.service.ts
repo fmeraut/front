@@ -34,6 +34,10 @@ import {Guide} from '../model/guide';
 		return this.httpClient.request(req);
 	  }
 
+	  public delete(id:number): Observable<any>{
+		return this.httpClient.delete(this.baseURL+"/"+id);
+	  }
+
 	  public findone(id:number): Observable<any>{
 		return this.httpClient.get(this.baseURL+"/"+id);
 	  }
@@ -48,6 +52,18 @@ import {Guide} from '../model/guide';
 
 	  public saveGuide(guide : any): Observable<any>{
 		return this.httpClient.post(this.baseURL, guide);
+	  }
+
+	  public validate(id:number): Observable<any>{
+		return this.httpClient.get(this.baseURL+"/validate/"+id);
+	  }
+	
+	  public findUnvalidated(): Observable<any>{
+		return this.httpClient.get(this.baseURL+"/unvalidated");
+	  }
+
+	  public findvalidated(): Observable<any>{
+		return this.httpClient.get(this.baseURL+"/validated");
 	  }
 	
 	

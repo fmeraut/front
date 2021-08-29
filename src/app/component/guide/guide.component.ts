@@ -61,7 +61,7 @@ export class GuideComponent implements OnInit {
   constructor(private guideService : GuideService, private router: Router ) { }
 
   ngOnInit(): void {
-    this.findAllGuides();
+    this.findvalidated();
   }
 
  
@@ -80,7 +80,9 @@ export class GuideComponent implements OnInit {
     this.router.navigate(['/component/oneGuide',guide.id]);
   }
 
-
+  findvalidated(){
+    this.guideService.findvalidated().subscribe(data => {this.list = data});
+  }
   
 
   

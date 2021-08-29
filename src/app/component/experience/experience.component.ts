@@ -57,7 +57,7 @@ export class ExperienceComponent implements OnInit {
   constructor(private experienceService:ExperienceService,private router: Router) { }
 
   ngOnInit(): void {
-    this.findall();
+    this.findvalidated();
     this.findtop4();
     this.findCountryList();
   }
@@ -90,6 +90,10 @@ export class ExperienceComponent implements OnInit {
     localStorage.removeItem("expId");
     localStorage.setItem("expId",experience.id.toString());
     this.router.navigate(['/component/oneExperience',experience.id]);
+  }
+
+  findvalidated(){
+    this.experienceService.findvalidated().subscribe(data => {this.list = data});
   }
 
 }

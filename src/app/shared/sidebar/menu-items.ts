@@ -42,8 +42,24 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
+    path: '/component/valideGuide',
+    title: 'Validate guide',
+    icon: 'mdi mdi-forum',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
     path: '/component/experience',
     title: 'Experience',
+    icon: 'mdi mdi-forum',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
+    path: '/component/valideExperience',
+    title: 'Validate Experience',
     icon: 'mdi mdi-forum',
     class: '',
     extralink: false,
