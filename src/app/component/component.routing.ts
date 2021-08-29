@@ -26,6 +26,7 @@ import { LoginComponent } from './login/login.component';
 import { GuideDetailComponent } from './guide-detail/guide-detail.component';
 import { OneGuideComponent } from './one-Guide/one-Guide.component';
 import { OneExperienceComponent } from './one-experience/one-experience.component';
+import {LieuDetailComponent} from './lieu-detail/lieu-detail.component';
 
 export const ComponentsRoutes: Routes = [
   {
@@ -318,6 +319,18 @@ export const ComponentsRoutes: Routes = [
             { title: 'Dashboard', url: '/dashboard' },
             { title: 'ngComponent' },
             { title: 'Place' }
+          ]
+        }
+      },
+      {
+        path: 'lieuDetail',
+        component: LieuDetailComponent,
+        data: {
+          title: 'LieuDetail',
+          urls: [
+            { title: 'Dashboard', url: '/dashboard' },
+            { title: 'ngComponent' },
+            { title: 'LieuDetail' }
           ]
         }
       },

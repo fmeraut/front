@@ -34,13 +34,14 @@ export class OneGuideComponent implements OnInit {
     if(guideId!=null){
     
     this.guideService.findone(+guideId).subscribe(data => {this.guide=data});
-    this.findByGuide(+guideId);
+    this.findByGuideBis(+guideId);
   }
   }
+  
 
   //fonctions liees aux places
-  findByGuide(id:number){
-    this.placeService.findByGuide(id).subscribe(data => {this.placesExtra = data});
+  findByPlace(id:number){
+    this.placeService.findByPlace(id).subscribe(data => {this.placesExtra = data});
   }
 
   // fonction pdf
@@ -70,13 +71,13 @@ export class OneGuideComponent implements OnInit {
 
   deleteComment(id : number){
     this.guidecommentService.delete(id).subscribe(
-      () => {this.findByGuide(this.guide.id)}
+      () => {this.findByGuideBis(this.guide.id)}
     )
   }
 
   saveComment(){
     this.guidecommentService.save(this.guideComment).subscribe(
-      () => {this.findByGuide(this.guide.id);
+      () => {this.findByGuideBis(this.guide.id);
       this.guideComment = new Guidecomment();
     }
     )

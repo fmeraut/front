@@ -33,6 +33,7 @@ import { GuideDetailComponent } from './guide-detail/guide-detail.component';
 import { OneGuideComponent } from './one-guide/one-guide.component';
 import { OneExperienceComponent } from './one-experience/one-experience.component';
 import { SanitizerPipe } from '../pipes/sanitizer.pipe';
+import { LieuDetailComponent } from './lieu-detail/lieu-detail.component';
 
 @NgModule({
   imports: [
@@ -70,6 +71,7 @@ import { SanitizerPipe } from '../pipes/sanitizer.pipe';
     OneGuideComponent,
     OneExperienceComponent,
     SanitizerPipe,
+    LieuDetailComponent,
     
   ]
 })
