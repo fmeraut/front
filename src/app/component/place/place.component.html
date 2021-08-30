@@ -22,18 +22,31 @@
 
                 <br>
 
-                <h4 class="d-inline">Les Places les plus aimés</h4>
-                <div class="card">
-                    <div class="row">
+                <div class="container-fluid padding">
+                    <div class="row welcome text-center">
+                        <div class="col-12">
+                      
+                     
+            
+                  <h2 class="display-4">Les lieux les plus aimées</h2>
+                  <div>
+                  <hr>
+                </div>
+                  </div>
+                </div>
+            </div>
                        
                         <!-- column -->
+                        <div class="container-fluid padding">
+                            <div class="row padding">
                         <div class="col-lg-3 col-md-6" *ngFor="let t of top">
-                            <!-- Experience -->
-                            <div class="experience">
-                                <img class="experience-img-top img-responsive" src="data:image/jpeg;base64,{{t.photos}}" style="width: 330px; height: 300px;" alt="Experience image cap">
-                                <div class="experience-body">
-                                    <h4 class="experience-title">
-                                        <a (click)="getPlace(t)">{{t.title}}</a>
+                            <!-- Lieu -->
+                            <div class="card">
+                            <div class="place">
+                                <img class="place-img-top img-responsive" src="data:image/jpeg;base64,{{t.photos}}" style="width: 285px; height: 220px;" alt="Experience image cap">
+                                <div class="place-body">
+                                    <h4 class="place-title">
+                                        <a href="http://localhost:4200/component/onePlace/{{t.id}}" (click)="getPlace(t)">{{t.title}}</a>
                                         <ngb-rating [(rate)]=t.rating>
                                             <ng-template let-fill="fill">
                                                 <span class="star" [class.filled]="fill === 100">&#9733;</span>
@@ -42,6 +55,7 @@
                                     </h4>
                                     <p class="place-text">{{t.text}}</p>
                                     <a href="#" class="btn btn-primary">En savoir plus</a>
+                                </div>
                                 </div>
                             </div>
                             </div>
@@ -67,17 +81,17 @@
 
                     <div class="col-12 m-t-30">
                         <div class="card">
-                            <div class="experience-group">
+                            <div class="place-group">
                                 <div class="row my-5">
                                     <div class="col-lg-2 col-xl-2">
                                         <div class="mb-lg-0 mb-2">
-                                            <img class="experience-img-top img-responsive" src="data:image/jpeg;base64,{{p.photos}}" style="width: 170px; height: 150px;">
+                                            <img class="place-img-top img-responsive" src="data:image/jpeg;base64,{{p.photos}}" style="width: 170px; height: 150px;">
                                         </div>
                                     </div>
 
                                     <div class="col-lg-5 col-xl-0">
-                                        <div class="experience-body">
-                                            <h4 class="experience-title"><a (click)="getPlace(p)">{{p.title}}</a>
+                                        <div class="place-body">
+                                            <h4 class="placece-title"><a (click)="getPlace(p)">{{p.title}}</a>
                                                 <ngb-rating [(rate)]=p.rating>
                                                     <ng-template let-fill="fill">
                                                         <span class="star" [class.filled]="fill === 100">&#9733;</span>
@@ -85,11 +99,11 @@
                                                 </ngb-rating>
                                             </h4>
 
-                                            <p class="experience-text">{{p.text}}</p>
-                                            <p class="experience-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                            <p class="place-text">{{p.text}}</p>
+                                            <p class="place-text"><small class="text-muted">Last updated 3 mins ago</small></p>
 
-                                            <hr/>
-                                            <br>
+                                            <hr>
+                                            
 
                                         </div>
                                     </div>
@@ -99,7 +113,9 @@
                     </div>
                 </div>
 
+
                 <a class="btn btn-primary" href="http://localhost:4200/component/lieuDetail"><strong>Ajouter mon lieu</strong></a>
+               
 
 
 
@@ -108,6 +124,7 @@
 
             </div>
         </div>
+        
    
 
 

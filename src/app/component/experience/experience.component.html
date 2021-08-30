@@ -27,19 +27,30 @@
         <br>
         <br>
 
-        <div class="card">
-
-        <h4 class="d-inline">Les Experiences les plus aimées</h4>
+        <div class="container-fluid padding">
+            <div class="row welcome text-center">
+                <div class="col-12">
+              
+             
+    
+          <h2 class="display-4">Les expériences les plus aimées</h2>
+          <div>
+          <hr>
         </div>
+          </div>
+        </div>
+    </div>
         <!-- Row -->
-        <div class="card">
+        <div class="container-fluid padding">
+            <div class="row padding">
         <div class="row">
            
             <!-- column -->
             <div class="col-lg-3 col-md-6" *ngFor="let t of top">
                 <!-- Experience -->
+                <div class="card">
                 <div class="experience">
-                    <img class="experience-img-top img-responsive" src="data:image/jpeg;base64,{{t.photos}}" style="width: 330px; height: 300px;" alt="Experience image cap">
+                    <img class="experience-img-top img-responsive" src="data:image/jpeg;base64,{{t.photos}}" style="width: 280px; height: 240px;" alt="Experience image cap">
                     <div class="experience-body">
                         <h4 class="experience-title">
                             <a (click)="getExperience(t)">{{t.title}}</a>
@@ -53,6 +64,9 @@
                         <a href="#" class="btn btn-primary">En savoir plus</a>
                     </div>
                 </div>
+            </div>
+        
+                </div>
                 <!-- Experience -->
             </div>
             <!-- column -->
@@ -65,7 +79,7 @@
         <!-- Row -->
         
 
-        <h4 class="m-b-0">Nos experiences</h4>
+        <h3 class="m-b-0">Toutes les experiences</h3>
         <p class="text-muted m-t-0 font-12">Pour que vos voyages riment avec aventure</p>
 
         <div class="row" *ngFor="let e of list">
@@ -93,8 +107,8 @@
                                 <p class="experience-text">{{e.text}}</p>
                                 <p class="experience-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                                 
-                                <hr/>
-                                <br>
+                                <hr>
+                               
                                 
                             </div>
                         </div>
@@ -106,6 +120,10 @@
     </div>
 </div>
 
-                
+                <div class="btn-group">
                 <a class="btn btn-primary" href="http://localhost:4200/component/experienceDetail"><strong>Ajouter mon expérience</strong></a>
+                <div [hidden]="!authenticated()">
+                <a class="btn btn-success" href="http://localhost:4200/component/valideExperience"><strong>Valider l'ajout de l'expérience</strong></a>
+                </div>
+            </div>
                 <!-- End Row -->

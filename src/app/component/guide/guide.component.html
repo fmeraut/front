@@ -1,3 +1,5 @@
+
+
 <div class="row">
     
   <div class="col-12">
@@ -26,22 +28,31 @@
       <br>
       <br>
 
-      <div class="card">
+      <div class="container-fluid padding">
+        <div class="row welcome text-center">
+            <div class="col-12">
+          
+         
 
-      <h4 class="d-inline">Les guides les plus aimées</h4>
+      <h2 class="display-4">Les guides les plus aimées</h2>
+      <div>
+      <hr>
+    </div>
       </div>
+    </div>
+</div>
       <!-- Row -->
-      <div class="card">
-      <div class="row">
+      <div class="container-fluid padding">
+      <div class="row padding">
          
           <!-- column -->
           <div class="col-lg-3 col-md-6" *ngFor="let t of top">
               <!-- guide -->
-              <div class="guide">
-                  <img class="guide-img-top img-responsive" src="data:image/jpeg;base64,{{t.images}}" style="width: 330px; height: 300px;" alt="guide image cap">
+              <div class="card">
+                  <img class="guide-img-top img-responsive" src="data:image/jpeg;base64,{{t.images}}" style="width: 285px; height: 240px;" alt="guide image cap">
                   <div class="guide-body">
                       <h4 class="guide-title">
-                          <a (click)="getguide(t)">{{t.title}}</a>
+                          <a href="http://localhost:4200/component/oneGuide/{{t.id}}"(click)="getGuide(t)">{{t.title}}</a>
                           <ngb-rating [(rate)]=t.rating>
                               <ng-template let-fill="fill">
                                   <span class="star" [class.filled]="fill === 100">&#9733;</span>
@@ -62,43 +73,63 @@
 <!-- Row -->
 <div class="row">
     <div class="col-12 m-t-30">
-        <h4 class="m-b-0">Nos guides</h4>
+        <h3 class="m-b-0">Nos guides</h3>
         <p class="text-muted m-t-0 font-12">Pour que vos voyages riment avec aventure</p>
+    
         
-            
-            <div class="guide-group" *ngFor="let e of list">
-              <div class="row my-5">
-                  <div class="col-lg-2 col-xl-2">
-                      <div class="mb-lg-0 mb-2">
-                          <img class="guide-img-top img-responsive" src="data:image/jpeg;base64,{{e.images}}" style="width: 130px; height: 150px;">
-                      </div>
-                  </div>
+    
+    <div class="row">
+        <div class="col-12 m-t-30">
+            <div class="row" *ngFor="let e of list">
+                <div class="col-12 m-t-30">
+                    <div class="card">
+                         <div class="row my-5">
+                             <div class="col-lg-2 col-xl-2">
+                                 <div class="mb-lg-0 mb-2">
+                      
+                                     <img class="guide-img-top img-responsive" src="data:image/jpeg;base64,{{e.images}}" style="width: 150px; height: 150px;">
+                                 </div>
+                      
+                             </div>
 
-                  <div class="col-lg-5 col-xl-0">
-                      <div class="guide-body">
-                          <h4 class="guide-title"><a (click)="getGuide(e)">{{e.title}}</a>
-                              <ngb-rating [(rate)]=e.rating>
-                                  <ng-template let-fill="fill">
-                                      <span class="star" [class.filled]="fill === 100">&#9733;</span>
-                                  </ng-template>
-                              </ngb-rating>
-                          </h4>
+                                <div class="col-lg-5 col-xl-0">
+                                  <div class="guide-body">
+                                         <h4 class="guide-title"><a href="http://localhost:4200/component/oneGuide/{{e.id}}" class="text-dark" (click)="getGuide(e)">{{e.title}}</a>
+                                            <ngb-rating [(rate)]=e.rating>
+                                                 <ng-template let-fill="fill">
+                                             <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                                                </ng-template>
+                                            </ngb-rating>
+                                         </h4>
 
-                          <p class="guide-text">{{e.text}}</p>
-                          <p class="guide-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                         <p class="guide-text">{{e.text}}</p>
+                                         <p class="guide-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                    </div>
 
-                          <br/>
-                          <hr/>
-                          <br/>
+                      
+                                     <hr>
+                         
                           
                       </div>
                   </div>
-              </div>
+                </div>
+                </div>
+                
+
+            
+              
           </div>
+          
         </div>
+    
     </div>
 </div>
+<div class="btn-group">
 <a class="btn btn-primary" href="http://localhost:4200/component/guideDetail"><strong>Proposer mon guide</strong></a>
+<div [hidden]="!authenticated()">
+<a class="btn btn-success" href="http://localhost:4200/component/valideGuide"><strong>Valider l'ajout de l'expérience</strong></a>
+</div>
+</div>
 
 
 
