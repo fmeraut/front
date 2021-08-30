@@ -37,6 +37,7 @@ import { OnePlaceComponent } from './one-place/one-place.component';
 import { LieuDetailComponent } from './lieu-detail/lieu-detail.component';
 import { ValidateExperienceComponent } from './validate-experience/validate-experience.component';
 import { ValidateGuideComponent } from './validate-guide/validate-guide.component';
+import { ImageSanPipe } from '../pipes/image-san.pipe';
 
 @NgModule({
   imports: [
@@ -74,6 +75,7 @@ import { ValidateGuideComponent } from './validate-guide/validate-guide.componen
     OneGuideComponent,
     OneExperienceComponent,
     SanitizerPipe,
+    ImageSanPipe,
     OnePlaceComponent,
     LieuDetailComponent,
     ValidateExperienceComponent,

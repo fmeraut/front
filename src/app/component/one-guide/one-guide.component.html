@@ -19,6 +19,7 @@
             <div class="row my-5">
 
                 <div class="col-lg-5 col-xl-0">
+                    <img class="guide-img-top img-responsive" src="data:image/jpeg;base64,{{p.images}}" style="width: 330px; height: 300px;" alt="Guide image cap">
                     <div class="place-body">
                         <h4 class="place-title">{{p.title}}
                             <ngb-rating [(rate)]=p.rating>
@@ -48,7 +49,7 @@
                                 </ng-template>
                             </ngb-rating>
                         </h4>
-                        <button class="btn btn-rounded btn-danger" (click)="savePlace(guide.id,pc.id)">Ajouter lieu</button>
+                        <button class="btn btn-rounded btn-danger" (click)="savePlace(guide,pc)">Ajouter lieu</button>
 
                     </div>
                     <!-- Lieux associés-->

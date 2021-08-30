@@ -83,9 +83,18 @@ import { Place } from '../model/place';
 		return this.httpClient.get(this.baseURL+"/top4");
 	  }
 	
+	  /*
 	  public savePlace(gid:number,pid:number): Observable<any>{
 		  console.log(this.baseURL+"/guide/"+gid+"/place/"+pid);
 		return this.httpClient.get(this.baseURL+"/guide/"+gid+"/place/"+pid);
 	  }
-	
+	*/
+	public savePlace(guide:Guide,place:Place): Observable<any>{
+		const formData: FormData = new FormData();
+		formData.append('gid', guide.id.toString());
+		formData.append('pid', place.id.toString());
+		const req = new HttpRequest('POST',this.baseURL+'/place',formData,{reportProgress:true, responseType:'text'});
+		return this.httpClient.request(req);
+  }
+
   }

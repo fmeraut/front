@@ -6,6 +6,7 @@ import { PlaceService } from 'src/app/services/place.service';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import { Guide } from 'src/app/model/guide';
+import { Place } from 'src/app/model/place';
 
 @Component({
   selector: 'app-one-guide',
@@ -96,8 +97,8 @@ export class OneGuideComponent implements OnInit {
     )
   }
 
-  savePlace(gid:number,pid:number){
-    this.guideService.savePlace(gid,pid).subscribe(data => {this.guide=data});
+  savePlace(guide:Guide,place:Place){
+    this.guideService.savePlace(guide,place).subscribe(data => {this.guide=data});
   }
 }
 
