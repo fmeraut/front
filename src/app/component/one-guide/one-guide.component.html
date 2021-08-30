@@ -1,7 +1,8 @@
 <div class="center-div">
     <div class="container" id="content" #content>
+
+        <!-- Guide -->
         <div class="col-lg-10 col-md-6">
-            <!-- Guide -->
             <img class="guide-img-top img-responsive" src="data:image/jpeg;base64,{{guide.images}}" style="width: 330px; height: 300px;" alt="Guide image cap">
             <h4>{{guide.title}}
                 <ngb-rating [(rate)]="guide.rating">
@@ -11,43 +12,43 @@
                 </ngb-rating>
             </h4>
             <p class="guide-text">{{guide.text}}</p>
-            <!-- Guide -->
-            <!-- Lieux associés -->
-            <div class="row" *ngFor="let p of placesExtra">
-
-                <div class="col-12 m-t-30">
-                    <div class="card">
-                        <div class="experience-group">
-                            <div class="row my-5">
-                                <div class="col-lg-2 col-xl-2">
-                                    <div class="mb-lg-0 mb-2">
-                                        <img class="experience-img-top img-responsive" src="data:image/jpeg;base64,{{p.photos}}" style="width: 150px; height: 150px;">
-                                    </div>
+        </div>
+        <!-- Guide -->
+        <!-- Lieux associés -->
+        <div class="row" *ngFor="let p of placesExtra">
+            <div class="col-12 m-t-30">
+                <div class="card">
+                    <div class="experience-group">
+                        <div class="row my-5">
+                            <div class="col-lg-2 col-xl-2">
+                                <div class="mb-lg-0 mb-2">
+                                    <img class="experience-img-top img-responsive" src="data:image/jpeg;base64,{{p.photos}}" style="width: 150px; height: 150px;">
                                 </div>
+                            </div>
 
-                                <div class="col-lg-5 col-xl-0">
-                                    <div class="experience-body">
-                                        <h4 class="experience-title">
-                                            <a (click)="getPlace(p)">{{p.title}}</a>
-                                            <ngb-rating [(rate)]=p.rating>
-                                                <ng-template let-fill="fill">
-                                                    <span class="star" [class.filled]="fill === 100">&#9733;</span>
-                                                </ng-template>
-                                            </ngb-rating>
-                                        </h4>
+                            <div class="col-lg-5 col-xl-0">
+                                <div class="experience-body">
+                                    <h4 class="experience-title">
+                                        <a (click)="getPlace(p)">{{p.title}}</a>
+                                        <ngb-rating [(rate)]=p.rating>
+                                            <ng-template let-fill="fill">
+                                                <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                                            </ng-template>
+                                        </ngb-rating>
+                                    </h4>
 
-                                        <p class="experience-text">{{p.description}}</p>
-                                        <p class="experience-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                    <p class="experience-text">{{p.description}}</p>
+                                    <p class="experience-text"><small class="text-muted">Last updated 3 mins ago</small></p>
 
-                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Lieux associés-->
         </div>
+        <!-- Lieux associés-->
+
         <!-- Associer un lieu -->
         <div ngbDropdown class="d-inline-block">
             <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
