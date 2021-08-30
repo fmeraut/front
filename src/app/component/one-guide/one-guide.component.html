@@ -17,11 +17,6 @@
         <!-- Lieux associés -->
         <div class="place-group" *ngFor="let p of placesExtra">
             <div class="row my-5">
-                <div class="col-lg-2 col-xl-2">
-                    <div class="mb-lg-0 mb-2">
-                        <img class="place-img-top img-responsive" src="data:image/jpeg;base64,{{p.images}}" style="width: 130px; height: 150px;">
-                    </div>
-                </div>
 
                 <div class="col-lg-5 col-xl-0">
                     <div class="place-body">
@@ -36,103 +31,83 @@
                         <p class="place-text">{{p.description}}</p>
                         <p class="place-text"><small class="text-muted">Last updated 3 mins ago</small></p>
 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Lieux associés-->
+        <!-- Associer un lieu -->
+        <div class="place-group" *ngFor="let pc of placesCountry">
+            <div class="row my-5">
+                <div class="col-lg-5 col-xl-0">
+                    <div class="place-body">
+                        <h4 class="place-title">{{pc.title}}
+                            <ngb-rating [(rate)]=pc.rating>
+                                <ng-template let-fill="fill">
+                                    <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                                </ng-template>
+                            </ngb-rating>
+                        </h4>
+                        <button class="btn btn-rounded btn-danger" (click)="savePlace(guide.id,pc.id)">Ajouter lieu</button>
+
+                    </div>
+                    <!-- Lieux associés-->
+                </div>
+            </div>
+        </div>
+        <!-- Commentaires -->
+        <div class="guidee-title">
+
+        </div>
+        <h2>Commentaires</h2>
+        <div class="guide-group" *ngFor="let c of guideCommentExtra">
+            <div class="row my-5">
+                <div class="col-lg-5 col-xl-0">
+                    <div class="guide-body">
+                        <h4 class="guide-title">
+                            <ngb-rating [(rate)]=c.rating>
+                                <ng-template let-fill="fill">
+                                    <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                                </ng-template>
+                            </ngb-rating>
+                        </h4>
+
+                        <p class="guide-text">{{c.text}}</p>
+                        <p class="guide-text"><small class="text-muted">{{c.date}}</small></p>
+                        <br/>
+                        <div>
+                            <button type="button" class="btn btn-rounded btn-warning" (click)="deleteComment(c.id)">Delete</button>
+                        </div>
                         <br/>
                         <hr/>
                         <br/>
                     </div>
                 </div>
-
             </div>
-            <!-- Lieux associés-->
-            <!-- Associer un lieu -->
-            <div class="place-group" *ngFor="let pc of placesCountry">
-                <div class="row my-5">
-                    <div class="col-lg-5 col-xl-0">
-                        <div class="place-body">
-                            <h4 class="place-title">{{pc.title}}
-                                <ngb-rating [(rate)]=pc.rating>
-                                    <ng-template let-fill="fill">
-                                        <span class="star" [class.filled]="fill === 100">&#9733;</span>
-                                    </ng-template>
-                                </ngb-rating>
-                            </h4>
-                            <button class="btn btn-rounded btn-danger" (click)="savePlace(guide.id,pc.id)">Ajouter lieu</button>
-                            <br/>
-                            <hr/>
-                            <br/>
-
-                        </div>
-                        <!-- Lieux associés-->
-                        <!-- Commentaires -->
-                        <div class="guidee-title">
-                            <h2>Commentaires</h2>
-                        </div>
-                        <div class="guide-group" *ngFor="let c of guideCommentExtra">
-                            <div class="row my-5">
-                                <div class="col-lg-5 col-xl-0">
-                                    <div class="guide-body">
-                                        <h4 class="guide-title">
-                                            <ngb-rating [(rate)]=c.rating>
-                                                <ng-template let-fill="fill">
-                                                    <span class="star" [class.filled]="fill === 100">&#9733;</span>
-                                                </ng-template>
-                                            </ngb-rating>
-                                        </h4>
-
-                                        <p class="guide-text">{{c.text}}</p>
-                                        <p class="guide-text"><small class="text-muted">{{c.date}}</small></p>
-                                        <br/>
-                                        <div>
-                                            <button type="button" class="btn btn-rounded btn-warning" (click)="deleteComment(c.id)">Delete</button>
-                                        </div>
-                                        <br/>
-                                        <hr/>
-                                        <br/>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Commentaires -->
-                    </div>
-                    <div class="container-fluid">
-                        <div class="card">
-                            <div class="card-header">
-                                <strong>Rediger un commentaire</strong>
-                                <small></small>
-                            </div>
-                            <form (ngSubmit)="saveComment()">
-                                <div class="card-body">
-                                    <div class="form-group">
-                                        <label>Texte</label>
-                                        <input type="text" class="form-control" [(ngModel)]="guideComment.text" name="text" placeholder="Comment">
-                                    </div>
-                                    <div class="form-group">
-                                        <ngb-rating [(rate)]="guideComment.rating">
-                                            <ng-template let-fill="fill">
-                                                <span type="text" [(ngModel)]="guideComment.rating" name="rating" class="star form-control" [class.filled]="fill === 100">&#9733;</span>
-                                            </ng-template>
-                                        </ngb-rating>
-                                    </div>
-                                    <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
-                                        <button class="btn btn-block btn-success">Ajouter</button>
-
-                                        <<<<<<< HEAD </div>
-                                            <!--<div class="form-group col-sm-3">
-            <form>
-                <label>Lieux à associer</label>
-                <select type="number" class="form-select border border-primary" [(ngModel)]="guide.place.id" name="guide.place.id"> 
-                    <option *ngFor="let p of placesExtra" [value]="p.id">{{p.title}}</option>
-                </select>
-                <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
-                    <button type="button" class="btn btn-rounded btn-success" (click)="associatePlace(guide.place.id)">Ajouter le lieu</button>
-=======
-                    </div>
->>>>>>> cadd79f1ad14ee155dfa4108fec24d3b419f5529
-                </div>
-            </form>
-
-
         </div>
+        <!-- Commentaires -->
     </div>
-</div>
-<input type="button" value="Download PDF" class="btn btn-success" (click)="SavePDF()">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header">
+                <strong>Rediger un commentaire</strong>
+                <small></small>
+            </div>
+            <form (ngSubmit)="saveComment()">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>Texte</label>
+                        <input type="text" class="form-control" [(ngModel)]="guideComment.text" name="text" placeholder="Comment">
+                    </div>
+                    <div class="form-group">
+                        <ngb-rating [(rate)]="guideComment.rating">
+                            <ng-template let-fill="fill">
+                                <span type="text" [(ngModel)]="guideComment.rating" name="rating" class="star form-control" [class.filled]="fill === 100">&#9733;</span>
+                            </ng-template>
+                        </ngb-rating>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                        <button class="btn btn-block btn-success">Ajouter</button>
+
+
+                        <input type="button" value="Download PDF" class="btn btn-success" (click)="SavePDF()">

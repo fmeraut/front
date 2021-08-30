@@ -84,6 +84,7 @@ import { Place } from '../model/place';
 	  }
 	
 	  public savePlace(gid:number,pid:number): Observable<any>{
+		  console.log(this.baseURL+"/guide/"+gid+"/place/"+pid);
 		return this.httpClient.get(this.baseURL+"/guide/"+gid+"/place/"+pid);
 	  }
 	
