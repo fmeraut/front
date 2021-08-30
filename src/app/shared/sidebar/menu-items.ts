@@ -41,14 +41,14 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: []
   },
-  {
+  /*{
     path: '/component/valideGuide',
     title: 'Validate guide',
     icon: 'mdi mdi-forum',
     class: '',
     extralink: false,
     submenu: []
-  },
+  },*/
   {
     path: '/component/experience',
     title: 'Experience',
@@ -56,7 +56,7 @@ export const ROUTES: RouteInfo[] = [
     class: '',
     extralink: false,
     submenu: []
-  },
+  },/*
   {
     path: '/component/valideExperience',
     title: 'Validate Experience',
@@ -64,7 +64,7 @@ export const ROUTES: RouteInfo[] = [
     class: '',
     extralink: false,
     submenu: []
-  },
+  },*/
   /*{
     path: '/component/experienceDetail',
     title: 'Ajout Experience',
