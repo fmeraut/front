@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import {Router} from '@angular/router';
 import {Observable} from 'rxjs';
+import {AppService} from 'src/app/app.service';
 import {Guide} from 'src/app/model/guide';
 import { GuideService } from 'src/app/services/guide.service';
 
@@ -10,30 +11,10 @@ import { GuideService } from 'src/app/services/guide.service';
   templateUrl: './guide.component.html',
   styles: [
     `
-      .star {
-        font-size: 1.5rem;
-        color: #b0c4de;
-      }
-      .filled {
-        color: #1e90ff;
-      }
-      .heart {
-        position: relative;
-        display: inline-block;
-        font-size: 3rem;
-        color: #d3d3d3;
-      }
-      .full {
-        color: red;
-      }
-      .half {
-        position: absolute;
-        display: inline-block;
-        overflow: hidden;
-        color: red;
-      }
+      
     `
-  ]
+  ],
+  styleUrls:['./guide.component.css']
   
 })
 export class GuideComponent implements OnInit {
@@ -59,7 +40,7 @@ export class GuideComponent implements OnInit {
   countryList=null;
   
 
-  constructor(private guideService : GuideService, private router: Router ) { }
+  constructor(private guideService : GuideService, private router: Router, private appService: AppService ) { }
 
   ngOnInit(): void {
     this.findvalidated();
@@ -103,6 +84,10 @@ export class GuideComponent implements OnInit {
 
   findCountryList(){
     this.guideService.findCountryList().subscribe(data => {this.countryList = data});
+  }
+
+  authenticated(){
+    return this.appService.authenticated;
   }
   
 

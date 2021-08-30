@@ -256,7 +256,7 @@ export const ComponentsRoutes: Routes = [
         path: 'oneGuide/:id',
         component: OneGuideComponent,
         data: {
-          title: 'oneGuide',
+          title: 'Description guide',
           urls: [
             { title: 'Dashboard', url: '/dashboard' },
             { title: 'ngComponent' },
@@ -270,7 +270,7 @@ export const ComponentsRoutes: Routes = [
         path: 'guideDetail',
         component: GuideDetailComponent,
         data: {
-          title: 'GuideDetail',
+          title: "Ajout d'un guide",
           urls: [
             { title: 'Dashboard', url: '/dashboard' },
             { title: 'ngComponent' },
@@ -306,7 +306,7 @@ export const ComponentsRoutes: Routes = [
         path: 'experienceDetail',
         component: ExperienceDetailComponent,
         data: {
-          title: 'Detail Experience',
+          title: "Ajout d'experience",
           urls: [
             { title: 'Dashboard', url: '/dashboard' },
             { title: 'ngComponent' },
@@ -330,7 +330,7 @@ export const ComponentsRoutes: Routes = [
         path: 'lieuDetail',
         component: LieuDetailComponent,
         data: {
-          title: 'LieuDetail',
+          title: "Ajout d'un lieu",
           urls: [
             { title: 'Dashboard', url: '/dashboard' },
             { title: 'ngComponent' },
@@ -342,7 +342,7 @@ export const ComponentsRoutes: Routes = [
         path: 'editUser/:id',
         component: EditUserComponent,
         data: {
-          title: 'EditUser',
+          title: 'Edit User',
           urls: [
             { title: 'Dashboard', url: '/dashboard' },
             { title: 'ngComponent' },
@@ -366,7 +366,7 @@ export const ComponentsRoutes: Routes = [
         path: 'onePlace/:id',
         component: OnePlaceComponent,
         data: {
-          title: 'Description experience',
+          title: 'Description lieu',
           urls: [
             { title: 'Dashboard', url: '/dashboard' },
             { title: 'ngComponent' },
