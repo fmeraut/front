@@ -1,21 +1,21 @@
 <div class="container" id="content" #content>
-    <div class="col-lg-3 col-md-6">
+    <div class="col-lg-10 col-md-6">
         <!-- Experience -->
-
         <div class="experience">
             <img class="experience-img-top img-responsive" src="data:image/jpeg;base64,{{experience.photos}}" style="width: 330px; height: 300px;" alt="Experience image cap">
+            <br/>
             <div class="experience-body">
 
-                <h4 class="experience-title">{{experience.title}}
+                <h3 class="experience-title">{{experience.title}}
                     <ngb-rating [(rate)]="experience.rating">
                         <ng-template let-fill="fill">
                             <span class="star" [class.filled]="fill === 100">&#9733;</span>
                         </ng-template>
                     </ngb-rating>
-                </h4>
+                </h3>
+                <h5>Pays : {{experience.country}}</h5>
                 <p class="experience-text">{{experience.text}}</p>
                 <iframe width="560" height="315" [src]='experience.videos |sanitizer' title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-                <a href="#" class="btn btn-primary">En savoir plus</a>
             </div>
 
         </div>
@@ -23,30 +23,31 @@
         <br/>
         <hr/>
         <!-- Commentaires -->
-        <div class="experience-title">
-            <h2>Commentaires</h2>
-        </div>
-        <div class="experience-group" *ngFor="let c of expCommentExtra">
-            <div class="row my-5">
-                <div class="col-lg-5 col-xl-0">
-                    <div class="experience-body">
-                        <h4 class="experience-title">
-                            <ngb-rating [(rate)]=c.rating>
-                                <ng-template let-fill="fill">
-                                    <span class="star" [class.filled]="fill === 100">&#9733;</span>
-                                </ng-template>
-                            </ngb-rating>
-                        </h4>
+        <div class="experience">
+            <div class="experience-title">
+                <h2>Commentaires</h2>
+            </div>
+            <div class="experience-group" *ngFor="let c of expCommentExtra">
+                <div class="row my-5">
+                    <div class="col-lg-10 col-md-6">
+                        <div class="experience-body">
+                            <h4 class="experience-title">
+                                <ngb-rating [(rate)]=c.rating>
+                                    <ng-template let-fill="fill">
+                                        <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                                    </ng-template>
+                                </ngb-rating>
+                            </h4>
 
-                        <p class="experience-text">{{c.text}}</p>
-                        <p class="experience-text"><small class="text-muted">{{c.date}}</small></p>
-                        <br/>
-                        <div>
-                            <button type="button" class="btn btn-rounded btn-warning" (click)="deleteComment(c.id)">Delete</button>
+                            <p class="experience-text">{{c.text}}</p>
+                            <p class="experience-text"><small class="text-muted">{{c.date}}</small></p>
+                            <br/>
+                            <div>
+                                <button type="button" class="btn btn-rounded btn-warning" (click)="deleteComment(c.id)">Delete</button>
+                            </div>
+                            <br/>
+                            <hr/>
                         </div>
-                        <br/>
-                        <hr/>
-                        <br/>
                     </div>
                 </div>
             </div>
@@ -54,7 +55,7 @@
         <!-- Commentaires -->
     </div>
     <!-- Formulaire commentaires -->
-    <div class="container-fluid">
+    <div class="col-lg-10 col-md-6">
         <div class="card">
             <div class="card-header">
                 <strong>Rediger un commentaire</strong>
@@ -73,16 +74,14 @@
                             </ng-template>
                         </ngb-rating>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                    <div>
                         <button class="btn btn-block btn-success">Ajouter</button>
 
                     </div>
                 </div>
             </form>
-
-
         </div>
     </div>
+    <!-- Formulaire commentaires -->
 </div>
 <input type="button" value="Download PDF" class="btn btn-success" (click)="SavePDF()">
-<!-- Formulaire commentaires -->
