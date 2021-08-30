@@ -39,6 +39,7 @@ export class OneGuideComponent implements OnInit {
     this.findByGuide(+guideId);
     this.findByCountry(guideCountry);
     this.findByGuideBis(+guideId);
+    this.guideComment.guide.id=+guideId;
   }
   }
   
