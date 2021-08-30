@@ -30,6 +30,7 @@ import { OnePlaceComponent } from './one-place/one-place.component';
 import {LieuDetailComponent} from './lieu-detail/lieu-detail.component';
 import { ValidateExperienceComponent } from './validate-experience/validate-experience.component';
 import { ValidateGuideComponent } from './validate-guide/validate-guide.component';
+import { NewsletterComponent } from './newsletter/newsletter.component';
 
 export const ComponentsRoutes: Routes = [
   {
@@ -390,6 +391,18 @@ export const ComponentsRoutes: Routes = [
         component: ValidateGuideComponent,
         data: {
           title: 'Validate Guide',
+          urls: [
+            { title: 'Dashboard', url: '/dashboard' },
+            { title: 'ngComponent' },
+            { title: 'validateGuide' }
+          ]
+        }
+      },
+      {
+        path: 'mail',
+        component: NewsletterComponent,
+        data: {
+          title: 'Send newsletter',
           urls: [
             { title: 'Dashboard', url: '/dashboard' },
             { title: 'ngComponent' },

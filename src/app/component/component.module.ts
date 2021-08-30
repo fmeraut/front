@@ -38,6 +38,7 @@ import { LieuDetailComponent } from './lieu-detail/lieu-detail.component';
 import { ValidateExperienceComponent } from './validate-experience/validate-experience.component';
 import { ValidateGuideComponent } from './validate-guide/validate-guide.component';
 import { ImageSanPipe } from '../pipes/image-san.pipe';
+import { NewsletterComponent } from './newsletter/newsletter.component';
 
 @NgModule({
   imports: [
@@ -80,6 +81,7 @@ import { ImageSanPipe } from '../pipes/image-san.pipe';
     LieuDetailComponent,
     ValidateExperienceComponent,
     ValidateGuideComponent,
+    NewsletterComponent,
     
   ]
 })
