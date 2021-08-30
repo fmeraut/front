@@ -61,6 +61,7 @@ export class OnePlaceComponent implements OnInit {
   }
 
   saveComment(){
+    console.log("je suis le place comment component:"+this.placeComment.id);
     this.placeCommentService.save(this.placeComment).subscribe(
       () => {this.findByPlace(this.place.id);
       this.placeComment = new PlaceComment();
