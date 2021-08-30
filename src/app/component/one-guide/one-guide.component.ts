@@ -7,6 +7,7 @@ import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import { Guide } from 'src/app/model/guide';
 import { Place } from 'src/app/model/place';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-one-guide',
@@ -27,10 +28,12 @@ export class OneGuideComponent implements OnInit {
      guideComment: Guidecomment = new Guidecomment();
 
   constructor(private guideService:GuideService,
-    private placeService: PlaceService, private guidecommentService: GuidecommentService) {}
+    private placeService: PlaceService, private guidecommentService: GuidecommentService,private router: Router ) {}
    
 
   ngOnInit(): void {
+    
+
     let guideId = localStorage.getItem("guideId");
     let guideCountry = localStorage.getItem("guideCountry");
     if(guideId!=null && guideCountry!=null){
@@ -81,6 +84,7 @@ export class OneGuideComponent implements OnInit {
 
   // fonctions liées aux commentaires
   findByGuideBis(id : number){
+    
     this.guidecommentService.findByGuideBis(id).subscribe(data => {this.guideCommentExtra = data});
   }
 
@@ -99,7 +103,15 @@ export class OneGuideComponent implements OnInit {
   }
 
   savePlace(guide:Guide,place:Place){
-    this.guideService.savePlace(guide,place).subscribe(data => {this.guide=data});
+    this.guideService.savePlace(guide,place).subscribe(
+      () => {this.findByGuide(this.guide.id)});
+
+  }
+
+  getPlace(place:Place){
+    localStorage.removeItem("placeId");
+    localStorage.setItem("placeId",place.id.toString());
+    this.router.navigate(['/component/onePlace',place.id]);
   }
 }
 

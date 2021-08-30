@@ -90,6 +90,7 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: []
   },*/
+  /*
   {
     path: '/component/accordion',
     title: 'Accordion',
