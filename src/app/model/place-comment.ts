@@ -5,5 +5,5 @@ export class PlaceComment {
     text: string="";
     note: number=0;
     date: Date=new Date();
-    experience: Place = new Place();
+    place: Place = new Place();
 }

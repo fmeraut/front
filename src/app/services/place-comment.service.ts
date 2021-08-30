@@ -15,6 +15,7 @@ export class PlaceCommentService {
   }
 
   public save(placeComment : any): Observable<any>{
+    console.log("je suis le place comment service:"+placeComment.place.id);
     return this.httpClient.post(this.baseURL, placeComment);
   }
 

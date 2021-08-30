@@ -46,7 +46,7 @@ export class OnePlaceComponent implements OnInit {
     
     this.placeService.findone(+placeId).subscribe(data => {this.place=data});
     this.findByPlace(+placeId);
-    this.placeComment.experience.id=+placeId;
+    this.placeComment.place.id=+placeId;
   }
   }
 
@@ -61,6 +61,7 @@ export class OnePlaceComponent implements OnInit {
   }
 
   saveComment(){
+    console.log("je suis le place comment component:"+this.placeComment.id);
     this.placeCommentService.save(this.placeComment).subscribe(
       () => {this.findByPlace(this.place.id);
       this.placeComment = new PlaceComment();

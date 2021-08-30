@@ -29,8 +29,6 @@ export class OneGuideComponent implements OnInit {
     private placeService: PlaceService, private guidecommentService: GuidecommentService) {}
    
 
-
-
   ngOnInit(): void {
     let guideId = localStorage.getItem("guideId");
     let guideCountry = localStorage.getItem("guideCountry");
@@ -99,7 +97,7 @@ export class OneGuideComponent implements OnInit {
   }
 
   savePlace(gid:number,pid:number){
-    this.guideService.savePlace(gid,pid);
+    this.guideService.savePlace(gid,pid).subscribe(data => {this.guide=data});
   }
 }
 
