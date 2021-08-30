@@ -1,5 +1,5 @@
 <div class="container" id="content" #content>
-    <div class="col-lg-3 col-md-6">
+    <div class="col-lg-10 col-md-6">
         <!-- Place -->
 
         <div class="place">
@@ -63,32 +63,32 @@
     </div>
     <!-- Formulaire commentaires -->
     <div class="container-fluid">
-        <div class="card">
-            <div class="card-header">
-                <strong>Rediger un commentaire</strong>
-                <small></small>
-            </div>
-            <form (ngSubmit)="saveComment()">
-                <div class="card-body">
-                    <div class="form-group">
-                        <label>Texte</label>
-                        <input type="text" class="form-control" [(ngModel)]="placeComment.text" name="text" placeholder="Comment">
-                    </div>
-                    <div class="form-group">
-                        <ngb-rating [(rate)]="placeComment.note">
-                            <ng-template let-fill="fill">
-                                <span type="text" [(ngModel)]="placeComment.note" name="note" class="star form-control" [class.filled]="fill === 100">&#9733;</span>
-                            </ng-template>
-                        </ngb-rating>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
-                        <button type="submit" class="btn btn-block btn-success">Ajouter</button>
-
-                    </div>
+        <div class="col-lg-10 col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <strong>Rediger un commentaire</strong>
+                    <small></small>
                 </div>
-            </form>
+                <form (ngSubmit)="saveComment()">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label>Texte</label>
+                            <input type="text" class="form-control" [(ngModel)]="placeComment.text" name="text" placeholder="Comment">
+                        </div>
+                        <div class="form-group">
+                            <ngb-rating [(rate)]="placeComment.note">
+                                <ng-template let-fill="fill">
+                                    <span type="text" [(ngModel)]="placeComment.note" name="note" class="star form-control" [class.filled]="fill === 100">&#9733;</span>
+                                </ng-template>
+                            </ngb-rating>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                            <button type="submit" class="btn btn-block btn-success">Ajouter</button>
 
-
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
