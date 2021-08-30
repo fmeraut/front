@@ -46,7 +46,7 @@ export class OnePlaceComponent implements OnInit {
     
     this.placeService.findone(+placeId).subscribe(data => {this.place=data});
     this.findByPlace(+placeId);
-    this.placeComment.experience.id=+placeId;
+    this.placeComment.place.id=+placeId;
   }
   }
 
