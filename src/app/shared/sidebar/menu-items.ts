@@ -17,14 +17,14 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: []
   },
-  {
+  /*{
     path: '/component/admin',
     title: 'Gestion utilisateurs',
     icon: 'mdi mdi-human',
     class: '',
     extralink: false,
     submenu: []
-  },
+  },*/
   /*{
     path: '',
     title: 'UI Components',

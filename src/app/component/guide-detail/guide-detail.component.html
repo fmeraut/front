@@ -4,7 +4,7 @@
             <strong>Nouveau guide</strong>
             <small></small>
         </div>
-        <form (ngSubmit)="saveGuide()">
+        <form (ngSubmit)="saveGuide()"  >
             <div class="card-body">
                 <div class="form-group">
                     <label>Title</label>
@@ -16,7 +16,7 @@
                 </div>
                 <div class="form-group">
                     <label>Description</label>
-                    <input type="text" class="form-control" [(ngModel)]="guide.text" name="text" placeholder="Guide description">
+                    <textarea type="text" class="form-control" [(ngModel)]="guide.text" name="text" placeholder="Guide description"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="fileUform">Photos</label>
@@ -35,6 +35,8 @@
                 </div>
             </div>
         </form>
+
+        
 
 
     </div>

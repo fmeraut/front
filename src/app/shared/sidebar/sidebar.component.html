@@ -8,7 +8,15 @@
                 <i [ngClass]="[sidebarnavItem.icon]"></i>
                 <span class="hide-menu">{{sidebarnavItem.title}}</span>
             </a>
+            
         </li>
+        <div [hidden]="!authenticated()">
+        <h3>Administration</h3>
+        <a type="button" href="http://localhost:4200/component/mail" style="color:grey">Envoi Newsletter</a>
+        <a type="button" href="http://localhost:4200/component/admin" style="color:grey">Gestion des Utilisateurs</a>
+        </div>
+        
 
     </ul>
+    
 </nav>
