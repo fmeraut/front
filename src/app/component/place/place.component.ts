@@ -70,7 +70,7 @@ export class PlaceComponent implements OnInit {
   }
 
   findAllPlaces(){
-    this.placeService.findAllPlaces().subscribe(data => {this.placeExtra = data});
+    this.placeService.findAllPlaces().subscribe(data => {this.list = data});
     console.log(this.placeExtra);
   }
 
@@ -94,6 +94,10 @@ export class PlaceComponent implements OnInit {
 
   findCountryList(){
     this.placeService.findCountryList().subscribe(data => {this.countryList = data});
+  }
+
+  findcountry(country:string){
+    this.placeService.findcountry(country).subscribe(data => {this.list = data});
   }
 
   ratingorder(list:Observable<any>){
