@@ -1,4 +1,5 @@
 
+<div class="body">
 <div class="row">
     
     <div class="col-12">
@@ -48,9 +49,9 @@
             <!-- column -->
             <div class="col-lg-3 col-md-6" *ngFor="let t of top">
                 <!-- Experience -->
-                <div class="card">
+                <div class="card" style="border:double">
                 <div class="experience">
-                    <img class="experience-img-top img-responsive" src="data:image/jpeg;base64,{{t.photos}}" style="width: 280px; height: 240px;" alt="Experience image cap">
+                    <img class="experience-img-top img-responsive" src="data:image/jpeg;base64,{{t.photos}}" style="width: 288px; height: 241px;" alt="Experience image cap">
                     <div class="experience-body">
                         <h4 class="experience-title">
                             <a href="http://localhost:4200/component/oneExperience/{{t.id}}" (click)="getExperience(t)" style="color:black">{{t.title}} </a>
@@ -78,14 +79,21 @@
         <!-- End Row -->
         <!-- Row -->
         
+        <h3 class="m-b-0" >Toutes les experiences</h3> 
+        
+       
+    
+    <p class="text-muted m-t-0 font-12">Pour que vos voyages riment avec aventure</p>
 
-        <h3 class="m-b-0">Toutes les experiences</h3>
-        <p class="text-muted m-t-0 font-12">Pour que vos voyages riment avec aventure</p>
+        
+    
+        
+    
 
         <div class="row" *ngFor="let e of list">
             
             <div class="col-12 m-t-30">
-                <div class="card">
+                <div class="card" style="border:double">
                 <div class="experience-group">
                     <div class="row my-5">
                         <div class="col-lg-2 col-xl-2">
@@ -127,3 +135,4 @@
                 </div>
             </div>
                 <!-- End Row -->
+            </div>
