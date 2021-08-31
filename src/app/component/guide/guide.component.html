@@ -52,7 +52,7 @@
                   <img class="guide-img-top img-responsive" src="data:image/jpeg;base64,{{t.images}}" style="width: 285px; height: 240px;" alt="guide image cap">
                   <div class="guide-body">
                       <h4 class="guide-title">
-                          <a href="http://localhost:4200/component/oneGuide/{{t.id}}"(click)="getGuide(t)">{{t.title}}</a>
+                          <a href="http://localhost:4200/component/oneGuide/{{t.id}}" style="color:black" (click)="getGuide(t)">{{t.title}} </a>
                           <ngb-rating [(rate)]=t.rating>
                               <ng-template let-fill="fill">
                                   <span class="star" [class.filled]="fill === 100">&#9733;</span>
@@ -60,7 +60,7 @@
                           </ngb-rating>
                       </h4>
                       <p class="guide-text">{{t.text}}</p>
-                      <a href="#" class="btn btn-primary">En savoir plus</a>
+                      <a href="http://localhost:4200/component/oneGuide/{{t.id}}"(click)="getGuide(t)" class="btn btn-primary">En savoir plus</a>
                   </div>
               </div>
               <!-- guide -->

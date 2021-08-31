@@ -46,7 +46,7 @@
                                 <img class="place-img-top img-responsive" src="data:image/jpeg;base64,{{t.photos}}" style="width: 285px; height: 220px;" alt="Experience image cap">
                                 <div class="place-body">
                                     <h4 class="place-title">
-                                        <a href="http://localhost:4200/component/onePlace/{{t.id}}" (click)="getPlace(t)">{{t.title}}</a>
+                                        <a href="http://localhost:4200/component/onePlace/{{t.id}}" style="color:black" (click)="getPlace(t)">{{t.title}} </a>
                                         <ngb-rating [(rate)]=t.rating>
                                             <ng-template let-fill="fill">
                                                 <span class="star" [class.filled]="fill === 100">&#9733;</span>
@@ -54,7 +54,7 @@
                                         </ngb-rating>
                                     </h4>
                                     <p class="place-text">{{t.text}}</p>
-                                    <a href="#" class="btn btn-primary">En savoir plus</a>
+                                    <a href="http://localhost:4200/component/onePlace/{{t.id}}"(click)="getPlace(t)" class="btn btn-primary">En savoir plus</a>
                                 </div>
                                 </div>
                             </div>
