@@ -20,28 +20,27 @@
             </div>
         </div>
 
-                <br>
+        <br>
 
-                <div class="container-fluid padding">
-                    <div class="row welcome text-center">
-                        <div class="col-12">
-                      
-                     
-            
-                  <h2 class="display-4">Les lieux les plus aimées</h2>
-                  <div>
-                  <hr>
-                </div>
-                  </div>
+        <div class="container-fluid padding">
+            <div class="row welcome text-center">
+                <div class="col-12">
+
+
+
+                    <h2 class="display-4">Les lieux les plus aimées</h2>
+                    <div>
+                        <hr>
+                    </div>
                 </div>
             </div>
-                       
-                        <!-- column -->
-                        <div class="container-fluid padding">
-                            <div class="row padding">
-                        <div class="col-lg-3 col-md-6" *ngFor="let t of top">
-                            <!-- Lieu -->
-                            <div class="card">
+
+            <!-- column -->
+            <div class="container-fluid padding">
+                <div class="row padding">
+                    <div class="col-lg-3 col-md-6" *ngFor="let t of top">
+                        <!-- Lieu -->
+                        <div class="card">
                             <div class="place">
                                 <img class="place-img-top img-responsive" src="data:image/jpeg;base64,{{t.photos}}" style="width: 285px; height: 220px;" alt="Experience image cap">
                                 <div class="place-body">
@@ -54,78 +53,87 @@
                                         </ngb-rating>
                                     </h4>
                                     <p class="place-text">{{t.text}}</p>
-                                    <a href="http://localhost:4200/component/onePlace/{{t.id}}"(click)="getPlace(t)" class="btn btn-primary">En savoir plus</a>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                            </div>
-                            </div>
-               
-                        
-                        <!-- Place -->
-                    
-                    <!-- column -->
-            
-                <!-- Row -->
-           
-     
-        <!-- End Row -->
-        <!-- Row -->
-        <div class="row">
-            <div class="col-12 m-t-30">
-                <h3 class="m-b-0">Nos Lieux</h3>
-                <p class="text-muted m-t-0 font-12">Pour que vos voyages riment avec aventure</p>
-
-                <div class="row" *ngFor="let p of placeExtra">
-
-                    <div class="col-12 m-t-30">
-                        <div class="card">
-                            <div class="place-group">
-                                <div class="row my-5">
-                                    <div class="col-lg-2 col-xl-2">
-                                        <div class="mb-lg-0 mb-2">
-                                            <img class="place-img-top img-responsive" src="data:image/jpeg;base64,{{p.photos}}" style="width: 170px; height: 150px;">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-5 col-xl-0">
-                                        <div class="place-body">
-                                            <h4 class="placece-title"><a (click)="getPlace(p)">{{p.title}}</a>
-                                                <ngb-rating [(rate)]=p.rating>
-                                                    <ng-template let-fill="fill">
-                                                        <span class="star" [class.filled]="fill === 100">&#9733;</span>
-                                                    </ng-template>
-                                                </ngb-rating>
-                                            </h4>
-
-                                            <p class="place-text">{{p.text}}</p>
-                                            <p class="place-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-
-                                            <hr>
-                                            
-
-                                        </div>
-                                    </div>
+                                    <a href="http://localhost:4200/component/onePlace/{{t.id}}" (click)="getPlace(t)" class="btn btn-primary">En savoir plus</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
-                <a class="btn btn-primary" href="http://localhost:4200/component/lieuDetail"><strong>Ajouter mon lieu</strong></a>
-               
-
-
-
-
-
-
             </div>
         </div>
-        
-   
+    </div>
+</div>
 
 
-    <!-- End Row -->
+
+<!-- Place -->
+
+<!-- column -->
+
+<!-- Row -->
+
+
+<!-- End Row -->
+<!-- Row -->
+<div class="row">
+    <div class="col-12 m-t-30">
+        <h4 class="m-b-0">Nos places</h4>
+        <p class="text-muted m-t-0 font-12">Pour que vos voyages riment avec aventure</p>
+
+        <div class="row" *ngFor="let p of list">
+
+            <div class="col-12 m-t-30">
+<<<<<<< HEAD
+                <h3 class="m-b-0">Nos Lieux</h3>
+                <p class="text-muted m-t-0 font-12">Pour que vos voyages riment avec aventure</p>
+=======
+                <div class="card">
+                    <div class="place-group">
+                        <div class="row my-5">
+                            <div class="col-lg-2 col-xl-2">
+                                <div class="mb-lg-0 mb-2">
+                                    <img class="place-img-top img-responsive" src="data:image/jpeg;base64,{{p.photos}}" style="width: 170px; height: 150px;">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-5 col-xl-0">
+                                <div class="place-body">
+                                    <h4 class="placece-title"><a (click)="getPlace(p)">{{p.title}}</a>
+                                        <ngb-rating [(rate)]=p.rating>
+                                            <ng-template let-fill="fill">
+                                                <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                                            </ng-template>
+                                        </ngb-rating>
+                                    </h4>
+
+                                    <p class="place-text">{{p.text}}</p>
+                                    <p class="place-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
+                                    <hr>
+>>>>>>> 35196f3a956c777e24c3c33f64fdc7d6ea4941af
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <a class="btn btn-primary" href="http://localhost:4200/component/lieuDetail"><strong>Ajouter mon lieu</strong></a>
+
+
+
+
+
+
+
+    </div>
+</div>
+
+
+
+
+<!-- End Row -->

@@ -19,7 +19,7 @@ import {Place} from '../model/place';
 		return this.httpClient.get(this.baseURL+"/"+id);
 	  }
 
-	public findPlaceByCountry(country : any): Observable<any>{
+	public findPlaceByCountry(country : string): Observable<any>{
 		return this.httpClient.get(this.baseURL+"/country/"+country);
 	  }
 
@@ -62,6 +62,12 @@ import {Place} from '../model/place';
 	  public findCountryList(): Observable<any>{
 		return this.httpClient.get(this.baseURL+"/countryList");
 	  }
+
+	  public findcountry(country:string): Observable<any>{
+		return this.httpClient.get(this.baseURL+"/country/"+country);
+	  }
+
+	  
 
 	
   }
