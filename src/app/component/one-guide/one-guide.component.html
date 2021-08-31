@@ -4,17 +4,20 @@
         <!-- Guide -->
         <div class="col-lg-10 col-md-6">
             <img class="guide-img-top img-responsive" src="data:image/jpeg;base64,{{guide.images}}" style="width: 330px; height: 300px;" alt="Guide image cap">
-            <h4>{{guide.title}}
+            <h3>{{guide.title}}
                 <ngb-rating [(rate)]="guide.rating">
                     <ng-template let-fill="fill">
                         <span class="star" [class.filled]="fill === 100">&#9733;</span>
                     </ng-template>
                 </ngb-rating>
-            </h4>
+            </h3>
             <p class="guide-text">{{guide.text}}</p>
         </div>
         <!-- Guide -->
         <!-- Lieux associés -->
+        <div class="place-title">
+            <h2>Lieux associés</h2>
+        </div>
         <div class="row" *ngFor="let p of placesExtra">
             <div class="col-12 m-t-30">
                 <div class="card">
@@ -50,6 +53,9 @@
         <!-- Lieux associés-->
 
         <!-- Associer un lieu -->
+        <div class="guide-title">
+            <h2>Associer un lieu</h2>
+        </div>
         <div ngbDropdown class="d-inline-block">
             <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
                   Lieu à ajouter
