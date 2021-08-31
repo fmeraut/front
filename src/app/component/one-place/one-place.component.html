@@ -1,30 +1,31 @@
-<div class="container" id="content" #content>
+<div class="container-fluid" id="content" #content>
     <div class="col-lg-10 col-md-6">
         <!-- Place -->
         <div class="place">
-            <img class="place-img-top img-responsive" src="data:image/jpeg;base64,{{place.photos}}" style="width: 330px; height: 300px;" alt="Place image cap">
+            <div class="container">
+                <img class="place-img-top img-responsive" src="data:image/jpeg;base64,{{place.photos}}" style="width: 330px; height: 300px;" alt="Place image cap">
 
-            <div class="place-body">
+                <div class="place-body">
 
-                <h4 class="place-title">{{place.title}}
-                    <ngb-rating [(rate)]="place.rating">
-                        <ng-template let-fill="fill">
-                            <span class="star" [class.filled]="fill === 100">&#9733;</span>
-                        </ng-template>
-                    </ngb-rating>
-                </h4>
-                <h5 class="place-title">
-                    {{place.adress}}, {{place.city}}, {{place.region}}, {{place.country}}
-                </h5>
-                <h4>Description</h4>
-                <p class="place-text">{{place.description}}</p>
-                <h4>Cost</h4>
-                <p class="place-text">{{place.cost}}</p>
-                <h4>Schedules</h4>
-                <p class="place-text">{{place.schedules}}</p>
-                <a href="#" class="btn btn-primary">En savoir plus</a>
+                    <h4 class="place-title">{{place.title}}
+                        <ngb-rating [(rate)]="place.rating">
+                            <ng-template let-fill="fill">
+                                <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                            </ng-template>
+                        </ngb-rating>
+                    </h4>
+                    <h5 class="place-title">
+                        {{place.adress}}, {{place.city}}, {{place.region}}, {{place.country}}
+                    </h5>
+                    <h4>Description</h4>
+                    <p style="white-space: pre-line;" class="place-text">{{place.description}}</p>
+                    <h4>Cost</h4>
+                    <p class="place-text" style="white-space: pre-line;">{{place.cost}}</p>
+                    <h4>Schedules</h4>
+                    <p class="place-text" style="white-space: pre-line;">{{place.schedules}}</p>
+                    <a href="#" class="btn btn-primary">En savoir plus</a>
+                </div>
             </div>
-
         </div>
         <!-- Place -->
         <br/>

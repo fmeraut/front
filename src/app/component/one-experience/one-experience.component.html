@@ -1,23 +1,24 @@
-<div class="container" id="content" #content>
+<div class="container-fluid" id="content" #content>
     <div class="col-lg-10 col-md-6">
         <!-- Experience -->
         <div class="experience">
-            <img class="experience-img-top img-responsive" src="data:image/jpeg;base64,{{experience.photos}}" style="width: 330px; height: 300px;" alt="Experience image cap">
-            <br/>
-            <div class="experience-body">
+            <div class="container">
+                <img class="experience-img-top img-responsive" src="data:image/jpeg;base64,{{experience.photos}}" style="width: 330px; height: 300px;" alt="Experience image cap">
+                <br/>
+                <div class="experience-body">
 
-                <h3 class="experience-title">{{experience.title}}
-                    <ngb-rating [(rate)]="experience.rating">
-                        <ng-template let-fill="fill">
-                            <span class="star" [class.filled]="fill === 100">&#9733;</span>
-                        </ng-template>
-                    </ngb-rating>
-                </h3>
-                <h5>Pays : {{experience.country}}</h5>
-                <p class="experience-text">{{experience.text}}</p>
-                <iframe width="560" height="315" [src]='experience.videos |sanitizer' title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+                    <h3 class="experience-title">{{experience.title}}
+                        <ngb-rating [(rate)]="experience.rating">
+                            <ng-template let-fill="fill">
+                                <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                            </ng-template>
+                        </ngb-rating>
+                    </h3>
+                    <h5>Pays : {{experience.country}}</h5>
+                    <p class="experience-text" style="white-space: pre-line;">{{experience.text}}</p>
+                    <iframe width="560" height="315" [src]='experience.videos |sanitizer' title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+                </div>
             </div>
-
         </div>
         <!-- Experience -->
         <br/>

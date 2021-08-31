@@ -30,6 +30,10 @@ import { PlaceService } from 'src/app/services/place.service';
         overflow: hidden;
         color: red;
       }
+      .container{
+        display:flex;
+        align-items: left;
+      }
     `
   ]
 })

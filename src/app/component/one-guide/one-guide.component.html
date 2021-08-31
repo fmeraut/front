@@ -1,23 +1,22 @@
+<div class="container-fluid" id="content" #content>
 
-    <div class="container-fluid" id="content" #content>
+    <!-- Guide -->
+    <div class="col-lg-10 col-md-6">
+        <div class="card">
+            <div class="container">
+                <img class="guide-img-top img-responsive" src="data:image/jpeg;base64,{{guide.images}}" style="width: 330px; height: 300px;" alt="Guide image cap">
 
-        <!-- Guide -->
-        <div class="col-lg-10 col-md-6">
-            <div class="card">
-                <div class="container">
-            <img class="guide-img-top img-responsive" src="data:image/jpeg;base64,{{guide.images}}" style="width: 330px; height: 300px;" alt="Guide image cap">
-        
-            <h3 style="padding-left: 5px;">{{guide.title}}
-                <ngb-rating [(rate)]="guide.rating">
-                    <ng-template let-fill="fill">
-                        <span class="star" [class.filled]="fill === 100">&#9733;</span>
-                    </ng-template>
-                </ngb-rating>
-            </h3>
-        
-            <p class="guide-text">{{guide.text}}</p>
-        
-        </div>
+                <h3 style="padding-left: 5px;">{{guide.title}}
+                    <ngb-rating [(rate)]="guide.rating">
+                        <ng-template let-fill="fill">
+                            <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                        </ng-template>
+                    </ngb-rating>
+                </h3>
+
+                <p class="guide-text" style="white-space: pre-line;">{{guide.text}}</p>
+
+            </div>
         </div>
         <!-- Guide -->
         <!-- Lieux associés -->
@@ -46,7 +45,7 @@
                                         </ngb-rating>
                                     </h4>
 
-                                    <p class="experience-text">{{p.description}}</p>
+                                    <p class="experience-text" style="white-space: pre-line;">{{p.description}}</p>
                                     <p class="experience-text"><small class="text-muted">Last updated 3 mins ago</small></p>
 
                                 </div>
@@ -98,7 +97,7 @@
                             </ngb-rating>
                         </h4>
 
-                        <p class="guide-text">{{c.text}}</p>
+                        <p class="guide-text" style="white-space: pre-line;">{{c.text}}</p>
                         <p class="guide-text"><small class="text-muted">{{c.date}}</small></p>
                         <br/>
                         <div>
@@ -114,34 +113,34 @@
     </div>
     <!-- Commentaires -->
 
-<div class="container-fluid">
-    <div class="col-lg-10 col-md-6">
+    <div class="container-fluid">
+        <div class="col-lg-10 col-md-6">
 
-        <div class="card">
-            <div class="card-header">
-                <strong>Rediger un commentaire</strong>
-                <small></small>
-            </div>
-            <form (ngSubmit)="saveComment()">
-                <div class="card-body">
-                    <div class="form-group">
-                        <label>Texte</label>
-                        <textarea type="text" class="form-control" [(ngModel)]="guideComment.text" name="text" placeholder="Comment"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <ngb-rating [(rate)]="guideComment.rating">
-                            <ng-template let-fill="fill">
-                                <span type="text" [(ngModel)]="guideComment.rating" name="rating" class="star form-control" [class.filled]="fill === 100">&#9733;</span>
-                            </ng-template>
-                        </ngb-rating>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
-                        <button type="submit" class="btn btn-block btn-success">Ajouter</button>
-
-                    </div>
+            <div class="card">
+                <div class="card-header">
+                    <strong>Rediger un commentaire</strong>
+                    <small></small>
                 </div>
-            </form>
+                <form (ngSubmit)="saveComment()">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label>Texte</label>
+                            <textarea type="text" class="form-control" [(ngModel)]="guideComment.text" name="text" placeholder="Comment"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <ngb-rating [(rate)]="guideComment.rating">
+                                <ng-template let-fill="fill">
+                                    <span type="text" [(ngModel)]="guideComment.rating" name="rating" class="star form-control" [class.filled]="fill === 100">&#9733;</span>
+                                </ng-template>
+                            </ngb-rating>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                            <button type="submit" class="btn btn-block btn-success">Ajouter</button>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</div>
-<input type="button" value="Download PDF" class="btn btn-success" (click)="SavePDF()">
+    <input type="button" value="Download PDF" class="btn btn-success" (click)="SavePDF()">

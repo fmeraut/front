@@ -41,6 +41,10 @@ import { ExperienceService } from 'src/app/services/experience.service';
       .body{
         background-color: #FBEEEB;
       }
+      .container{
+        display:flex;
+        align-items: left;
+      }
     `
   ]
 })
