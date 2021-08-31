@@ -1,10 +1,11 @@
 <div class="container-fluid" id="content" #content>
-
-    <!-- Guide -->
     <div class="col-lg-10 col-md-6">
+    <!-- Guide -->
+    <div class="guide">
         <div class="card">
             <div class="container">
                 <img class="guide-img-top img-responsive" src="data:image/jpeg;base64,{{guide.images}}" style="width: 330px; height: 300px;" alt="Guide image cap">
+                <div class="experience-body">
 
                 <h3 style="padding-left: 5px;">{{guide.title}}
                     <ngb-rating [(rate)]="guide.rating">
@@ -13,8 +14,12 @@
                         </ng-template>
                     </ngb-rating>
                 </h3>
-
+                <br/>
+            
+                <div class="col-lg-12 col-md-6">
                 <p class="guide-text" style="white-space: pre-line;">{{guide.text}}</p>
+            </div>
+        </div>
 
             </div>
         </div>
