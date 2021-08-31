@@ -104,7 +104,8 @@
 
                         <div class="col-lg-5 col-xl-0">
                             <div class="experience-body">
-                                <h4 class="experience-title"><a (click)="getExperience(e)">{{e.title}}</a>
+                                <h4 class="experience-title">
+                                    <a href="http://localhost:4200/component/oneExperience/{{e.id}}" (click)="getExperience(e)" style="color:black">{{e.title}} </a>
                                     <ngb-rating [(rate)]=e.rating>
                                         <ng-template let-fill="fill">
                                             <span class="star" [class.filled]="fill === 100">&#9733;</span>

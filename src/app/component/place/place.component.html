@@ -83,10 +83,8 @@
         <div class="row" *ngFor="let p of list">
 
             <div class="col-12 m-t-30">
-<<<<<<< HEAD
                 <h3 class="m-b-0">Nos Lieux</h3>
                 <p class="text-muted m-t-0 font-12">Pour que vos voyages riment avec aventure</p>
-=======
                 <div class="card">
                     <div class="place-group">
                         <div class="row my-5">
@@ -98,7 +96,8 @@
 
                             <div class="col-lg-5 col-xl-0">
                                 <div class="place-body">
-                                    <h4 class="placece-title"><a (click)="getPlace(p)">{{p.title}}</a>
+                                    <h4 class="placece-title">
+                                        <a href="http://localhost:4200/component/oneExperience/{{p.id}}" (click)="getExperience(p)" style="color:black">{{p.title}} </a>
                                         <ngb-rating [(rate)]=p.rating>
                                             <ng-template let-fill="fill">
                                                 <span class="star" [class.filled]="fill === 100">&#9733;</span>
@@ -110,7 +109,6 @@
                                     <p class="place-text"><small class="text-muted">Last updated 3 mins ago</small></p>
 
                                     <hr>
->>>>>>> 35196f3a956c777e24c3c33f64fdc7d6ea4941af
 
 
                                 </div>
